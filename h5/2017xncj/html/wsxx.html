@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <style>
+        html {
+            font-size: 100px;
+        }
+        a, a:hover, a:target, a:visited, a:active {
+            color: #000;
+            display: block;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: url("../images/bg2.png") no-repeat;
+            background-size: cover;
+            font-family: "微软雅黑";
+        }
+        .contain{
+            width: 5.1rem;
+            height: 100%;
+            margin: 0 auto;
+        }
+        .contain .z-top{
+            width: 5.1rem;
+            height: 4.72rem;
+            position: relative;
+        }
+        .contain .z-top img{
+            width: 100%;
+            height: 3.48rem;
+        }
+        .z-top span,.z-mid span{
+            display: block;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+        }
+        .z-top span:nth-of-type(1){
+            font-family: MStiffHeiPRC;
+            position: absolute;
+            bottom: 1.4rem;
+            display: block;
+            text-align: center;
+            width: 100%;
+            font-size: .5rem;
+            line-height: .5rem;
+            color: #b22d1a;
+            font-weight: bolder;
+        }
+        .z-top span:nth-of-type(2){
+            font-size: .28rem;
+            line-height: .5rem;
+        }
+        .z-top span:nth-of-type(3){
+            font-size: .4rem;
+            line-height: .5rem;
+        }
+       .Iphone{
+            width: 100%;
+            height: auto;
+       }
+        .Iphone img{
+            display: block;
+            width: 2.44rem;
+            height: 2.44rem;
+            border: 2px dashed #b22d1a;
+            border-radius: 50%;
+            margin: 0rem auto;
+            background: #fff;
+        }
+        .Iphone span{
+            display: block;
+            width: 100%;
+            font-size: .24rem;
+            line-height: .5rem;
+            color:#333;
+            text-align: center;
+        }
+        .z-bot button{
+            display: block;
+            width: 100%;
+            height: .86rem;
+            margin:.2rem auto;
+            background: #f3d073;
+            border: none;
+            border-radius: .05rem;
+            font-size: .4rem;
+            font-family: "微软雅黑";
+            line-height: .86rem;
+            text-align: center;
+        }
+        .z-bot button a{
+            color: #b22d1a;
+        }
+        .z-bot div img{
+            display: block;
+            width: 1.65rem;
+            height: 1.65rem;
+            margin: .2rem auto;
+        }
+        .z-bot span{
+            display: block;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            font-size: .28rem;
+            line-height: .5rem;
+        }
+    </style>
+</head>
+<body>
+<div class="contain">
+    <div class="z-top">
+        <img src="../images/fj_03.png" alt=""/>
+        <span>中奖啦</span>
+        <span>恭喜您获得由提供的</span>
+        <span>Iphone手机一部</span>
+    </div>
+    <div class="Iphone">
+        <img src="../images/iphone_03.png" alt=""/>
+        <span>请如实填写个人信息，以便奖品快速投入怀抱哦</span>
+    </div>
+    <div class="z-bot">
+        <button><a href="grxx.html">完善信息领奖</a></button>
+        <div>
+            <img src="../images/ewm_03.png" alt=""/>
+        </div>
+        <span>欢迎关注人民网</span>
+    </div>
+
+</div>
+<script src="../js/index.js"></script>
+<script>
+    //获取参数 绑定相应物品
+    var str=window.location.href
+    function GetHref(str){
+        arr=str.split('?');
+        return arr[2];
+    }
+    var hax= GetHref(str)
+
+
+
+
+</script>
+</body>
+</html>

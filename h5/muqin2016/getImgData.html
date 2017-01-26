@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>get image data</title>
+</head>
+<body>
+<script>
+window.onmessage = function(e){
+	if(e.origin == 'http://t.people.com.cn' || e.origin == 'http://wx.people.com.cn' || e.origin == 'http://bbs1.people.com.cn' || e.origin == 'http://bbs.people.com.cn'){
+		loadImg(e.data);
+	}
+};
+function loadImg(data){
+	data = data.split('{|}');
+	if(data.length != 2){
+		return;
+	};
+	var key = data[0],
+		src = data[1];
+	var img  = new Image();
+	var canvas = document.createElement('canvas');
+	var ctx = canvas.getContext("2d");
+	img.onload = function(){
+		canvas.width = img.width;
+		canvas.height = img.height;
+		ctx.drawImage(img, 0, 0);
+		parent.postMessage(key + '{|}' + canvas.toDataURL('image/png'), '*');
+	};
+	img.src = src;
+}
+parent.postMessage('ready', '*');
+</script>
+</body>
+</html>

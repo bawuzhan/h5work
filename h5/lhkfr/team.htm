@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>两会开放日活动实时播报-人民网</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<base href="/microblog-v3/h5/lhkfr/">
+<link rel="stylesheet" href="style.css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+<div class="share"><a href="javascript:void(0)" class="close"></a></div>
+<div class="header npa"></div>
+<div class="tname">
+	<a href="/h5/lhkfr" class="btnReturn"></a>
+	<h1><span></span>代表团<br>开放日活动</h1>
+</div>
+<div class="contBox"><div class="nodata">载入中...</div></div>
+<script>
+//2016.2.29 mengjia
+(function(){
+
+	function Q(s, p){
+		return (p || document).querySelector(s);
+	};
+	function QA(s, p){
+		return (p || document).querySelectorAll(s);
+	};
+	var isWX = navigator.userAgent.indexOf('Messenger') !== -1;
+	var viewScale;
+	var viewWidth, viewScale;
+	if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76){
+		viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+		viewScale = viewWidth / 640;
+	}else{
+		viewScale = document.documentElement.clientWidth / 640;
+	};
+
+	document.documentElement.style.fontSize = 32 * viewScale + 'px';
+
+	var teamName = location.search.match(/(\?|&)t=([^?&]*)/);
+	if(teamName){
+		teamName = teamName[2];
+	}else{
+		showError('参数错误');
+		return;
+	};
+
+	Q('.share .close').onclick = function(){
+		Q('.share').style.display = 'none';
+		sessionStorage.setItem('lh_s', 1);
+	};
+	if(isWX && sessionStorage.getItem('lh_s') != 1){
+		Q('.share').style.display = 'block';
+	};
+
+	if(document.referrer.indexOf('h5/lhkfr') !== -1){
+		Q('.btnReturn').href = 'javascript:history.back()';
+	};
+	function showError(str){
+		Q('h1').innerHTML = str;
+	};
+	function fullData(data){
+		var html = '';
+		Q('h1 span').innerHTML = decodeURI(decodeURI(teamName));
+		if(data && data.result && data.result.data && data.result.data.length){
+			data = data.result.data;
+			for (var i = 0; i < data.length; i++) {
+				html += data[i].contentBody.replace(/<br \/>/g, ' ').replace(/src="\//g, 'src="http://lianghui.people.com.cn/').replace(/<em>.*?<\/em>/, '').replace(/ [^\s]*?代表团<\/h3>/, '</h3>');
+			};
+		}else{
+			html = '<div class="nodata">暂无数据</div>';
+		};
+		Q('.contBox').innerHTML = html;
+	};
+	var xhr = new XMLHttpRequest();
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState == 4 && xhr.status == 200){
+			//上传完成
+			try{
+				var data = eval('(' + xhr.responseText + ')');
+				fullData(data);
+			}catch(e){
+				showError('数据错误');
+			}
+			
+		}else if(xhr.readyState == 4){
+			alert('网络忙，请稍后再试！code:' + xhr.status);
+		};
+	};
+	xhr.ontimeout = function(e){
+		alert('网络不给力，请在较好的网络环境中再试！');
+	};
+	xhr.open('GET', '/lhtwzbJson.action?lhRegion=' + teamName, true);
+	xhr.send(null);
+
+	function setShareInfo(title, img, url){
+		if(url && history.pushState){
+			history.pushState(null, document.title, url);
+		};
+		if(img){
+			var i = window._shareImg || new Image();
+			i.src = img;
+			i.style.position = 'absolute';
+			i.style.left = '-1000px';
+			i.style.top = '-1000px';
+			window._shareImg = i;
+			document.body.insertBefore(i, document.body.firstChild);
+		};
+		if(title){
+			document.title = title;
+		}
+	};
+	setShareInfo(decodeURI(decodeURI(teamName)) + '网友请关注！快来看看你的家乡代表团开放日直播！【人民网两会直播】', 'images/icon.jpg');
+})();
+</script>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

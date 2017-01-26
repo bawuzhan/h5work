@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>转盘摇奖</title>
+    <link rel="stylesheet" href="../css/1.index.css"/>
+</head>
+<body>
+<div id="box" class="box">
+    <div id="outer" class="outer KinerLottery KinerLotteryContent"><img src="../images/lotteryContent.png"></div>
+    <div class="ZPinner KinerLotteryBtn start"></div>
+</div>
+<div class="filter">
+    <div class="inner">
+        <div class="fil_top">
+            <img src="../images/fj_03.png" alt=""/>
+            <span>好可惜</span>
+        </div>
+        <div class="fil_bot">
+            <div class="close"></div>
+            <div class="again">
+                <div class="changeTxt">
+                    <h3>奖品一不小心溜走了</h3>
+                    <span>别灰心<br>据说面朝东方风水更好哦</span>
+                </div>
+                <button class="againShake">再来一次</button>
+            </div>
+            <div class="over">
+                <h2>今日机会已用完</h2>
+                <span>明天再来吧！</span>
+            </div>
+            <div class="shareAgain">
+                <h2>机会已用完</h2>
+                <span>分享朋友圈再得一次抽奖机会哦</span>
+                <img src="../images/huotui_03.png" alt=""/>
+                <div>
+                    <img src="../images/zhizhen_03.png" alt=""/>
+                </div>
+            </div>
+            <div class="curAwards">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script src="../js/ZeptoRotate.1.0.js"></script>
+<script src="../js/turntable.js"></script>
+<script>
+    //判断浏览器
+    var iOS = navigator.userAgent.match(/ OS (\d+).*? Mac OS/) || false;
+    var isAndroid = (/android/i).test(navigator.userAgent) || false;
+    //适配
+    var viewWidth, viewScale;
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76){
+        viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+        viewScale = viewWidth / 640;
+    }else{
+        viewScale = document.documentElement.clientWidth / 640;
+    };
+    document.documentElement.style.fontSize = 100 * viewScale + 'px';
+
+
+
+
+    var filter=$('.filter'),again=$('.again'),shareAgain=$('.shareAgain'),over=$('.over');
+    var inner=['<h3>奖品一不小心溜走了</h3><span>别灰心<br>据说面朝东方风水更好哦</span>','<h3>大奖没有投入你的怀抱</h3><span>你和奖品还差再摇一次的距离</span>','<h3>大奖就差一点点</h3><span>可能姿势不对哦</span>'];
+    //公用的function
+    var utils={
+        random:function (m,n){//取随机数
+            return Math.round(Math.random(n-m)+m)
+        },
+        err:function (text){//提示错误信息
+            alert(text);
+        },
+        awardsAlert:function(data){//传进去的参数 弹出中奖的内容
+            var awardsList = ['苹果6S Plus', '100M流量', '1G流量', '未中奖', '500M流量', '30M流量']//奖品列表
+            var zjRecordId =data.zjRecordId ,zjFlag =data.zjFlag;
+            //显示弹出层
+            filter.css('display','block');
+            again.css('display','none');
+            shareAgain.css('display','none');
+            over.css('display','none');
+            if(zjFlag==-1){
+                window.location.href='instr.html';
+            }else if(zjFlag==-3){//表示摇过两次
+                shareAgain.css('display','block');
+            }else if(zjFlag==-9){
+                over.css('display','block');
+            }else if(zjFlag==0){
+                $('.changeTxt').html(inner[utils.random(0,3)])
+                again.css('display','block');
+            }else if(zjFlag==1){//中奖啦
+                $('.curAwards').html(awardsList[zjRecordId-1]).css("display","block");//如果中奖了 显示中奖的产品
+                $('.ZPinner').attr("flag",1);
+                window.setTimeout(function(){
+                    filter.css('display','');
+
+                    window.location.href='http://t.people.com.cn/xncj2017ZjResult.action?sn='+sn+'&zjRecordId'+zjRecordId;
+                },1500)
+            }
+        }
+    }
+    $(function(){
+        $('.ZPinner').attr("flag",1);
+        $('.ZPinner').on('click',function(){
+            if($('.ZPinner').attr("flag")==0){
+                return;
+            }
+            console.log($('.ZPinner').attr("flag"))
+            $('.ZPinner').attr("flag",0);
+            /*$.ajax({
+                url: "",
+                type: "get",
+                success: function(data){
+                    data=JSON.parse(data);
+                    rotate({
+                        obj:'#outer',
+                        data:data,
+                        during:3000,
+                        animate:animate[3],
+                        dir:1
+                    })
+                },
+                error:utils.err('对不起网络繁忙，请稍后再试')
+
+            });*/
+            text()
+        })
+        //转动的函数
+        /*
+          obj--转动的元素
+        * during--转动的时间
+        * animate--运动的动画形式
+        * dir--运动的方向
+        * data--ajax请求回来的参数
+        * */
+        function text(){
+            rotate({
+                obj:'#outer',
+                data:{
+                    zjRecordId:0,
+                    zjFlag:0
+                },
+                during:3000
+            })
+        }
+        function rotate(options){
+            var awardsDegree;
+            //默认的转动形式
+            var animate=['ease','linear','ease-in','ease-out','ease-in-out']
+            var _default={
+                obj:"#outer",
+                data:"",
+                during:3000,
+                animate:animate[3],
+                dir:1
+            };
+            for (var key in options) {
+                if (_default.hasOwnProperty(key)) {
+                    _default[key] = options[key];
+                }
+            }
+            $(_default.obj).css("transform","rotateZ(0)")
+            if(_default.data){
+                awardsDegree=[80,10,20,30,40,50,60,70];//对应view的不同的角度 80deg的表示没有中奖
+                _default.deg=awardsDegree[_default.data.zjRecordId];
+            }
+            _default.deg=_default.deg-utils.random(0,9);
+            _default.deg=_default.dir>0?_default.deg+utils.random(4,7)*360:-(_default.deg-utils.random(4,7)*360);//判断旋转方向
+            console.log(_default.deg)
+            $(_default.obj).animate({rotateZ:_default.deg+'deg'},_default.during,_default.animate,function(){
+
+                //弹出中的什么奖
+                setTimeout(function(){
+                    utils.awardsAlert(_default.data);
+                    $(_default.obj).css("transform","rotateZ(0)")
+                },1000)
+            })
+        }
+        //关闭弹出层
+        $('.close').on('click',function(){
+            filter.css('display','none');
+            $('.ZPinner').attr("flag",1);
+        })
+        //点击分享按钮
+        $('.againShake').singleTap(function(){
+            filter.css('display','none');
+            $('.ZPinner').attr("flag",1);
+        });
+
+
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

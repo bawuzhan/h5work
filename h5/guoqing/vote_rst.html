@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Demo</title>
+<script src="mobile.js" type="text/javascript"></script>
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="pb_pg page_rst">
+  <div class="bg1"></div>
+  <div class="logo_w"></div>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个宅在家里过十一的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个国庆去相亲的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个国庆也要上班的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个十一被堵在<br />高速/景区/大卖场的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个国庆吃吃吃胖三斤的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个十一败在份子钱脚下的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个十一回家陪亲人的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个十一出境游的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个十一在上课的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个因为十一放假<br />看不见Ta的人</td>
+    </tr>
+  </table>
+  <table class="rstTxt">
+    <tr>
+      <td>我是第 <strong>345</strong> 个大奇葩</td>
+    </tr>
+  </table>
+
+  <a href="javascript:void(0)" class="toShare btn_share" ></a>
+  <a href="index.html" class="toVote"></a>
+</div>
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+<script>
+  function Q(s, p){
+      return (p || document).querySelector(s);
+  };
+  H5tools.initView();
+  
+  //微信分享时的缩略图
+  if(H5tools.isWX){
+    var img = new Image();
+    img.src = 'images/icon.jpg';
+    img.style.position = 'absolute';
+    img.style.top = '-1000px';
+    img.style.left = '-1000px';
+    document.body.insertBefore(img, document.body.firstChild);
+  };
+  // 分享按钮
+  Q('.btn_share').onclick=function(){showShare();}
+  //显示分享提示，分享按钮可以调用
+function showShare(){
+  if(!H5tools.isWX){
+    document.getElementById('shareAlert').innerHTML = '<div class="othersShare">分享：<a href="javascript:void(0)" onclick="shareSina()"><img src="/microblog-v3/2014subject/1216_oneword/images/sina.png"></a> <a href="javascript:void(0)" onclick="sharePeople()"><img src="/microblog-v3/2014subject/1216_oneword/images/people.png"></a> <a href="javascript:void(0)" onclick="shareTencent()"><img src="/microblog-v3/2014subject/1216_oneword/images/tencent.png"></a></div>';
+  };
+  Q('#shareAlert').style.display = 'block';
+  setTimeout(function(){
+  Q('#shareAlert').style.display = 'none';
+  }, 10000);
+};
+</script>
+</body>
+</html>

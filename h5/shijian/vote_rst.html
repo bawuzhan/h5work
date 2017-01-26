@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Demo</title>
+
+<!-- <script src="mobileshow.js" type="text/javascript"></script> -->
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="scenery page_vote_rst" style="display:block">
+    <div class="bg"></div>
+    <div class="logo"></div>
+    <div class="bigTitle">
+     <div class="title"></div>
+     <p>北京劳动管理干部学院昌平分校区材料科学与技术学院长沙行爱心小分队</p> 
+    </div>
+    <div class="rstDetail">
+      <div class="rstNum"><span class="num">1031</span>票</div>
+          <div class="usrInfo">
+    <table>
+      <tr>
+        <td><img src="images/temp_face.jpg" height="80" width="80" alt="" class="userFace"/><span class="userName">阡陌凝烟</span></td>
+      </tr>
+    </table>
+    </div>
+    <div class="voteStaut"><span>投票成功</span></div>
+    </div>
+
+  </div>
+<script>
+(function(){
+  var viewWidth = document.body.clientWidth;
+  var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+  var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+  isMobile = isMobile ? isMobile[0] : false;
+  
+  if(isMobile){
+    var f = document.documentElement.clientWidth / 640 * 32;
+     document.documentElement.style['font-size'] = f + 'px';
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+      //小屏幕手机单独定义CSS
+      //document.body.className = 'smallScreen';
+      f = document.documentElement.clientHeight / 1008 * 32;
+    }
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['max-width'] = '20rem';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  }else{
+    var f = document.documentElement.clientHeight / 504 * 16,
+      viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+    document.documentElement.style['font-size'] = f + 'px';
+    // document.body.style['overflow'] = 'hidden';
+    document.body.style['max-width'] = '640px';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+
+  };
+})();
+</script>
+</body>
+</html>

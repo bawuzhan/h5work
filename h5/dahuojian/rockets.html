@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="长征五号的秘密"/>
+    <title>厉害了！word 胖五！</title>
+    <style>
+        @charset "utf-8";
+        body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, button, input, textarea, th, td {
+            margin: 0;
+            padding: 0
+        }
+        body {
+            font-size: 12px;
+            font-style: normal;
+            font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+            -webkit-text-size-adjust: 100% !important;
+            text-size-adjust: 100% !important;
+
+        }
+
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none;
+            background-color: transparent
+        }
+
+        a:hover, a:active {
+            outline-width: 0;
+            text-decoration: none
+        }
+
+        img {
+            border-style: none;
+            display: block;
+        }
+
+        html {
+            -webkit-touch-callout: none;
+            -webkit-text-size-adjust: 100%
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: url("images/bg4_02.png");
+            background-size: 100% 100%;
+            font-family: "微软雅黑";
+        }
+
+        html {
+            font-size: 100px;
+        }
+
+        /*火苗显现的动画*/
+        @-webkit-keyframes fadeInDown {
+            from {
+                opacity: 1;
+                transform-origin:top;
+                -webkit-transform: scaleY(1.8);
+                transform: scaleY(1.8)
+            }
+            to {
+                opacity: 1;
+                transform-origin:top;
+                -webkit-transform:none;
+                transform: none
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 1;
+                transform-origin:top;
+                -webkit-transform:scaleY(1.8);
+                transform: scaleY(1.8);
+            }
+            to {
+                opacity: 1;
+                transform-origin:top;
+                -webkit-transform: none;
+                transform: none
+            }
+        }
+
+        .fadeInDown {
+            -webkit-animation: fadeInDown 0.7s linear 0s infinite both;
+            animation: fadeInDown 0.7s linear 0s infinite both;
+        }
+
+        /*火箭起飞的动画*/
+        @-webkit-keyframes bounceOutUp {
+            20% {
+                -webkit-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            to {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -15rem, 0);
+                transform: translate3d(0, -15rem, 0)
+            }
+        }
+
+        @keyframes bounceOutUp {
+            20% {
+                -webkit-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0)
+            }
+            to {
+                opacity: 1;
+                -webkit-transform: translate3d(0, -20rem, 0);
+                transform: translate3d(0, -20rem, 0)
+            }
+        }
+
+        .bounceOutUp {
+            -webkit-animation: bounceOutUp 2s linear;
+            animation: bounceOutUp 2s linear;
+        }
+
+        /*显示分享页*/
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+            to {
+                opacity: 1
+            }
+        }
+
+        .fadeIn {
+            -webkit-animation: fadeIn 0.5s linear 0s both;
+            animation: fadeIn 0.5s linear 0s both;
+        }
+        .rocket{
+            overflow: hidden;
+        }
+        .rocket .toTop {
+            width: 100%;
+            top: 6.34rem;
+            left: 1.38rem;
+            position: absolute;
+            z-index: 2;
+        }
+
+        .rocket .toTop .rockBody{
+            opacity: 1;
+            width: 1.14rem;
+            height: 2.8rem;
+        }
+
+        .rocket .toTop .rockBody img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .rocket .toTop .rockFire {
+            height: .50rem;
+            width: 1.1rem;
+            opacity: 0;
+        }
+
+        .rocket .toTop .rockFire img {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .btn2 button {
+            display: block;
+            width: 1.5rem;
+            height: .4rem;
+            margin: 0 auto;
+            line-height: .4rem;
+            text-align: center;
+            font-size: .3rem;
+            background: #3280bf;
+        }
+        .hidden{
+            display: none;
+        }
+        .main{
+            height: 6.54rem;
+            width: 100%;
+            margin-top: .75rem;
+            overflow: hidden;
+        }
+        .main .rocket1{
+            float: left;
+            padding-top: .75rem;
+            margin-left: 1.18rem;
+            width: 2.23rem;
+            height: 5.6rem;
+        }
+        .main .rocket1 img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .color{
+            float: left;
+            position: relative;
+            width: 1.28rem;
+            margin-left: .62rem;
+            padding-bottom: .1rem;
+        }
+        .color ul{
+            padding-bottom: .1rem;
+            height: 6.5rem;
+            width: 1.28rem;
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            flex-direction: column;
+            -webkit-justify-content: space-between; /* Safari */
+            justify-content: space-between;
+
+        }
+        .color ul li{
+            width: 1.2rem;
+            height: 1.2rem;
+            border: .04rem solid #0e77c4;
+            border-radius: 50%;
+        }
+        .color ul li img{
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+        .btn_fire{
+            width: 100%;
+            margin-top: 1.28rem;
+            margin-bottom: 1rem;
+        }
+        .btn_fire button{
+            width: 5.1rem;
+            height: .76rem;
+            background: #c32430;
+            font-size: .38rem;
+            line-height: .76rem;
+            margin-left: .65rem;
+            color: #fff;
+            border: none;
+            border-radius: .38rem;
+        }
+        /*发射页*/
+        .launchers{
+            width: 2.82rem;
+            height: 3.95rem;
+            margin-left: .5rem;
+            margin-top: 5.62rem;
+        }
+        .launchers img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .sharePage{
+            width: 100%;
+            height: 100%;
+            background: url("images/newBg1_03.jpg") no-repeat;
+            background-size: 100% 100%;
+            overflow: hidden;
+        }
+        .sharePage .share_rocket{
+            height: 4.9rem;
+            width: 100%;
+            margin-top: 2.3rem;
+        }
+        .sharePage .share_rocket img{
+            display: block;
+            width: 2rem;
+            height: 4.9rem;
+            margin: 0 auto;
+        }
+        .sharePage .share_fire{
+            height: 1.02rem;
+            width: 100%;
+        }
+        .sharePage .share_fire img{
+            height: 1.02rem;
+            width: 2rem;
+            margin: 0 auto;
+        }
+        .share_btn{
+            width: 5.40rem;
+            height: .78rem;
+            margin: 0 auto;
+            margin-top: .44rem;
+            padding-bottom:.62rem;
+            font-family: '微软雅黑';
+            display: -webkit-flex; /* Safari */
+            display: flex;
+            -webkit-justify-content: space-around; /* Safari */
+            justify-content:space-around;
+        }
+        .share_btn button{
+            width: 2.278rem;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            font-size: .28rem;
+            border: none;
+            border-radius: .39rem;
+        }
+        .share_btn .share_btn1{
+            background: #c32430;
+        }
+        .share_btn .share_btn2{
+            background: #2b75bb;
+        }
+        .share_btn .share_btn3{
+            background: #54ad1e;
+        }
+
+        .color .select{
+            border: .04rem solid #54ad1e;
+        }
+        .color .noSelect{
+            border: .04rem solid #0e77c4;
+        }
+        .color i{
+            display: block;
+            width: .4rem;
+            height: .45rem;
+            background: url("images/select_03.png") no-repeat;
+            background-size: contain;
+            position: absolute;
+            top:.8rem;
+            left: .92rem;
+        }
+        .yao{
+            width: 2.38rem;
+            height: 1.1rem;
+            position: absolute;
+            top: 0;
+            left: 1.16rem;
+            background: url("images/yao_03.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .logo{
+            width: 1.38rem;
+            height: 1.1rem;
+            position: absolute;
+            right: .65rem;
+            top: 0;
+            background: url("images/logo_03.png") no-repeat;
+            background-size: 100% 100%;
+        }
+#shareAlert{background:rgba(0, 0, 0, .8);width:100%;height:100%;position:absolute;left:0;top:0;z-index:2000;display:none;}
+.shareArr{width:2.625em;height:5.1875em;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAACmCAMAAABz71jhAAAAYFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////98JRy6AAAAH3RSTlMA+i4Q7M4Z9MMJlyMC5d1JoXusimtTQDYFg16zunLWREEM4wAAA4pJREFUaN7Nmsm24jAMRDNPODMhI9H//2U/J0o/updwfQ5asapjS6VSycHDYtmqh8dG2IlIlrOYq/yEzx61lyPuJObon6BPErQT/qQPX0EHELQREbpQwXXQKOBAC9GobtxBIxhUM4pf/3HWCK3+tFm0ZkXJv1iwODxBGwYz320uRy87K8XIVGuxWi+M5QikUrfIXj73bhWoKI0258XVDcAcLFDxIinl5/RPdouT/PyqRWP5FNN0qqFKLIRU85HFSUmQdsf9w88YesylNLiEKh1tMqT+aCxlrxzqRFLTa9nejaA5y91NpwDEIpU5xt/+dlPdlZZVoqkoRbLJVJa19buYoqwMLm75Ip0qa/8mPcsTcw9e535xKdZb91emp0Xyj/49Lfb7onIrsnhtx1etOnspqU7NYqI4CWoOqc4g0E2H3iwqBkCEsY7n2ldSAXErteg5lVRV0/XXp3YI6PC354PUMhWbfs9fOUwx41NfC0XaAIU6Ncq/hpMJodUkEilzj43AThUDgy5afDR6nalorFp8MsIY9NCvnj8OYdDhv3bHmnRGEdVRDTBoXv02KdpP1QSDLmog0Sgc9NOU0W8nOvQquk6Dummc+j2MaTaa+jpK0gQGrdWRodG7UJNMVZ9maemCpauLxm9hzNBqqZr/79bS1oU3cdGjQUQTSidJB9s90zmYJIlVKLydXChURz/C69qf0hZy4b+WeKZRMaFrz9/eRe03B8wPInp9UNVbYSnNY30sJeOhz5poNLjm68scbXWfwm95eaYCRZcpog1k52DNuUUOyjQ7UNKkcqAld33PJGOKHXTTILx/zDda9HTJ8Wmrt+lbPhkPn+aTOr0qwQ/KW4jVAfFrn1/vp1V4n6vfSemu523JXeiMqo5GcEZnoZ8hdDLt7LA3jfCb6Jjy3wimzPJ+xOnEV6mkLZn60bSmBxPf9GHMUlR7iX8jDlK+8nnmwOW1uIpqfy5w5TMHJm920Eq1zyc02V+s0zfvoC7WxUcqEqkwf/Nuk68OtsXWQUIHB5MuKPmEhpmDhHYOBkhvEwoPkLvwS0htdXk1bOEj/dcvLXd+zZNJehbz/M8Xyqa8E3wiT4XwjwS98AmdRfCv4M8Dc094zGhkMfkitXLEk8aEva3pT8z+qzFNMjaKaShrM3f7CenfsR5KRSPiuFSKRgxy/rp6QQpocR6THR61hVzwzyDZYjw2/gATH3kr/bGDygAAAABJRU5ErkJggg==) no-repeat 0 0;position:absolute;right:1.5em;top:1.5em;background-size:100%;}
+.shareText{text-align:center;font-size:1.75em;line-height:1.85em;color:#fff;position:absolute;top:5.0em;width:100%;}
+.othersShare{margin-top:11em;text-align:center;font-size:1em;color:#fff;}
+.othersShare img{width:3em;height:3em;margin:0 0.5em;}
+
+    </style>
+</head>
+<body>
+<!--换肤页-->
+<div class="container">
+    <div class="main">
+        <div class="rocket1">
+            <img src="images/rock0_03.png" alt=""/>
+        </div>
+        <div class="color">
+            <i></i>
+            <ul>
+                <li class="select"><img src="images/rocket1(0)_03.png" alt=""/></li>
+                <li><img src="images/1_03.png" alt=""/></li>
+                <li><img src="images/2_06.png" alt=""/></li>
+                <li><img src="images/3_08.png" alt=""/></li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn_fire">
+        <button>发 射</button>
+    </div>
+</div>
+<!--发射页-->
+<div class="fire hidden">
+    <div class="rocket">
+        <div class="toTop">
+            <!--火箭-->
+            <div class="rockBody">
+                <img src="images/rock0_03.png" alt="火箭"/>
+            </div>
+            <!--喷火-->
+            <div class="rockFire">
+                <img src="images/fire_06.png" alt="火苗"/>
+            </div>
+        </div>
+        <!--发射塔-->
+        <div class="launchers">
+            <img src="images/ta_07.png" alt=""/>
+        </div>
+    </div>
+
+</div>
+<!--分享页-->
+<div class="sharePage hidden">
+    <div class="yao"></div>
+    <div class="logo"></div>
+    <div class="share_rocket"><img src="images/rock0_03.png" alt=""/></div>
+    <div class="share_fire fadeInDown"><img src="images/fire_06.png" alt=""/></div>
+    <div class="share_btn">
+        <button class="share_btn1">分享给好友</button>
+        <button class="share_btn2">重新涂装</button>
+        <button class="share_btn3">看秘密</button>
+    </div>
+</div>
+
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+    <audio id="bgMusic" src="bgMusic.mp3" autoplay loop></audio>
+
+<script src="js/zepto.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+    var src = "http://mblog.people.com.cn/weixinJS.action?url=" + encodeURIComponent(location.href.split('#')[0]);
+    var left = unescape('%3c');
+    var right = unescape('%3E');
+    document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+    // console.log(src)
+</script>
+<script>
+    var shareData = {
+        imgUrl: 'http://mblog.people.com.cn/microblog-v3/h5/dahuojian/images/300.jpg',
+        link: 'http://mblog.people.com.cn/microblog-v3/h5/dahuojian/index.html',
+        title: '厉害了！word 胖五！',
+        desc : '快来涂装大火箭啦！'
+    }
+    // peopleWXConfig.debug = true;
+    peopleWXConfig.jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'];
+    wx.config(peopleWXConfig);
+    function initWXShare(){
+        wx.onMenuShareAppMessage({
+            title: shareData.title,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            desc :shareData.desc
+        });
+        wx.onMenuShareTimeline({
+            title: shareData.title,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            desc :shareData.desc
+        });
+        wx.onMenuShareQQ({
+            title: shareData.title,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            desc :shareData.desc
+        });
+        wx.onMenuShareWeibo({
+            title: shareData.title,
+            link: shareData.link,
+            imgUrl: shareData.imgUrl,
+            desc :shareData.desc
+        });
+    }
+    wx.ready(initWXShare);
+</script>
+<script>
+    /*适配*/
+    if (document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76) {
+        viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+        viewScale = viewWidth / 640;
+    } else {
+        viewScale = document.documentElement.clientWidth / 640;
+    };
+    document.documentElement.style.fontSize = 100 * viewScale + 'px';
+//禁止用户更改字号
+    (function(){
+        if (typeof(WeixinJSBridge) == "undefined") {
+            document.addEventListener("WeixinJSBridgeReady", function (e) {
+                setTimeout(function(){
+                    WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                        // alert(JSON.stringify(res));
+                    });
+                },0);
+            });
+        } else {
+            setTimeout(function(){
+                WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {
+                    // alert(JSON.stringify(res));
+                });
+            },0);
+        }
+    })();
+
+    //setShareInfo('厉害了！word 胖五！', 'images/300.jpg','index.html');
+    var music = document.getElementById("bgMusic");
+    /*点击皮肤 点第几个火箭图片的src就变成第几个*/
+    var arr = ["rock0_03.png","fuzi_03.png", "micai_03.png", "chang_03.png"];
+    var arrTop=[".8rem","2.64rem","4.28rem","6.1rem"];
+    $('.color ul li').singleTap(function () {
+        var n = $(this).index();
+        $('.color ul li').forEach(function(item){
+            $(item).css("borderColor","#0e77c4")
+        })
+        $(this).css("borderColor","#54ad1e")
+        $('.color i').css('top',arrTop[n]);
+        $('.rocket1>img')[0].src = "images/" + arr[n];//点击的是第几个就把第几个图片赋给火箭图
+        $('.rockBody>img')[0].src = "images/" + arr[n];//发射页的火箭
+        $('.share_rocket>img')[0].src="images/" + arr[n];//分享页的火箭
+        /*var arrShare=["share1_02.jpg","share4_02.jpg","share3_02.jpg","share2_02.jpg"]
+        shareData.imgUrl='http://mblog.people.com.cn/microblog-v3/h5/dahuojian/images/'+arrShare[n];*/
+    });
+
+    /*点击发射按钮  先跳转   先点火   在起飞  显示分享*/
+    $('.btn_fire button').singleTap(fire);
+
+    function fire() {
+        $('.container').addClass('hidden');
+        $('.fire').removeClass('hidden');
+        var audioObj
+        window.setTimeout(function(){
+            $('.rockFire').addClass("fadeInDown");//显示点火动画
+            audioObj = document.createElement("audio");
+            audioObj.src = 'fire.mp3';//火箭发射的声音
+            audioObj.play();//声音响起
+        },500)
+        window.setTimeout(function () {//500m后火箭开始起飞
+            $('.toTop').addClass("bounceOutUp");//起飞 2000ms后消失在屏幕
+        }, 500)
+        window.setTimeout(function () {
+            if (!audioObj.paused) {
+                audioObj.pause()//火箭声音消失
+            }
+            $('.fire').addClass('hidden');
+            $('.sharePage').removeClass('hidden')
+            $('.toTop').css("opacity", 0);
+            $('.toTop').removeClass("bounceOutUp");//上天的动画消失
+            $('.rockFire').removeClass("fadeInDown");//火苗消失
+        }, 2500);
+    }
+    ;
+    /*分享函数*/
+    function setShareInfo(title, img, url) {
+        if (img) {
+            if(window._shareImg){window._shareImg.parentNode.removeChild(window._shareImg)}
+            var i = new Image();
+            i.src = img;
+            i.style.position = 'absolute';
+            i.style.left = '-1000px';
+            i.style.top = '-1000px';
+            window._shareImg = i;
+            document.body.insertBefore(i, document.body.firstChild);
+        }
+        if (title) {
+            document.title = title;
+        }
+        if (url && history.replaceState) {
+            history.replaceState(null, document.title, url);
+        }
+
+    };
+    $('.share_btn2').singleTap(function () {
+         $('.sharePage').addClass('hidden');
+         $('.container').removeClass('hidden');
+         $('.toTop').css("opacity", 1);
+         $('.toTop').removeClass("fadeIn");//静态火箭渐现
+        if (music.paused) {
+            music.play();//火箭声音消失
+        }
+    });
+    $('.share_btn1').singleTap(function () {
+        $('#shareAlert').show();
+        console.log($('#bgMusic'))
+        if (!music.paused) {
+            music.pause();//火箭声音消失
+        }
+        setTimeout(function(){
+            $('#shareAlert').hide();
+        }, 8000);
+    })
+    $('.share_btn3').singleTap(function () {
+        window.setTimeout(function(){
+            window.location.href='index.html';
+        },310)
+    })
+</script>
+</body>
+</html>

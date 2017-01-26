@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <style>
+        html {
+            font-size: 100px;
+            height: 100%;
+        }
+        a, a:hover, a:target, a:visited, a:active {
+            color: #000;
+            display: block;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            overflow-x: hidden;
+            background: url("../images/bg.png") no-repeat;
+            background-size: 100% 100%;
+            font-family: Hiragino Sans GB, STHeiti, Microsoft Yahei, sans-serif;
+        }
+        .contain{
+            width: 5.1rem;
+            margin: 0 auto;
+        }
+        .title{
+            height: 2.9rem;
+            width: 100%;
+            background: url("../images/find_01.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .conInner{
+            width: 5.08;
+            height: 2.88rem;
+            margin-top: .6rem;
+            border: 1px solid #d64600;
+            border-radius: .2rem;
+            text-align: center;
+            color: #d64600;
+            line-height: .46rem;
+        }
+        .conInner h2:nth-of-type(1){
+            margin-top: .35rem;
+        }
+        .conInner p{
+            font-size: .24rem;
+            font-weight: bold;
+        }
+        .conInner p:nth-of-type(1){
+            margin-top: .35rem;
+        }
+        .btnList{
+            width: 5.4rem;
+            height: .56rem;
+            margin-top: .5rem;
+            overflow: hidden;
+            margin-left: .3rem;
+        }
+        .btnList button{
+            float: left;
+            width: 1.5rem;
+            height: .56rem;
+            margin-left: .3rem;
+            border-radius: .1rem;
+            background: url("../images/btnBg_08.png") no-repeat 15% 15%;
+            background-size: 130% 130%;
+            font-size: .32rem;
+            line-height: .56rem;
+            border: none;
+            color: #fff;
+        }
+        .btnList button a{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="title"></div>
+<div class="contain">
+    <div class="conInner">
+        <h2>感谢投稿！</h2>
+        <h2>您的作品编号：<span>220909</span></h2>
+        <p>投稿需审核，请稍后在网络投票页面中按</p>
+        <p>编号检索确认审核状态</p>
+    </div>
+</div>
+<div class="btnList">
+    <button><a href="11.vote.html">网络投票</a></button>
+    <button><a href="2.grxx.html">继续投稿</a></button>
+    <button><a href="index.html">返回首页</a></button>
+</div>
+<script src="../js/index.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script>
+//获取域名中的数字编号 并绑定
+/*function getHX(str){
+    var reg=/\?(\d+)/g;
+    var arr=reg.exec(str);
+    return arr[1];
+}
+var url=window.location.href;
+var index=getHX(url);
+    //index就是作品编号*/
+
+</script>
+</body>
+</html>

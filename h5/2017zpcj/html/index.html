@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://t.people.com.cn/microblog-v3/css/public_v2.css"/>
+    <link rel="stylesheet" href="http://t.people.com.cn/microblog-v3/css/page_live.css"/>
+    <script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="../js/weibo-widgets.js"></script>
+    <script type="text/javascript" src="../js/weibo-class.js"></script>
+    <script type="text/javascript" src="http://t.people.com.cn/microblog-v3//js/weibo-subject.js"></script>
+    <style>
+        body,h1,h2,h3,p,ul,ol,li,button{
+            margin:0;
+            padding:0;
+        }
+        body{
+            font-size:12px;
+            font-style:normal;
+            font-family:"\5FAE\8F6F\96C5\9ED1",Helvetica,sans-serif;
+            background: #ffd16c;
+        }
+        a{
+            text-decoration:none;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color:transparent;
+        }
+        a:hover,a:active{
+            outline-width:0;
+            text-decoration:none;
+        }
+        img{
+            border-style:none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        ul,ol{
+            list-style:none;
+        }
+        .header{
+            height: 34px;
+            width: 100%;
+            background: #fbfbfb;
+        }
+        .header div{
+            height: 34px;
+            width: 90px;
+            background: url("../images/logoRed_02.png");
+            background-size: 100% 100%;
+            margin-left: 305px;
+        }
+        .titTop{
+            background:url("../images/topBg_02.png") no-repeat;
+            background-size: 100% 100%;
+            height: 505px;
+        }
+        .str{
+            width: 960px;
+            height: 800px;
+            margin: 0 auto;
+            padding: 0 98px;
+            margin-top: -170px;
+            background: url("../images/bg2_03.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .str .strL,.str .strR{
+            float: left;
+            height: 630px;
+            margin-top: 170px;
+        }
+        .str .strL div{
+            padding:30px;
+        }
+        .str .strL .strL_mid{
+            width: 246px;
+            height: 100px;
+            margin-top: 265px;
+            color: #fff;
+        }
+        .str .strL .strL_mid h2,.str .strL .strL_bot h2{
+            width: 100%;
+            font-size: 28px;
+            line-height: 30px;
+        }
+        .str .strL_mid p{
+            margin-top: 10px;
+            font-size:.18rem;
+            line-height: 30px;
+        }
+        .str .strL .strL_bot{
+            color: #fff;
+            padding-top:0px;
+        }
+        .str .strL .strL_bot ul{
+            height: 150px;
+            margin-top: 10px;
+        }
+
+        .str .strL .strL_bot li{
+            line-height: 30px;
+            height: 30px;
+        }
+        .str .strL .strL_bot li span{
+            margin-left: 30px;
+        }
+        .str .strR{
+            width: 585px;
+            height: 584px;
+            padding: 23px;
+            margin-left:23px;
+        }
+        .strR ul{
+            width: 100%;
+            height: 100%;
+        }
+        .strR ul li{
+            position: relative;
+            float: left;
+            width: 190px;
+            height: 188px;
+            background: url("../images/bg5_03.png") no-repeat;
+            background-size: 100% 100%;
+            margin-top: 5px;
+            margin-right: 2px;
+        }
+        .strR ul li img{
+            display: block;
+            background: #fff;
+            border-radius: 10px;
+            width: 190px;
+            height: 180px;
+        }
+        .strR ul li .liT{
+            position: absolute;
+            width: 190px;
+            margin-top: 0;
+            height: 26px;
+            background: #fed06b;
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+            color: #000;
+            border-top-right-radius:11px;
+            border-top-left-radius: 11px;
+
+        }
+        .strR ul li .liB{
+            position: absolute;
+            width: 190px;
+            height: 26px;
+            bottom: 7px;
+            background:rgba(0,0,0,0.4);
+            font-size: 14px;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            border-bottom-right-radius:12px;
+            border-bottom-left-radius: 12px;
+        }
+        .wid{
+            width: 960px;
+            margin: 0 auto;
+        }
+        .strR ul li.come img{
+            display: block;
+            border-radius: 15px;
+            width: 190px;
+            height: 190px;
+        }
+        .go{
+            margin-top: 35px;
+           height: 126px;
+        }
+        .go div{
+            float: left;
+            width: 320px;
+            height: 100%;
+        }
+        .go div img{
+            width: 100%;
+            height: 100%;
+        }
+        .luck{
+            width: 100%;
+            height: 893px;
+            margin-top: 35px;
+            background-color: #ef2d25;
+        }
+        .tit{
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 26px;
+            font-family: MStiffHeiPRC;
+            font-weight: bolder;
+        }
+        .luck .tit{
+            width: 100%;
+            background: url("../images/tit4_14.png") no-repeat;
+            background-size: 100% 100%;
+            color: #d6271b;
+        }
+        .luck ul{
+            margin: 0 auto;
+            margin-top: 40px;
+            width: 930px;
+            height: 790px;
+        }
+        .luck ul li{
+            float: left;
+            width: 160px;
+            height: 180px;
+            background:#f9e5c9;
+            margin:0 13px;
+            margin-bottom: 20px;
+        }
+        .luckPrize{
+            width: 130px;
+            height: 130px;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+        .luckPrize span{
+            display: block;
+            height: 22px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            background: rgba(0,0,0,.4);
+            color: #fff;
+            line-height: 22px;
+            text-align: center;
+            font-size: 14px;
+
+
+        }
+        .luckPrize_ins{
+            display: block;
+            height: 22px;
+            width: 100%;
+            margin: 0 auto;
+            color: #d6271b;
+            line-height: 30px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .summary{
+            margin-top: 45px;
+            background: #ffebce;
+        }
+        .summary .tit{
+            background:url("../images/tit3_15.png") no-repeat;
+            background-size:100% 100%;
+            width: 100%;
+            color: #ffd16c;
+        }
+        .innerMin1{
+            margin-top: 75px;
+            width: 100%;
+            height: 22px;
+            line-height: 22px;
+            color: #bbb;
+            font-size: 12px;
+        }
+        .innerMin1 span{
+            margin-left: 435px;
+        }
+        .more{
+            margin-top: 38px;
+            height: 247px;
+            background: #ef2d25;
+        }
+        .more .tit{
+            background:url("../images/tit4_14.png") no-repeat;
+            background-size:100% 100%;
+            width: 100%;
+            color: #ef2d25;
+        }
+        .more ul{
+            width: 1000px;
+            height: 140px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 45px;
+        }
+        .more ul li{
+            width: 200px;
+            height: 100%;
+            float: left;
+            position: relative;
+            margin: 0 25px;
+        }
+        .more ul li div{
+            position: absolute;
+            height: 100%;
+            width: 40px;
+            left: 0;
+            top: 0;
+            background: #000;
+        }
+        .moreL{
+            float: left;
+            width: 10px;
+            height: 100%;
+            margin:7px;
+            line-height: 15px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .moreR{
+            float: left;
+            width: 15px;
+            height: 100%;
+            margin-top: 52px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .partner{
+            margin-top: 40px;
+            height: 320px;
+            background: #ffebce;
+        }
+        .partner .tit{
+            background:url("../images/tit3_15.png") no-repeat;
+            background-size:100% 100%;
+            width: 100%;
+            color: #ffd16c;
+        }
+        .partner ul{
+            width: 100%;
+            height: 260px;
+            margin-top: 12px;
+            margin-left: 5px;
+            overflow: hidden;
+        }
+        .partner ul li{
+            float: left;
+            width: 110px;
+            height: 54px;
+            margin:0 10px 10px 0;
+        }
+        .bottom{
+            width: 100%;
+            height: 128px;
+            margin-top: 55px;
+            background: url("../images/BOT_09.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .m_left{
+            margin: 0 auto;
+        }
+        .pbl_icon{
+            width: 160px;
+        }
+        .pbl_icon a{
+            float: left;
+            width: 40px;
+        }
+        .pbl_bot{
+            width: 600px;
+        }
+        .list_func a{
+            display: inline;
+        }
+        .WBM_publisher{
+            margin-bottom: 60px;
+        }
+        .live_cont{
+            position: relative;
+        }
+        .line{
+            width: 860px;
+            height: 0;
+            position: absolute;
+            border-bottom: 1px solid  #ef2d25;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div></div>
+</div>
+<div class="titTop"></div>
+<div class="str">
+    <div class="strL">
+        <div  class="strL_mid">
+            <h2>抽奖攻略</h2>
+            <p>进入人民网微信，点击菜单栏“吉星高照赢好礼”参与抽奖</p>
+        </div>
+        <div  class="strL_bot">
+            <h2>幸运榜</h2>
+            <ul>
+                <li>某某****<span>鹿世界公园门票</span></li>
+                <li>某某****<span>鹿世界公园门票</span></li>
+                <li>某某****<span>鹿世界公园门票</span></li>
+                <li>某某****<span>鹿世界公园门票</span></li>
+                <li>某某****<span>鹿世界公园门票</span></li>
+            </ul>
+        </div>
+    </div>
+    <div class="strR">
+       <ul>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li class="come"><a href=""><img src="../images/nianhuo_03.png" alt=""/></a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+           <li><a href="">
+               <div class="liT">毛绒玩具毛绒</div>
+               <img src="../images/chahu_03.png" alt=""/>
+               <div class="liB">人民网提供</div>
+           </a></li>
+       </ul>
+    </div>
+</div>
+<div class="go wid">
+    <div><a href=""><img src="../images/go_07.png" alt=""/></a></div>
+    <div><a href=""><img src="../images/go_09.png" alt=""/></a></div>
+    <div><a href=""><img src="../images/go_10.png" alt=""/></a></div>
+</div>
+<div class="luck">
+    <div class="tit">
+        <span>幸运好奖</span>
+    </div>
+    <ul>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <div class="luckPrize">
+                    <img src="../images/makalong_17.png" alt=""/>
+                    <span>FLO马卡龙</span>
+                </div>
+                <span class="luckPrize_ins">人民网提供</span>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="go wid">
+    <div><a href=""><img src="../images/go_07.png" alt=""/></a></div>
+    <div><a href=""><img src="../images/go_09.png" alt=""/></a></div>
+    <div><a href=""><img src="../images/go_10.png" alt=""/></a></div>
+</div>
+<div class="summary wid">
+    <div class="tit">
+        <span>总结我的2016</span>
+    </div>
+    <div class="innerMin">
+        <div class="innerMin1"><span>中国人可能获诺贝尔奖，央视首次受邀采访　24小时热博</span></div>
+        <div class="live_cont clearfix">
+
+            <div class="m_left" style="height:862px;width:610px">
+                <!-- publisher -->
+                <div class="WBM_publisher WBM_weiboEditor" data-widget="publisher" id="mainPublisher">
+
+                    <div class="pbl_text">
+                        <textarea class="wgt_text_01" data-nodeType="publisherText"></textarea>
+                    </div>
+                    <div class="pbl_media skin_color_01 clearfix" data-nodeType="mediaList"></div>
+                    <div class="pbl_bot clearfix">
+                        <div class="pbl_icon"> <a href="javascript:void(0)" data-nodeType="btnFace" class="pbl_icon01">表情</a> <a href="javascript:void(0)" data-nodeType="btnImage" class="pbl_icon02">图片</a> </div>
+                        <div class="pbl_submit"><a href="javascript:void(0)" data-nodeType="publishButton" title="发布"></a></div>
+                    </div>
+                </div>
+                <!-- /publisher -->
+                <div class="line"></div>
+                <div class="wbp_listnav clearfix" style="padding:10px 0 0">
+                    <div class="ln_tags"> </div>
+                </div>
+                <div>
+                    <div class="WBM_list">
+                        <div class="list_item" data-contentid="131291958">
+                            <div class="list_face"><a href="/10666247" target="_blank"><img src="http://i0.peopleurl.cn/headimg/20140416/head3166247_201404160708_m.jpg" data-widget="userCard" data-nickname="人民网山西" width="50" height="50" alt=""></a></div>
+                            <div class="list_detail" data-nodetype="itemBox">
+                                <div class="list_user"><a data-widget="userCard" data-nickname="人民网山西" href="/10666247" data-userid="3166247" class="list_name" target="_blank">人民网山西</a><a target="_blank" href="/judgeMeIsV.action"><span class="wgt_icon_v" title="实名认证用户"></span></a><a target="_blank" href="/duihuagw.html?uid=3166247&amp;nickname=%E4%BA%BA%E6%B0%91%E7%BD%91%E5%B1%B1%E8%A5%BF" class="wgt_icon_dhgw"></a></div>
+                                <div class="list_text skin_color_01">【长治深化金融改革助力实体经济发展】今年以来，长治市将金融改革作为全面深化经济体制改革的重中之重，先后出台了一系列政策措施优化金融发展环境，着力在完善金融服务体系、加快金融产品创新等方面进行积极探索，以推动金融产业发展，促进经济转型升级。山西频道-人民网<a href="http://peopleurl.cn/7Buy6e" target="_blank">http://peopleurl.cn/7Buy6e</a></div>
+                                <div class="list_bottom skin_color_02 clearfix">
+                                    <div class="list_time"><a href="/10666247/131291958" target="_blank" data-posttime="1442208600">10分钟前</a> 来自<a href="/" target="_blank">人民微博</a></div>
+                                    <div class="list_func"><a href="javascript:void(0)" class="list_icon_agree" data-nodetype="btn_agree" title="赞"><i></i><span>(102)</span></a>&nbsp;| <a href="javascript:void(0)" data-nodetype="btn_forward">转发</a> | <a href="/10666247/131291958" data-nodetype="btn_comment">评论</a> | <a href="javascript:void(0)" class="list_icon_fav" data-nodetype="btn_favorite">收藏</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="feedListPage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="more">
+    <div class="tit">更多年终策划</div>
+    <ul>
+        <li><a href="">
+            <div>
+                <span class="moreL">国际大牌运动专场</span>
+                <span class="moreR">一折狂欢</span>
+            </div>
+            <img src="../images/more_06.png" alt=""/>
+        </a></li>
+        <li><a href="">
+            <div>
+                <span class="moreL">国际大牌运动专场</span>
+                <span class="moreR">一折狂欢</span>
+            </div>
+            <img src="../images/more_06.png" alt=""/>
+        </a></li>
+        <li><a href="">
+            <div>
+                <span class="moreL">国际大牌运动专场</span>
+                <span class="moreR">一折狂欢</span>
+            </div>
+            <img src="../images/more_06.png" alt=""/>
+        </a></li>
+        <li><a href="">
+            <div>
+                <span class="moreL">国际大牌运动专场</span>
+                <span class="moreR">一折狂欢</span>
+            </div>
+            <img src="../images/more_06.png" alt=""/>
+        </a></li>
+    </ul>
+</div>
+<div class="partner wid">
+  <div class="tit"><span>合作伙伴</span></div>
+    <ul>
+        <li><a href=""><img src="../images/guanggao_33.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_35.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_37.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_39.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_37.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_41.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_43.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_45.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_47.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_57.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_58.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_59.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_60.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_62.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_63.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_64.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_65.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_74.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_75.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_76.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_77.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_79.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_80.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_81.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_82.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_91.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_92.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_93.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_94.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_95.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_96.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_98.png" alt=""/></a></li>
+        <li><a href=""><img src="../images/guanggao_99.png" alt=""/></a></li>
+    </ul>
+</div>
+<div class="bottom">
+</div>
+</body>
+</html>

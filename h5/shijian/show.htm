@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>2015全国大学生社会实践评选活动</title>
+<meta name="description" content="这个夏天你做了什么？大学生暑期社会实践微杂志展播中，看谁的青春更多彩！快来投票吧~ ">
+<base href="/microblog-v3/h5/shijian/">
+<script type="text/javascript" src="http://i0.peopleurl.cn/microblog-v3/js/jquery-2.1.3.min.js"></script>
+
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+<style>
+@-webkit-keyframes flashBtn{
+	50%{
+		box-shadow: inset 0 0 1em 1em rgba(0,0,0, 0.8);
+	}
+}
+.flashBtn{
+	-webkit-animation-name: flashBtn;
+    animation-name: flashBtn;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+};
+</style>
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+<div class="slideshow"></div>
+
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    var src = "http://58.68.146.12/weixin/JS.js?url=" + encodeURIComponent(location.href.split('#')[0]);
+    var left = unescape('%3c');
+    var right = unescape('%3E');
+    document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+<script>
+window.shareData = {
+	image: '',
+	link: location.href,
+	title: "2015全国大学生社会实践评选活动",
+	desc: "这个夏天不虚度！全国大学生暑期社会实践微杂志展播中，快来投票吧，看谁的青春更多彩~"
+};
+peopleWXConfig.jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'];
+wx.config(peopleWXConfig);
+wx.ready(function() {
+    wx.onMenuShareAppMessage({
+        title: shareData.title,
+        desc: shareData.desc,
+        link: shareData.link,
+        imgUrl: shareData.image
+    });
+    wx.onMenuShareTimeline({
+        title: shareData.title,
+        link: shareData.link,
+        imgUrl: shareData.image
+    });
+    wx.onMenuShareQQ({
+        title: shareData.title,
+        desc: shareData.desc,
+        link: shareData.link,
+        imgUrl: shareData.image
+    });
+    wx.onMenuShareWeibo({
+        title: shareData.title,
+        desc: shareData.desc,
+        link: shareData.link,
+        imgUrl: shareData.image
+    });
+});
+</script>
+<script>
+function toEditor(style){
+	if(window.localStorage){
+		window.localStorage['_ty_edit'] = style;
+	};
+	window.location.href = '/h5/shijian';
+};
+function setShareTitle(s, i, team){
+	shareData.title = '请支持' + team;
+	shareData.image = i;
+	// if(i){
+	// 	var img = new Image();
+	// 	img.src = i;
+	// 	img.style.position = 'absolute';
+	// 	img.style.top = '-1000px';
+	// 	img.style.left = '-1000px';
+	// 	document.body.insertBefore(img, document.body.firstChild);
+	// };
+	// if(team){
+	// 	document.title = '请支持' + team;
+	// }
+};
+var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+function shareSina(){
+	window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(shareData.link) + '&appkey=&title=' + encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')) + '&ralateUid=&language=&sudaref=service.weibo.com');
+};
+function shareTencent(){
+	window.open('http://share.v.t.qq.com/index.php?c=share&a=index&url=' + encodeURIComponent(shareData.link) + '&title=' + encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')));
+};
+function sharePeople(){
+	window.open('http://t.people.com.cn/toshareinfo.action?url=' + encodeURIComponent(shareData.link) + '&appkey=&title=' 
++ encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')) + '&site=');
+};
+</script>
+
+<script>
+/**
+mobileshow
+mengjia@people.cn
+2015.9.28
+*/
+eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([5-8jow-yA-Z]|[12]\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(6(){6 r(a,b){w c=a.H.S(1n 21("\\\\b"+b+"\\\\b","g"),"");a.H=c.S(/ +/g," ").S(/(^ +| +$)/g,"")+" "+b}6 s(a,b){a.H=a.H.S(1n 21("\\\\b"+b+"\\\\b","g")," ").S(/ +/g," ").S(/(^ +| +$)/g,"")}6 l(a,b,c){a&&a.22?a.22("on"+b,c):a&&a.1z(b,c,!1)}6 h(a,b,c){a.24?a&&a.24("on"+b,c):a&&a.1A(b,c,!1)}6 d(a){a=(m+a).S(/-+/g,"-").S(/(^-|-$)/g,"").split("-");T(w b=1;b<a.A;b++)a[b]=a[b].25(0,1).toLocaleUpperCase()+a[b].25(1).toLowerCase();19 a.join("")}6 t(){I(1o.1p.13(/26 [678]/))U{5.P="MediaPlayer",5.o=x.1B("object"),5.o.classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6",5.o.1e.autoStart=!1,5.o.1e.1C=1a}V(a){}14 5.P="W",5.o=x.1B("audio");5.o.7.M="Q";5.o.7.position="absolute";5.o.7.left="-27";5.o.7.top="-27";x.1f.insertBefore(5.o,x.1f.firstChild)}w f="";-1!==1o.1p.1q("WebKit")?f="1g":-1!==1o.1p.1q("Firefox")?f="1r":-1!==1o.1p.1q("26")&&(f="D");w u={1r:"28",1g:"webkitAnimationEnd",D:"MSAnimationEnd"}[f]||"28",v={1r:"29",1g:"webkitTransitionEnd",D:"MSTransitionEnd"}[f]||"29",m={1r:"",1g:"-1g-",D:""}[f]||"",n="mousedown",p="mousemove",q="mouseup";void 0!==x.ontouchstart&&(n="touchstart",p="touchmove",q="touchend");t.prototype={R:!1,setMute:6(a){5.R=a=!0===a;I("W"==5.P)5.o.muted=a;14 U{5.o.1e.R=a}V(b){}},setVolume:6(a){a=parseInt(a);1a<a?a=1a:0>a&&(a=0);I("W"==5.P)5.o.1C=a/1a;14 U{5.o.1e.1C=a}V(b){}},X:6(){I("W"==5.P)5.o.X();14 U{5.o.2a.X()}V(a){}},2b:6(a){a=1==a;I("W"==5.P)5.o.loop=a;14 U{5.o.1e.playCount=a?9999:1}V(b){}},1h:6(){I("W"==5.P)5.o.1h();14 U{5.o.2a.1h()}V(a){}},2c:6(){I("W"==5.P)19 5.o.2d;U{19 2==5.o.playState}V(a){}},2e:6(a){I("W"==5.P)5.o.1b=a;14 U{5.o.URL=a}V(b){}}};window.mobileshow={2f:[],R:!1,init:6(a,b){w c=5;5.K&&5.2g();5.K=x.Y(a);5.Z=(5.K||x).1i(".Z");T(w e=0;e<5.Z.A;e++)5.Z[e].7.M="Q";5.A=5.Z.A;5.L=-1;5.cssKey="";b&&b.A?(5.1s=b,5.2h()):!1===b?5.1D():5.15(0);w d=-1,f,h,g,k=0;5.1E=6(a){a=a.1t?a.1t[0]:a;d=a.2i;f=a.2j;c.1F&&!c.R&&c.11.2c()&&(c.1u(),console.log("X"))};5.1G=6(a){a.preventDefault();I(-1==d)19!1;a=a.1t?a.1t[0]:a;h=a.2i-d;g=a.2j-f;0==k?(0<g&&10<16.17(g)&&16.17(g)>16.17(h)&&(k=-1,c.2k(g)),0>g&&10<16.17(g)&&16.17(g)>16.17(h)&&(k=1,c.2l(g))):10<16.17(g)&&c.1v(g,k);19!1};5.1H=6(a){d=-1;0!=k&&c.1I(k);k=0};l(5.K,n,5.1E);l(5.K,p,5.1G);l(5.K,q,5.1H);5.11||(5.11=1n t,5.11.2b(!0),l(x.Y(".1j"),"click",6(){c.R?c.1u():c.1J();19!1}))},setSound:6(a){5.1F=a;5.R?5.1J():5.1u()},1J:6(){5.R=!0;r(x.Y(".1j"),"2m");s(x.Y(".1j"),"2n");5.11.1h()},1u:6(){5.11.2e(5.1F);5.R=!1;s(x.Y(".1j"),"2m");r(x.Y(".1j"),"2n");5.11.X()},1D:6(){5.N=x.1B("E");5.N.H="loadingPage";5.N.innerHTML=\'<E 18="loadingBar"><E 18="block_1 N"></E><E 18="block_2 N"></E><E 18="block_3 N"></E><E 18="block_4 N"></E><E 18="block_5 N"></E></E><E 18="loadingTxt">\\u8f7d\\u5165\\u4e2d</E>\';5.K.appendChild(5.N);5.N.7.M="1K"},2o:6(){5.N.7.M="Q";5.15(0)},2h:6(){w a=5,b=0,c;5.1D();T(w d=0;d<5.1s.A;d++)c=1n Image,c.onerror=c.onload=6(){b++;b>=a.1s.A&&a.2o()},c.1b=5.1s[d]},2g:6(){5.K&&(h(5.K,n,5.1E),h(5.K,p,5.1G),h(5.K,q,5.1H),5.K=12,5.11.1h())},15:6(a,b){w c=5;I(a!=5.L){w e=0;a>5.L?e=1:a<5.L&&(e=-1);-1==5.L&&(e=0);a>=5.A?a=0:0>a&&(a=5.A-1);a+1==5.A?x.Y(".2p").7.M="Q":x.Y(".2p").7.M="1K";5.B&&(5.B.7.1L=1);5.j&&("6"==2q 5.j.G&&5.j.G(),5.j.7.1L=2,5.B=5.j);5.j=5.Z[a];5.1M(5.j);1k(5.1N);w f=6(){1k(c.1O);5.1A(v,f,12);5.7[d("1l")]="Q";5.G=12;c.2r();c.1P()};0!==e?(5.j.G=f,5.j.1z(v,f,12),5.j.7[d("1l")]="Q",5.j.7[d("O")]="1Q("+e*x.1f.1R+"px)",5.B&&(5.B.7[d("1l")]="Q"),b||c.1I(e)):5.1w();5.L=a;5.2t();5.j.7.M="1K";5.j.7.1L=10;0==e&&5.1P()}},2u:6(){5.15(5.L+1)},pre:6(){5.15(5.L-1)},2k:6(a){5.15(5.L-1,!0);5.1v(a,-1)},2l:6(a){5.15(5.L+1,!0);5.1v(a,1)},1v:6(a,b){w c=b*x.1f.1R+a,e=c*b/x.1f.1R*.1+.9;5.j.7[d("O-1x")]="50% 50%";5.j.7[d("O")]="1Q("+c+"px)";5.B&&(5.B.7[d("O-1x")]="50% "+(1==b?"0":"1a%"),5.B.7[d("O")]="2v("+e+")")},1I:6(a){w b=5;1S(6(){b.j.7[d("O-1x")]="50% 50%";b.j.7[d("1l")]=m+"O 0.4s 2x-2y";b.j.7[d("O")]="1Q(0px)";b.B&&(b.B.7[d("1l")]=m+"O 0.4s 2x-2y",b.B.7[d("O-1x")]="50% "+(1==a?"0":"1a%"),b.B.7[d("O")]="2v(0.9)")},10);5.1w();1k(5.1O);5.1O=1S(6(){b.j.G&&b.j.G()},500);5.1M(5.L+1>=5.A-1?5.Z[0]:5.Z[5.L+1])},1M:6(a){I(a&&!a.y("8-2z")){T(w b=(a||x).1i("img[8-1b]"),c=0;c<b.A;c++)b[c].1b=b[c].y("8-1b"),b[c].1T("8-1b");a.1y("8-2z",1)}},1w:6(){w a=5,b=0;1k(5.1N);I(b=5.j.y("8-1w"))b=-1!==b.1q("D")?b==1U(b):1E3*1U(b),2A>b&&(b=2A),5.1N=1S(6(){a.2u()},b)},2r:6(){I(5.B){5.B.7.M="Q";5.B.J||(5.B.J=(5.B||x).1i("*[8-1d],*[8-C],*[8-1m]"));T(w a=0;a<5.B.J.A;a++)"6"==2q 5.B.J[a].G&&5.B.J[a].G()}},2t:6(){5.j.J||(5.j.J=(5.j||x).1i("*[8-1d],*[8-C],*[8-1m]"));T(w a,b,c,e=0;e<5.j.J.A;e++)c=5.j.J[e],a=c.y("8-1d"),b=c.y("8-C"),c.y("8-1m"),a&&(a=a.13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)))?/i))&&3<=a.A?c.7.M="Q":b&&(b=b.13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)))?/i))&&3<=b.A&&(c.1y("8-F",c.y("8-F")||c.H),c.H=c.y("8-F")+" "+b[1],c.7[d("C-1V")]=b[2],c.7[d("C-1W-1X")]="backwards",c.7[d("C-X-1Y")]="2d")},1P:6(){w a;5.j.J||(5.j.J=(5.j||x).1i("*[8-1d],*[8-C],*[8-1m]"));T(;a=5.2f.pop();)1k(a);T(w b,c,d=0;d<5.j.J.A;d++)c=5.j.J[d],a=c.y("8-1d"),b=c.y("8-C"),c.y("8-1m"),a&&(a=a.13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)?))?/i))&&3<=a.A?5.2B(c):b&&(b=b.13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)?))?(?:\\s(\\d+|1Z))?/i))&&3<=b.A&&5.20(c)},2B:6(a){w b=5,c=a.y("8-1d").13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)?))?/i),e=6(){5.1A(u,arguments.call,12);5.y("8-F")&&(5.H=5.y("8-F"));5.1T("8-F");5.G=12;2C 5.G;b.20(5)};a.1z(u,e,12);a.G=e;a.7.M="";a.1y("8-F",a.y("8-F")||a.H);a.H=a.y("8-F")+" "+c[1];a.7[d("C-1V")]=c[2];a.7[d("C-2D")]=c[3]||0;a.7[d("C-1W-1X")]="2E";a.7[d("C-2F-2G")]=1;a.7[d("C-X-1Y")]="2H"},2I:6(){5.y("8-F")&&(5.H=5.y("8-F"));5.1T("8-F");5.G=12;2C 5.G},20:6(a){w b=a.y("8-C");b&&(b=b.13(/([a-z]*)\\s([\\d\\.]+(?:s|D))(?:\\s([\\d\\.]+(?:s|D)?))?(?:\\s(\\d+|1Z))?/i))&&3<=b.A&&(a.G=5.2I,a.7.M="",a.1y("8-F",a.y("8-F")||a.H),a.H=a.y("8-F")+" "+b[1],a.7[d("C-1V")]=b[2],a.7[d("C-2D")]=b[3]||0,a.7[d("C-1W-1X")]="2E",a.7[d("C-2F-2G")]=1U(b[4])?b[4]:"1Z",a.7[d("C-X-1Y")]="2H")}}})();',[],169,'|||||this|function|style|data|||||||||||nowScen|||||audioObj||||||||var|document|getAttribute||length|preScen|animation|ms|div|endClassName|_endFn|className|if|childs|ele|index|display|loading|transform|__objType|none|mute|replace|for|try|catch|Audio|play|querySelector|scenery||auido_bg|null|match|else|select|Math|abs|class|return|100|src||animationIn|settings|body|webkit|pause|querySelectorAll|sound|clearTimeout|transition|animationOut|new|navigator|userAgent|indexOf|moz|preloadList|touches|playSound|moveScen|autoNext|origin|setAttribute|addEventListener|removeEventListener|createElement|volume|showLoading|__startFn|soundSrc|__moveFn|__endFn|endMoveScen|stopSound|block|zIndex|preloadScen|_autoNextTimer|_pageTranEndTimeout|actionScen|translateY|clientHeight|setTimeout|removeAttribute|parseFloat|duration|fill|mode|state|infinite|_action|RegExp|attachEvent||detachEvent|substr|MSIE|100px|animationend|transitionend|controls|setLoop|isPaused|paused|setSrc|_timers|uninit|preload|pageX|pageY|preMoveScen|nextMoveScen|s_off|s_on|hideLoading|moveArr|typeof|clearPreScen||readyScen|next|scale||ease|out|isLoad|3E3|_actionIn|delete|delay|both|iteration|count|running|_ele_animation_end_event_fn'.split('|'),0,{}))
+</script>
+<script>
+eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([35-7joW-Z]|[1-4]\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(j(){j Q(){5.a=5.b=5.g=5.r=0;5.Y=2g}j S(b,A){o q=1I Image;q.30=j(){b.1e=7.1d.2h;b.1k=7.1d.1J;o A=b.31("2d");A.33(q,0,0,b.1e,b.1k);o d=b.1e,p=b.1k,v=2i.2j(b.1e/10);if(!(isNaN(v)||1>v)){o v=v|0,e=b.31("2d"),n;2k{2k{n=e.34(0,0,d,p)}2l(O){2k{netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead"),n=e.34(0,0,d,p)}2l(E){35 1m("36 1K 37 1t"),38("39 to 1K 37 1t X: "+E);}}}2l(G){35 1m("36 1K 1t"),38("39 to 1K 1t X: "+G);}o f=n.X,z,F,a,g,h,M,k,l,m,B,C,D,r,s,t,w,x,y,H;z=v+v+1;o N=d-1,P=p-1,u=v+1,I=u*(u+1)/2,J=1I Q,c=J;1a(a=1;a<z;a++)if(c=c.Y=1I Q,a==u)o R=c;c.Y=J;c=a=2g;M=h=0;o K=T[v],L=U[v];1a(F=0;F<p;F++){r=s=t=k=l=m=0;B=u*(w=f[h]);C=u*(x=f[h+1]);D=u*(y=f[h+2]);k+=I*w;l+=I*x;m+=I*y;c=J;1a(a=0;a<u;a++)c.r=w,c.g=x,c.b=y,c=c.Y;1a(a=1;a<u;a++)g=h+((N<a?N:a)<<2),k+=(c.r=w=f[g])*(H=u-a),l+=(c.g=x=f[g+1])*H,m+=(c.b=y=f[g+2])*H,r+=w,s+=x,t+=y,c=c.Y;a=J;c=R;1a(z=0;z<d;z++)f[h]=k*K>>L,f[h+1]=l*K>>L,f[h+2]=m*K>>L,k-=B,l-=C,m-=D,B-=a.r,C-=a.g,D-=a.b,g=M+((g=z+v+1)<N?g:N)<<2,r+=a.r=f[g],s+=a.g=f[g+1],t+=a.b=f[g+2],k+=r,l+=s,m+=t,a=a.Y,B+=w=c.r,C+=x=c.g,D+=y=c.b,r-=w,s-=x,t-=y,c=c.Y,h+=4;M+=d}1a(z=0;z<d;z++){s=t=r=l=m=k=0;h=z<<2;B=u*(w=f[h]);C=u*(x=f[h+1]);D=u*(y=f[h+2]);k+=I*w;l+=I*x;m+=I*y;c=J;1a(a=0;a<u;a++)c.r=w,c.g=x,c.b=y,c=c.Y;g=d;1a(a=1;a<=v;a++)h=g+z<<2,k+=(c.r=w=f[h])*(H=u-a),l+=(c.g=x=f[h+1])*H,m+=(c.b=y=f[h+2])*H,r+=w,s+=x,t+=y,c=c.Y,a<P&&(g+=d);h=z;a=J;c=R;1a(F=0;F<p;F++)g=h<<2,f[g]=k*K>>L,f[g+1]=l*K>>L,f[g+2]=m*K>>L,k-=B,l-=C,m-=D,B-=a.r,C-=a.g,D-=a.b,g=z+((g=F+u)<P?g:P)*d<<2,k+=r+=a.r=f[g],l+=s+=a.g=f[g+1],m+=t+=a.b=f[g+2],a=a.Y,B+=w=c.r,C+=x=c.g,D+=y=c.b,r-=w,s-=x,t-=y,c=c.Y,h+=d}e.putImageData(n,0,0)}d=b.1e;p=d/q.1e*q.1k;A.33(q,0,.4*(b.1k-p),d,p)};q.1c=A}1u.1v.1w(/ OS (\\d+).*? Mac OS/);1u.1v.3c("NetType/WIFI");o G=-1!==1u.1v.3c("Messenger"),e=1u.1v.1w(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/),e=e?e[0]:!1,O=1u.1v.1w(/Firefox|Opera/i)?"ogg":"mp3";if(G&&"t.1L.1M.cn"!=1N.host)1N.Z="1x://t.1L.1M.cn/h5/3e";1O{o T=[1f,1f,1i,1f,1o,1i,1p,1f,1y,1o,1q,1i,1z,1p,1A,1f,1P,1y,1Q,1o,1R,1q,1S,1i,1T,1z,1U,1p,1j,1A,1V,1f,2m,1P,1B,1y,2n,1Q,2o,1o,1j,1R,2p,1q,1W,1S,1X,1i,2q,1T,2r,1z,2t,1U,2u,1p,2v,1j,2w,1A,2x,1V,1C,1f,3f,2m,3g,1P,3h,1B,3i,1y,3j,2n,3k,1Q,1Y,2o,3l,1o,1Z,1j,3m,1R,3n,2p,25,1q,1C,1W,3o,1S,3p,1X,3q,1i,3r,2q,1B,1T,3t,2r,3u,1z,3v,2t,3w,1U,1Y,2u,2y,1p,3x,2v,3y,1j,3z,2w,3B,1A,2z,2x,25,1V,3C,1C,3E,1f,505,3f,489,2m,1X,3g,461,1P,447,3h,435,1B,422,3i,411,1y,399,3j,389,2n,378,3k,368,1Q,359,1Y,3F,2o,2y,3l,3G,1o,324,1Z,316,1j,309,3m,301,1R,3H,3n,2z,2p,281,25,274,1q,268,1C,262,1W,257,3o,501,1S,491,3p,480,1X,470,3q,460,1i,451,3r,442,2q,433,1B,424,1T,416,3t,408,2r,400,3u,392,1z,385,3v,377,2t,370,3w,363,1U,357,1Y,3F,2u,344,2y,338,1p,3G,3x,326,2v,1Z,3y,315,1j,310,3z,304,2w,299,3B,3H,1A,289,2z,285,2x,280,25,275,1V,1q,3C,267,1C,263,3E,1W],U=[9,11,12,13,13,14,14,15,15,15,15,16,16,16,16,17,17,17,17,17,17,17,18,18,18,18,18,18,18,18,18,19,19,19,19,19,19,19,19,19,19,19,19,19,19,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,20,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,22,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,23,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24,24],O={page:1,3I:"1x://i0.2B.cn/26-v3/2015subject/0122_thisyear/1D/3J."+O,3K:"1D/",3L:[[],[],[],[],[]],defaultTxtIndex:0,W:1,mute:!1,2C:j(){o b=5,A=1N.Z.1w(/\\/(\\d+)($|\\?)/)||1N.Z.1w(/id=(\\d+)($|\\&)/);if(A){5.2D=A=A[1];o q=1I XMLHttpRequest;q.onreadystatechange=j(){if(4==q.3M&&200==q.3N){o e=q.responseText;1g.2E&&2E.3O==A&&(2G(),2E.removeItem("3O"));e=eval("("+e+")");b.3P(e)}1O 4==q.3M&&1m("\\2H\\2I\\u5fd9\\2J\\2K\\u7a0d\\u540e\\3Q\\3R\\uff01code:"+q.3N)};q.ontimeout=j(b){1m("\\2H\\2I\\3S\\u7ed9\\u529b\\2J\\2K\\u5728\\u8f83\\u597d\\u7684\\2H\\2I\\u73af\\u5883\\u4e2d\\3Q\\3R\\uff01")};q.3T("GET","/nmsgimage/wx/conf/"+A+".2L",!0);q.send(2g)}1O 1m("\\2K\\u6307\\u5b9aid")},3P:j(b){if(0==b.3U.1h)1m("\\u6570\\u636e\\3S\\u6b63\\u786e");1O{5.W=b.W;5.1b=b.3U;5.2M=decodeURIComponent(b.team).2N(/</g,"&lt;");1a(o A=7.1d.2h,e=7.1d.1J,n=5.3L[5.W-1],d=0;d<n.1h;d++)n[d]=5.3K+n[d];shareData.1t=5.1b[0].1c;o p=\'<3 6="globalPackage"><3 6="3J s_off"></3><3 6="moveArr moveArr_0\'+5.W+\'"></3></3><3 6="2O page_0\'+5.W+\'"><3 6="bg"></3><3 6="bigTitle" X-28="2P 1s 1s"><3 6="title"></3><p>\'+5.2M+\'</p></3><3 6="logo"></3></3>\',v=["2Q 1s 0","2R 1s 0","fadeInDown 1s 0","2P 1s 0"],E=["2S:3X;2T:29;","3Y:3Z;40:29;","2S:3X;2T:29;","3Y:3Z;40:29;"],G=["2R 3s 0","2Q 3s 0","2R 3s 0","2Q 3s 0"];5.1b.1h&&n.push(5.1b[0].1c);1a(d=0;d<5.1b.1h;d++)p+=\'<3 6="2O" X-autoNext="8"><3 6="userImgBox" X-28="\'+v[d%v.1h]+\'"><41 id="bgCanvas_\'+d+\'" 6="userBgImg"></41><2a \'+(0==d?"":"X-")+\'1c="\'+5.1b[d].1c+\'" 6="userImg" 30="2U(5)" W="2S:\'+2i.2j(.4*(e-5.1b[d].1k*A/5.1b[d].1e))+\'px"></3>\',5.1b[d].2L&&(p+=\'<3 6="userTxt" X-28="\'+G[d%G.1h]+\'" W="\'+E[d%E.1h]+\'">\'+decodeURI(5.1b[d].2L).2N(/</g,"&lt;").2N(/([,\\2J;\\uff1b\\u3002])/g,"$1<br>")+"</3>"),p+="</3>";p+=\'<3 6="2O page_end_01"><3 6="bg"></3><3 6="number">\\u7f16\\u53f7\\42\'+5.2D+\'</3><a Z="/dxsHuodongPh.43" 6="toRank"></a><a Z="1r:2G()" 6="toShare"></a><a Z="https://3T.weixin.qq.1M/connect/oauth2/authorize?appid=wx08c557d901beff5a&redirect_uri=1x%3A%2F%2Ft.1L.1M.cn%2Fwechatcallback.43%3FconfId%3D\'+5.2D+\'&response_type=code&scope=snsapi_login&44=44#wechat_redirect" 6="toVote"></a><a Z="/h5/3e" 6="toDoSelf"></a><3 6="footer" X-28="2P 1s 0" X-animation="shine 2s 0 2"><3 6="pic"></3></3></3>\';$(".45").html(p);"j"==typeof 1g.46&&1g.46(b.W,5.1b[0].1c,5.2M);2b.2C(".45",n);2b.setSound(5.3I)}}};1g.2G=j(b){G||(7.2c("2V").47=\'<3 6="othersShare">\\u5206\\u4eab\\42<a Z="1r:1G(0)" 1H="shareSina()"><2a 1c="/26-v3/2W/2X/1D/sina.2Y"></a> <a Z="1r:1G(0)" 1H="sharePeople()"><2a 1c="/26-v3/2W/2X/1D/1L.2Y"></a> <a Z="1r:1G(0)" 1H="shareTencent()"><2a 1c="/26-v3/2W/2X/1D/tencent.2Y"></a></3>\');$("#2V").show();48(j(){$("#2V").hide()},1E4)};o n=7.1d.2h,n=2e<n?2e:n,V=n/2e;$(7).bind("touchmove",j(b){2Z!1});e?2e>n&&(7.2f.W["49-4a"]=32*V+"px"):(e=7.2f.1J/4b*16,n=2i.2j(7.2f.1J/4b*1Z),7.2f.W["49-4a"]=e+"px",7.1d.W.overflow="hidden",7.1d.W.1e=n+"px",7.1d.W.position="relative",e=7.createElement("3"),e.className="pageBtn",e.W.2T=n+"px",e.47=\'<a Z="1r:1G(0)" id="4c">\\u4e0a\\4d\\4e</a><a Z="1r:1G(0)" id="4f">\\u4e0b\\4d\\4e</a>\',7.1d.appendChild(e),7.4g("#4c").1H=j(){2b.pre();2Z!1},7.4g("#4f").1H=j(){2b.Y();2Z!1});o E;1g.4h=j(b){"1x://i0.2B.cn"===b.4i&&"ready"==b.X&&(E=7.2c("loadImgFrame").contentWindow,1g.4h=j(b){"1x://i0.2B.cn"===b.4i&&(b=b.X.split("{|}"),2==b.1h&&7.2c(b[0])&&S(7.2c(b[0]),b[1]))})};1g.2U=j(b){o e=b.previousSibling;"CANVAS"==e.tagName&&(E?E.postMessage(e.id+"{|}"+b.1c,"*"):(e=b.getAttribute("X-4j")||0,20>e&&(b.setAttribute("X-4j",e),48(j(){1g.2U(b)},500))))};O.2C()}})();',[],268,'|||div||this|class|document||||||||||||function|||||var||||||||||||||||||||||||||||||||||style|data|next|href|||||||||||for|items|src|body|width|512|window|length|456|312|height||alert||328|335|271|javascript||image|navigator|userAgent|match|http|405|388|292|428|265|images|||void|onclick|new|clientHeight|access|people|com|location|else|454|364|298|496|420|360|273|259|475|354|320||||||278|microblog||animationIn|2em|img|mobileshow|getElementById||640|documentElement|null|clientWidth|Math|round|try|catch|482|383|345|284|437|404||374|347|323|302|282|341|287||peopleurl|init|dataId|localStorage||showShare|u7f51|u7edc|uff0c|u8bf7|txt|teamName|replace|scenery|fadeInUp|fadeInLeft|fadeInRight|top|left|showBlurBg|shareAlert|2014subject|1216_oneword|png|return|onload|getContext||drawImage|getImageData|throw|Cannot|local|Error|unable|||indexOf||shijian|497|468|441|417|394|373|337|305|291|507|485|465|446||412|396|381|367|329|318|307||297|269||261|350|332|294|bgAudio|sound|elementsPath|elements|readyState|status|tempId|preview|u518d|u8bd5|u4e0d|open|scrnery|||5em|bottom|8em|right|canvas|uff1a|action|state|slideshow|setShareTitle|innerHTML|setTimeout|font|size|504|preBtn|u4e00|u9875|nextBtn|querySelector|onmessage|origin|bgTry'.split('|'),0,{}))
+</script>
+<iframe src="http://i0.peopleurl.cn/microblog-v3/2015subject/0325_qingming/getImageData.html" frameborder="0" style="position:absolute;left:-1000px;top:-1000px;" id="loadImgFrame"></iframe>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

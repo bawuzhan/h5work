@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>指点里约——为中国奥运健儿,加油！</title>
+<!-- <base href="/microblog-v3/h5/chuangke/"> -->
+
+<script src="mobileshow.js" type="text/javascript"></script>
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+
+<div class="slideshow">
+  <!-- 自定义场景 begin -->
+<div class="scenery userScenery_01" style="display: block; transition: none; transform: translateY(0px); z-index: 10; transform-origin: 50% 50% 0px;" data-isload="1">
+    <div class="bg"></div>
+    <div class="tiemLine anItem"><span></span></div>
+    <div class="txt anItem"><span>0</span>次</div> 
+    <a class="anItem stick" href="javascript:0"><span class="mask"></span></a>
+    <div class="anItem fire"></div>
+    <div class="footer anItem"><div class="logo"></div></div>
+    <table class="timeLayer anItem">
+      <tbody>
+        <tr>
+          <td>倒计时<p>3</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+	</div>
+  <!-- 自定义场景 end -->
+</div>
+<script>
+(function(){
+  function Q(s, p){
+    return (p || document).querySelector(s);
+  };
+  function QA(s, p){
+    return (p || document).querySelectorAll(s);
+  }; 
+    
+  var viewWidth = document.body.clientWidth;
+  var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+  var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+  isMobile = isMobile ? isMobile[0] : false;
+  
+  if(isMobile){
+    var f = document.documentElement.clientWidth / 640 * 32;
+    
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+      //小屏幕手机单独定义CSS
+      //document.body.className = 'smallScreen';
+      f = document.documentElement.clientHeight / 1008 * 32;
+    }
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['max-width'] = '20rem';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  }else{
+    var f = document.documentElement.clientHeight / 504 * 16,
+      viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['overflow'] = 'hidden';
+    document.body.style['max-width'] = '640px';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  };
+
+
+})();
+
+</script>
+
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

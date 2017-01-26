@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <link rel="stylesheet" href="../css/cjxx.css"/>
+</head>
+<body>
+<div class="contain">
+    <div class="but_top">
+        <button class="select btn1">中奖记录</button>
+        <button class="btn2">我的奖品</button>
+    </div >
+    <div class='list'>
+        <div class="left">
+            <div>
+                <span>超级幸运榜</span>
+            </div>
+            <div style="width: 100%; height: 5.1rem;overflow:auto;margin-top: .05rem;bottom: 0">
+                <ul class="name">
+                    <li>我是a学霸aaa</li>
+                    <li>caribrum</li>
+                    <li>葡萄柚</li>
+                    <li>风轻云淡风轻云淡</li>
+                    <li>我是学霸</li>
+                    <li>caribrumcaribrum</li>
+                    <li>葡萄柚</li>
+                    <li>风轻云淡</li>
+                    <li>我是a学霸aaa</li>
+                    <li>caribrum</li>
+                    <li>葡萄柚</li>
+                    <li>风轻云淡风轻云淡</li>
+                    <li>我是学霸</li>
+                    <li>caribrumcaribrum</li>
+                    <li>葡萄柚</li>
+                    <li>风轻云淡</li>
+                </ul>
+                <ul class="prize">
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                    <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right">
+            <div style="width: 100%; height: 5.1rem;overflow:auto;margin-top: .05rem;bottom: 0">
+            <ul class="data">
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+                <li>2017-01-01</li>
+            </ul>
+            <ul class="prize">
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+                <li><a href="javascript:;">魅族移动电源标准版</a></li>
+            </ul>
+                </div>
+        </div>
+    </div>
+</div>
+<div class="but">
+    <button><a href="javascript:;">去抽奖</a></button>
+</div>
+<div id="hidden" style="display: none">
+    <p id="sn"><s:property value='sn' /></p>
+</div>
+
+<script src="../js/index.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script>
+    //超出变为省略号
+    omit();
+    function omit(){
+        var reg=/[\u4e00-\u9fa5]{1,}/g;
+        $('.name>li').each(function(index,item){
+            if(reg.test($(item).text())&&$(item).text().length>4){
+                $(item).html(($(item).text()).substring(0,4)+'...');
+            }else{
+                if($(item).text().length>8){
+                    $(item).html(($(item).text()).substring(0,8)+'...');
+                }
+            }
+        })
+    }
+    //左右切换
+    $('.btn1').singleTap(function(){
+        $('.left').css('display','block');
+        $('.right').css('display','none');
+        $('.btn1').addClass('select')
+        $('.btn2').removeClass('select')
+    })
+    $('.btn2').singleTap(function(){
+        $('.right').css('display','block');
+        $('.left').css('display','none');
+        $('.btn2').addClass('select')
+        $('.btn1').removeClass('select')
+    })
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var src = "http://mblog.people.com.cn/weixinJS.action?url=" + encodeURIComponent(location.href.split('#')[0]);
+    var left = unescape('%3c');
+    var right = unescape('%3E');
+    document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+<script type="text/javascript" src="../js/share.js"></script>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+</body>
+</html>

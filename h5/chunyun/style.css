@@ -1,0 +1,109 @@
+* { -webkit-text-size-adjust: 100%; }
+html { height: 100%; font-size: 32px; }
+body { margin: 0 auto; padding: 0; height: 100%; }
+.slideshow { position: relative; height: 100%; background: #000; }
+.globalPackage { }
+.scenery { width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 90; display: none; }
+.sound { position: absolute; width: 2.1875rem; height: 2.1875rem; right: 0.5625rem; top: 0.5625rem; background-size: 100%!important; cursor: pointer; z-index: 100; outline: none; }
+.s_on { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAMAAABG8BK2AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABLUExURQcGAbKysCAfHMbGxQYFAYaFhPv7+wAAAMzMywYFAf///////////////5KSj9vb2klJRf///2NjYP///359e8PDwv///////4WFglFlWQAAAAAZdFJOUz1vUHpHcn0AmkGVZhQ4XH5WB1mIVZMsVWEzGC3DAAACuElEQVRYw7XY25arIAwA0CBCVVARvPz/nx7UaoEGxKknj13jHgi3ALziIdtFcN7Y4FwsrUz8KUR+H1phOCWd1mBD645QbkQ73GJm0dBOQRCqo42YsxnJ+w4i0fW8zWKk4FFkjZGa+ZKRS0PgIrpeyDQzXyNrkKZNMMPSj5AVY78MMWbgFLKD8gFnJCdwIwiXGCPNLcU6Rn4zA7+prO0ZQuYPiusczHKZ3XqLIM+Lz8z9NVHaCCHauoxsxnQjVkIxxlTpM2MjHUaQdCMKzWi1BQscIj4M3qWdKBQjU/UJFaSnn0/GjBiydYNWQYTNGc3BtD2qfBMYs2d5ZTjWmJJVVRYz8p3BMhNVvpktO5YRyGZXF1M204mVGRosM7rKZqAZLNPS3D7RCGOTDHifQmYidgIXEcb2Cl4G0sxEmS7KbS5HGDAvkDzBbI3YV6SdSFGGS8BSczDFSWxpjzK0hYWkGHdjiDNkASzDDuPNpRgzCuA6wdSQxWgORv3OgIEGMpnESFkkk0kOeC7z3kp/Y1aE0Sm6plbmOsVW0VNqhYMy6IDXPuOt08iAf02//VD5MHWtLvabdfqFi2EdEaW1w5TkirGLIViaFmFnIt7MdMXYpelvFHWpnI+KdWHuk/cMXaMbhbdt2Ty4/3pnvNZM6FoINtG69I64d6fcgdIIs22iTnKCQTlGqkjPmn1Ldw6YuvZ28ncHrPMeq8m2BZvDg3/cBQwpz8VgywrCdIkq+3HnHL5Bp9TxUaTU8g9fpxTwUuzmASv8glLAKUzcdLIy8h1EChOnTLLOPomJylQ+ZZJbmmxFllZFLBFoZpASsj4is8IW8YI21wgL2qvyOt6l9m6xj47S8n+uHg9dhJ66lj11SXzqyvrUBfqp63zm48J4+biwPXX0vz91PPbwcj4DIcatZ6DHHqVuP5H9A9bYS1whZY24AAAAAElFTkSuQmCC) no-repeat 0 0; }
+.s_off { background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEYAAABGCAMAAABG8BK2AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAA8UExURQAAAPfky8JsYbteUrteUrteUrteUrteUrteUrteUu3NtfPawt+tmsFqXMyEdNujkcZ0Z9KPf8l+b+S6pWrulXcAAAAKdFJOUwD///+rjudTzxn+xD0CAAACyUlEQVRYw62Y2bKDIAyGi7EuQQX0/d/1BKXKEjgwYy6r/SYL+Un8fPI2j99+moBsmvrvOH/abR77ASIb+kbU2Nu/aaMOREGGeCij7W/9WA+xgWyLFJHJZbMB1oFm8kSrhOFIaq8CzV+AVYmCLQTq/8nRSF4bKcqmVoCiQ+SKQfGvSQPwzQdEqVWiyhbK0JylaBSVhjrDmQfYpag2ucMw8xGhaDC5cf5MsMLaxtlhSmukcWvl6Lhe4xlRKwej8zO7Spc4EhelMKm7n54ezPV7hiMPtXWnLeEDA70f0vordcIhJ4zuHouerl5Yk3d4fQ7eTjwWuaOeao2wew9uzpEgGIzYb3cmCJ45juq6Gszycyd05sdZujrM7U6ftLXl6FqMuopFZybpSOKstRh5nZ0RtvSgkHannI3F0LvjGdPCHDgdcrRZUEges5xRDSB5eXMce1tdb2QwFJVNjWZVsrOc3TrxvM9jyPOZUmN4DHHivshgDCXny6u4PTYxJ4dRJDs9HDlMF/VpDnNQjidegU+MDDk5DFI/8IVymFA3chgJwweKmICTxwBhRAnjc3IYUYHxOGWMLGOcbpCSboWghn8xlqPzHX6luFhwpk8zBS8dP4fBDh5O5vhxzYAHKg9jOo+j+GZIWlOqOxEOozuPk2nNWCh8EfZk5uYgLxRRqQIp97z5cXa+3rGImi7FuBvr5KDIiGgg6dgxGLnfHE6bLkkPLpjgktPPAHv9wM5j7oIJrrsA45UQlTE03HBzi7vugss3CAq5ABLOPQv4o4CXYlajE849CgTuSF2kpJxnMAnGJHeI86tDyPHGJH9ou3Y5LI3rga76Q9szQlaZxwlGyHugbeVEA60br1s5mKxnNOzLVk467Nv07K0cZvWwi9DWxuEXPOK0+IMru5a9tSS+tbK+tUC/ts6/9XHhrU8dr314ee0z0GsfpZo/kf0BvjUucdsSsygAAAAASUVORK5CYII=) no-repeat 0 0; }
+.globalPackage .moveArr { width: 2rem; height: 0.9375rem; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAeBAMAAABuwwVqAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAeUExURQAAAP///////////////////////////////////yR8m5UAAAAKdFJOUwDmBdFmEidElLVfBXS/AAABEElEQVQoz32TPQvCMBCGj4O6hyxmK0LrLHGosx/oVkR0FSnUWazoKIKdi4J/V9ukl1qSvkuSu3D35O4C8K/BwIcuhefZZd3hD5ZSRgt3DDyOGGNR5vRvClYqOrgAHpWf8bcdI1gxLW7FUABKIvOdAMyBgdtHw8/4J3YC2DGaADYMTAhA2jBwRwDjlLYfU42QAKIMkzoZf9ZJvGttEz+04EYYc18DEGBeRg2nJl4LQPeADKopDYATtELyefMkFgaKXhKDRxlzU10y9vcQFv8ASkONIU4wLGz9qxObC6LVHI3RP+gLPG+3Vz1uHEPv7pjCqhq5D3hzTDomL1nZdy85sQ6pl84upR31aomh/yl2/tcvqctMXXo+iOMAAAAASUVORK5CYII=) no-repeat 0 0; background-size: 100%; position: absolute; left: 9rem; bottom: 3rem; z-index: 100; }
+.scenery { background: #000; width: 100%; height: 100%; overflow: hidden; }
+.loadingPage { width: 100%; height: 100%; background: url(data:image/gif;base64,R0lGODlhQABAAJEAABoaGhMTEyoqKh8fHyH5BAAAAAAALAAAAABAAEAAAAL/VBCGmtfrmIwU2ofZQGAf33HgKJafGZ5qyl6TW2XxK8PQSuJozvL+DqAJZ0Rb7agB6pY9ZZMJMg6lRWTVAHX+stzm1EoNgzHbp7mMdoq/7Ku7m4Zrge21236Jn+dyJn5cB0jRt0eotxGYeCeIcMhXCMnzpzhJZPjomEXJyPmVGYn5WDnaOQh6ieq1uMka8/kaukLaWpkKe0lbSnp72iupC9xqG+tbknu8yKssGrzqDDMcDYo8m0y8TFitLSiNvUfdLOY9jrINPtR9HXr+zremeLhsu3wZfLMdu7qpeX5bvL8Nv37d2+Ma8swfpX0EsCA/+WEiwikOBvyDmCxjQ4jwHCxPrKYxIBWNDIAUAADs=) repeat 0 0 #161616; display: none; z-index: 200; }
+.loadingBar { width: 3.28125rem; margin: 0 auto; padding: 8rem 0 1rem; }
+.loadingTxt { text-align: center; color: #eee; }
+.loading { background-color: #2187e7; background-image: -moz-linear-gradient(45deg, #2187e7 25%, #a0eaff); background-image: -webkit-linear-gradient(45deg, #2187e7 25%, #a0eaff); border-left: 0.03125rem solid #111; border-top: 0.03125rem solid #111; border-right: 0.03125rem solid #333; border-bottom: 0.03125rem solid #333; width: 0.3125rem; height: 0.3125rem; float: left; margin-left: 0.15625rem; opacity: 0.1; transform: scale(0.7); -webkit-transform: scale(0.7); animation: loading 1.8s infinite linear; -webkit-animation: loading 1.8s infinite linear; }
+.block_1 { animation-delay: .1s; -webkit-animation-delay: .1s; }
+.block_2 { animation-delay: .3s; -webkit-animation-delay: .3s; }
+.block_3 { animation-delay: .5s; -webkit-animation-delay: .5s; }
+.block_4 { animation-delay: .7s; -webkit-animation-delay: .7s; }
+.block_5 { animation-delay: .9s; -webkit-animation-delay: .9s; }
+.block_6 { animation-delay: 1.1s; -webkit-animation-delay: 1.1s; }
+@keyframes loading {
+ 0% {
+transform: scale(1.2);
+opacity:1;
+}
+ 50% {
+transform: scale(0.7);
+opacity:0.1;
+}
+ 100% {
+transform: scale(0.7);
+opacity:0.1;
+}
+}
+@-webkit-keyframes loading {
+ 0% {
+-webkit-transform: scale(1.2);
+opacity:1;
+}
+ 50% {
+-webkit-transform: scale(0.7);
+opacity:0.1;
+}
+ 100% {
+-webkit-transform: scale(0.7);
+opacity:0.1;
+}
+}
+.pageBtn { position: absolute; top: 100px; left: 320px; }
+.pageBtn a:link, .pageBtn a:visited { display: block; width: 40px; line-height: 30px; height: 90px; padding: 20px 0; background: #0cf; color: #fff; text-decoration: none; margin-bottom: 20px; text-align: center; font-size: 24px; }
+.pageBtn a:hover { }
+#shareAlert { background: rgba(0, 0, 0, .8); width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 2000; display: none; }
+.shareArr { width: 2.625rem; height: 5.1875rem; background: url(images/title-bottom.png) no-repeat 0 0; position: absolute; right: 1.5rem; top: 1.5rem; background-size: 100%; }
+.shareText { text-align: center; font-size: 1.75rem; line-height: 1.85rem; color: #fff; position: absolute; top: 5.0rem; width: 100%; }
+.othersShare { margin-top: 11rem; text-align: center; font-size: 1rem; color: #fff; }
+.othersShare img { width: 3rem; height: 3rem; margin: 0 0.5rem; }
+/* 用于定义小屏手机的覆盖样式 */
+.smallScreen { }
+/* 自定义CSS */
+.scenery .bg {position: absolute; width: 100%;background-size: 100% !important; height: 100%;left: 0; top: 0;z-index: 1;}
+.scenery .pic_bg {position: absolute; width: 100%;height: 100%;left: 0; top: 0;z-index: 2;}
+.scenery .anItem{position: absolute; background-size: 100% !important;z-index: 3; }
+.scenery .title {right: 0.5rem; top: 0.5rem; width: 2.6875rem; height:3.6875rem; background: url(images/title_cover.png) no-repeat 0 0; }
+.scenery .footer {height: 2.28125rem; width: 100%; left: 0; bottom: 0;}
+.scenery .logo { width: 100%; height: 2.25rem; background:rgba(235, 134, 16,.6) url(images/logo.png) no-repeat 0 0;background-size: 100%;}
+.scenery .txtbg{background-color: rgba(0,0,0,.15);color: #fff;height: 1.875rem;padding: 0 0.5rem;line-height: 1.875rem}
+.frameR .userTxt { right: auto; left: 1rem; }
+/*封面*/
+.page_01 .bg {background:#fffcf7 url(images/bg_cover_01.png) no-repeat 0 100%;}
+.page_01 .txt1 {left: 4.375rem;bottom:19.0625rem; width: 2.5rem;height: 10rem;background: url(images/hd_01.png) no-repeat 0 0;}
+.page_01 .btn1_txt {right: 1.4375rem;bottom:3.75rem; width: 5.3125rem;height: 5.1875rem;background: url(images/btn_01_font.png) no-repeat 0 0;z-index: 4}
+.page_01 .btn1_bg {right: 1.4375rem;bottom:3.75rem; width: 5.3125rem;height: 5.1875rem;background: url(images/btn_01.png) no-repeat 0 0;}
+/*封底*/
+.page_end_01 .bg { background: url(images/bg_end_01.png) no-repeat 0 100% #fffcf7;background-size: 100%}
+.page_end_01 .hd01 {top:4.25rem;left: 50%;margin-left: -0.5rem; width: 1rem;height: 13rem;background: url(images/title_end_01.png) no-repeat 0 0;}
+.page_end_01 .arr_wrap { position: absolute; height: 23.75rem; width: 100%; left: 0; top: 50%; margin-top: -11.875rem }
+.page_end_01 .arr_btn{position: absolute;bottom: 1.5rem;left: 0;width: 100%;text-align: center;}
+.page_end_01 .arr_btn a{display:inline-block;width: 7.46875rem; height: 2.5rem; border-radius: 1.25rem; background-color: rgb(239, 92, 57); box-shadow: 0.15625rem 0.1875rem 0rem 0rem rgb(209, 84, 54);text-align: center;line-height: 2.5rem;color: #fff;text-decoration: none;margin: 0 0.5rem;text-shadow: 0px 2px 0px rgba(139, 77, 1, 0.75);}
+
+/*内页*/
+.userScenery_1{display: block;height: auto; background: url(images/page_bg_01.png) no-repeat 0 0 #f15834;background-size: 100%;overflow: hidden;padding-bottom: 2.28125rem}
+.userScenery_1 .banner{position: relative; width: 100%;height: 8.125rem;}
+.userScenery_1 .banner .toShow{position: absolute; right: 1.5625rem;bottom: 0.5rem; width: 8.3125rem;height: 3.25rem;background: url(images/paizi.png) no-repeat 0 0;background-size: 100%}
+.userScenery_1 .toShow a{display: block;width: 100%;height: 2rem;line-height: 2rem;text-align: center;text-shadow: 0px 2px 0px rgb(203, 55, 20);color: #fff;text-decoration: none;}
+.userScenery_1 .logo { background: rgba(215, 67, 32,.7) url(images/logo_page.png) no-repeat 0 0;background-size: 100%}
+
+/*奖品*/
+.AwardList{text-align: center;}
+.AwardItem{display: inline-block;width: 6.875rem;padding:0.3125rem 0.3125rem 0;background-color: #ffdba7;margin: 0 0.375rem;}
+.AwardItem .AwardImg{height: 6.25rem}
+.AwardItem img{width: 6.875rem;height: 6.25rem;}
+.AwardItem .AwardDetail{font-size: 0.6875rem;line-height: 1.875rem;color: #b94429;width: 6.875rem;overflow: hidden;}
+/*活动说明*/
+.hdsm{line-height: 0;border: 1px solid #be3212;text-align: center;min-height: 10rem;color: #fff6d8;margin:1.5rem 1.125rem 1rem;padding:0 0.75rem;}
+.hdsm .tips { font-size: 1.125rem; color: #ffe400; text-shadow:0rem 0.125rem 0.09375rem rgba(6, 0, 1, 0.32); padding: 0 1.875rem;background-color: #f15834;}
+.hdsm .hdTime{color: #fcbf2b;text-shadow:1px 2px 0 rgba(6, 0, 1, 0.32);font-size: 0.9375rem;line-height: 1.5;margin: 1.5rem 0 0}
+.hdsm .step_01{font-size: 0.8125rem;line-height: 1.5;text-align: left;margin:0;list-style-position:inside;padding: 0;}
+.hdsm .step_01 li{margin:0.5rem 0;}
+.hdsm .step_02{line-height: 1.5;font-size:0.8125rem;text-align: left;margin:0.5rem 0 ; }
+.hdsm .step_03{line-height: 1.5;font-size:0.8125rem;text-align: left;color: #932005;margin:0.5rem 0; }
+/*二维码*/
+.WXCodePic{}
+.WXCodePic p{font-size:0.6875rem;color:#fdcd6f;text-align: center;margin: 1rem 0 0;line-height: 1.2}
+.WXCodePic img{width:5.1875em;height:5.1875em;margin:0.5rem}
+.btn_02{display:inline-block;width: 7.46875rem; height: 2.5rem; border-radius: 1.25rem; background-color: #ff9c00; box-shadow: 0.15625rem 0.1875rem 0rem 0rem rgb(211, 71, 2);text-align: center;line-height: 2.5rem;color: #fff;text-decoration: none;margin: 1rem 0;text-shadow: 0px 2px 0px rgba(139, 77, 1, 0.75);}
+
+
+

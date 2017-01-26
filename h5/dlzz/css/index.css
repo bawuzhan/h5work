@@ -1,0 +1,213 @@
+@charset "utf-8";
+html {
+    font-size: 100px;
+}
+html, body, .swiper-container, .swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    max-width: 8.5rem;
+    margin: 0 auto;
+}
+.swiper-slide {
+    position: relative;
+}
+.page1 {
+    background: url("../image/01.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page2 {
+    background: url("../image/02.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page3 {
+    background: url("../image/03.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page4 {
+    background: url("../image/04.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page5 {
+    background: url("../image/05.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page6 {
+    background: url("../image/06.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page7 {
+    background: url("../image/07.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page8 {
+    background: url("../image/08.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page9 {
+    background: url("../image/09_01.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+.page1>div:nth-of-type(1),.page2>div:nth-of-type(1),.page3>div:nth-of-type(1),.page4>div:nth-of-type(1),.page5>div:nth-of-type(1),.page6>div:nth-of-type(1),.page7>div:nth-of-type(1),.page8>div:nth-of-type(1),.page9>div:nth-of-type(1){
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.page1 .top img{
+    display: block;
+    width: 100%;
+    height: 1.88rem;
+}
+.page1 .bot img{
+    position: absolute;
+    width: 80%;
+    padding: 10%;
+    margin: 0 auto;
+    bottom: 1%;
+
+}
+.page2 div:nth-of-type(1) img{
+    display: block;
+    width: 100%;
+    height: 1.82rem;
+}
+.page3>div:nth-of-type(1) img{
+    display: block;
+    width: 100%;
+    height: 1.91rem;
+}
+
+.page4>div:nth-of-type(1) img,.page5>div:nth-of-type(1) img,.page6>div:nth-of-type(1) img,.page7>div:nth-of-type(1) img,.page8>div:nth-of-type(1) img{
+    display: block;
+    width: 100%;
+    height: 1.8rem;
+}
+.page9 .top img{
+    display: block;
+    width: 80%;
+    padding: 0 10%;
+    height: 1.07rem;
+}
+.page9 .bottom img{
+    display: block;
+    width: 80%;
+    padding: 0 10%;
+    position: absolute;
+    bottom: 6%;
+    height: 2.16rem;
+}
+.img1{
+    width: .6rem;
+    height: .4rem;
+    position: absolute;
+    bottom: .29rem;
+    left:3rem;
+    z-index: 10;
+    opacity: 0;
+}
+.img1 img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#page1>div:nth-of-type(1),#page2>div:nth-of-type(1),#page3>div:nth-of-type(1),#page4>div:nth-of-type(1),#page5>div:nth-of-type(1),#page6>div:nth-of-type(1),#page7>div:nth-of-type(1),#page8>div:nth-of-type(1),#page9>div:nth-of-type(1){
+    -webkit-animation: fadeIn 1.2s linear both;
+    animation: fadeIn 1.2s linear both;
+}
+
+#img1{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+ }
+#img2{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img3{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img4{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img5{
+     opacity: 0;
+     -webkit-animation: prevMove 1s linear 1.5s infinite both;
+     animation: prevMove 1s linear 1.5s infinite both;
+ }
+#img6{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img7{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img8{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+#img9{
+    opacity: 0;
+    -webkit-animation: prevMove 1s linear 1.5s infinite both;
+    animation: prevMove 1s linear 1.5s infinite both;
+}
+
+@keyframes prevMove{
+    0%{
+        opacity: 0;
+        transform: translateY(0rem);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(-0.15rem);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateY(-0.3rem);
+    }
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+
+
+
+
+
+
+

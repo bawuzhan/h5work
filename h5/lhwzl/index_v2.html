@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>我有问题问总理——两会</title>
+<!-- <base href="/microblog-v3/h5/lhwzl/"> -->
+
+<script src="mobileshow.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+
+<div class="slideshow">
+	<div class="globalPackage"  style="display: none"><div class="sound s_off" ></div><div class="moveArr"></div></div>
+  <!-- 自定义场景 begin -->
+    <!-- 封底 -->
+  <div class="scenery page_end_01">
+    <div class="bg"></div>
+    <div class="hd01 anItem"></div>
+    <div class="arr_Qust">
+      <a href="page03.html" title=""><span><em>养老服务</em></span></a>
+      <a href="page03.html" title=""><span><em>摘贫困帽</em></span></a>
+      <a href="page03.html" title=""><span><em>科技创新</em></span></a>
+      <a href="page03.html" title=""><span><em>打虎怕蝇</em></span></a>
+      <a href="page03.html" title=""><span><em>节能减排</em></span></a>
+      <a href="page03.html" title=""><span><em>城镇化</em></span></a>
+      <a href="page03.html" title=""><span><em>绿色经济</em></span></a>
+      <a href="page03.html" title=""><span><em>人口政策</em></span></a>
+      <a href="page03.html" title=""><span><em>全面小康</em></span></a>
+      <a href="page03.html" title=""><span><em>农业<br />现代化</em></span></a>
+      <a href="page03.html" title=""><span><em>互联网+</em></span></a>
+      <a href="page03.html" title=""><span><em>其他</em></span></a>
+    </div>
+  </div>
+  <!-- 封面 -->
+	<div class="scenery page_cover_01">
+		<div class="bg"></div>
+    <div class="logo_top"></div>
+    <div class="title anItem"></div>
+    <div class="pic01 anItem"></div>
+		<div class="hd01 anItem"></div>
+    <div class="hd02 anItem"></div>
+    <div class="hd03 anItem"></div>
+    <div class="txt anItem"><span class="shape01"></span>[编者按]2014年“全国两会”是党的十八大之后召开的重要会议，是我国人民政治生活中的大事，所以今年的“我有问题问总理”将承载更多百姓对未来的美好期待。您对总理有哪些心里话想说，又有哪些问题想向总理提呢？赶快留言吧【视频问总理】</div>
+	</div>
+
+  <!-- 自定义场景 end -->
+</div>
+
+<script>
+(function(){
+  if(document.addEventListener){
+  document.addEventListener('touchmove', function(e){
+    e.preventDefault();
+  }, false); 
+  }
+  function Q(s, p){
+    return (p || document).querySelector(s);
+  };
+
+  //预载图片
+  var preload = [
+    'images/bg_cover.jpg',
+    'images/title_cover.png',
+    'images/pic01.png',
+    'images/hd_1.png',
+    'images/hd_3.png',
+    'images/hd_2.png'
+  ];
+  mobileshow.init('.slideshow', preload);
+  
+
+  var viewWidth = document.body.clientWidth;
+  var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+  var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+  isMobile = isMobile ? isMobile[0] : false;
+  
+  if(isMobile){
+    var f = document.documentElement.clientWidth / 640 * 32;
+    
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+      //小屏幕手机单独定义CSS
+      //document.body.className = 'smallScreen';
+      f = document.documentElement.clientHeight / 1008 * 32;
+    }
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['max-width'] = '20rem';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  }else{
+    var f = document.documentElement.clientHeight / 504 * 16,
+      viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['overflow'] = 'hidden';
+    document.body.style['max-width'] = '640px';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+
+    var pb = document.createElement('div');
+    pb.className = 'pageBtn';
+    pb.style.left = viewWidth + 'px';
+    pb.innerHTML = '<a href="javascript:void(0)" id="preBtn">上一页</a><a href="javascript:void(0)" id="nextBtn">下一页</a>'
+    document.body.appendChild(pb);
+
+    Q('#preBtn').onclick = function(){
+      mobileshow.pre();
+      return false;
+    };
+    Q('#nextBtn').onclick = function(){
+      mobileshow.next();
+      return false;
+    };
+  };
+})();
+
+</script>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

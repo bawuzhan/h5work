@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>两会开放日活动实时播报-人民网</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<base href="/microblog-v3/h5/lhkfr/">
+<link rel="stylesheet" href="style.css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+<div class="header"></div>
+<a id="tagBtn" class="listBtn" href="javascript:void(0)"></a>
+<div class="mapBox">
+	<div class="map"></div>
+	<div class="repoBox"><div class="reporters"></div></div>
+	<div class="layer">
+		<a href="javascript:void(0)" class="close"></a>
+		<ol></ol>
+	</div>
+</div>
+<div class="listBox">
+</div>
+<script>
+//2016.2.29 mengjia
+(function(){
+		var teamTime = {
+		"辽宁" : "2016/03/05 15:00:00",
+		"江西" : "2016/03/05 15:00:00",
+
+		"福建" : "2016/03/06 09:00:00",
+		"黑龙江" : "2016/03/06 09:00:00",
+		"宁夏" : "2016/03/06 09:00:00",
+		"湖南" : "2016/03/06 09:00:00",
+		"青海" : "2016/03/06 09:00:00",
+		"山西" : "2016/03/06 15:00:00",
+		"吉林" : "2016/03/06 15:00:00",
+		"上海" : "2016/03/06 15:00:00",
+		"广东" : "2016/03/06 15:00:00",
+		"湖北" : "2016/03/06 15:00:00",
+		"重庆" : "2016/03/06 15:00:00",
+
+		"北京" : "2016/03/07 09:00:00",
+		"云南" : "2016/03/07 09:00:00",
+		"陕西" : "2016/03/07 09:00:00",
+		"甘肃" : "2016/03/07 09:00:00",
+		"浙江" : "2016/03/07 09:00:00",
+		"海南" : "2016/03/07 09:00:00",
+		"内蒙古" : "2016/03/07 09:00:00",
+
+		"江苏" : "2016/03/07 15:00:00",	
+		"贵州" : "2016/03/07 15:00:00",
+		"西藏" : "2016/03/07 15:00:00",
+		"香港" : "2016/03/07 15:00:00",
+		"澳门" : "2016/03/07 15:00:00",
+		"山东" : "2016/03/07 15:00:00",
+		"河南" : "2016/03/07 15:00:00",
+
+		"安徽" : "2016/03/08 09:00:00",
+		"广西" : "2016/03/08 09:00:00",
+		"四川" : "2016/03/08 09:00:00",
+		"河北" : "2016/03/08 15:00:00",
+		"新疆" : "2016/03/08 15:00:00",
+		"天津" : "2016/03/08 15:00:00",
+
+		"台湾" : "2016/03/10 09:00:00",
+	};
+
+	var data = [
+		{
+			name : '人民大会堂',
+			teams : '河北,青海,福建,黑龙江,重庆,上海,香港,江苏,西藏,海南,新疆,安徽,天津,台湾',
+			x : 537,
+			y : 502 + 50
+		},
+		// {
+		// 	name : '天泰宾馆',
+		// 	teams : '四川',
+		// 	x : 384,
+		// 	y : 479 + 50
+		// },
+		// {
+		// 	name : '京西宾馆',
+		// 	teams : '解放军',
+		// 	x : 278,
+		// 	y : 492 + 50
+		// },
+		// {
+		// 	name : '远望楼宾馆',
+		// 	teams : '',
+		// 	x : 447,
+		// 	y : 205 + 50
+		// },
+		{
+			name : '北京会议中心',
+			teams : '北京',
+			x : 665,
+			y : 30
+		},
+		{
+			name : '首都大酒店',
+			teams : '广东',
+			x : 588,
+			y : 514 + 50
+		},
+		{
+			name : '中国职工之家',
+			teams : '云南,吉林,陕西,山东',
+			x : 367,
+			y : 497 + 50
+		},
+		{
+			name : '北京国际饭店',
+			teams : '湖北,四川',
+			x : 659,
+			y : 478 + 50
+		},
+		// {
+		// 	name : '天健宾馆',
+		// 	teams : '重庆',
+		// 	x : 465,
+		// 	y : 432 + 50
+		// },
+		{
+			name : '金台饭店',
+			teams : '江西',
+			x : 483,
+			y : 376 + 50
+		},
+		{
+			name : '北京饭店',
+			teams : '澳门',
+			x : 589,
+			y : 479 + 50
+		},
+		{
+			name : '河南大厦',
+			teams : '河南',
+			x : 762,
+			y : 641 + 50
+		},
+		{
+			name : '广西大厦',
+			teams : '广西',
+			x : 747,
+			y : 641 + 50
+		},
+		{
+			name : '万寿庄宾馆',
+			teams : '山西',
+			x : 173,
+			y : 474 + 50
+		},
+		{
+			name : '内蒙古大厦',
+			teams : '内蒙古',
+			x : 623,
+			y : 496 + 50
+		},
+		{
+			name : '亚洲大酒店',
+			teams : '辽宁,甘肃',
+			x : 692,
+			y : 377 + 50
+		},
+		{
+			name : '国谊宾馆',
+			teams : '湖南,贵州',
+			x : 345,
+			y : 366 + 50
+		},
+		// {
+		// 	name : '西直门宾馆',
+		// 	teams : '',
+		// 	x : 429,
+		// 	y : 343 + 50
+		// },
+		{
+			name : '人大会议中心',
+			teams : '浙江,宁夏',
+			x : 471,
+			y : 386 + 50
+		}
+	];
+	var iOS = navigator.userAgent.match(/ OS (\d+).*? Mac OS/) || false;
+	var isAndroid = (/android/i).test(navigator.userAgent) || false;
+	function Q(s, p){
+		return (p || document).querySelector(s);
+	};
+	function QA(s, p){
+		return (p || document).querySelectorAll(s);
+	};
+	var viewScale;
+	var viewWidth, viewScale;
+	if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76){
+		viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+		viewScale = viewWidth / 640;
+	}else{
+		viewScale = document.documentElement.clientWidth / 640;
+	};
+	function getOffset(obj, parentObj){ //位置
+		var left = obj.offsetLeft;
+		var top = obj.offsetTop;
+		var tempObj = obj.offsetParent;
+		try{
+			while(tempObj.id!=document.body && tempObj.id!=document.documentElement && tempObj != parentObj && tempObj!= null){
+				sss += tempObj.tagName + " , ";
+				tempObj = tempObj.offsetParent;
+				left += tempObj.offsetLeft;
+				top += tempObj.offsetTop;
+			};
+		}catch(e){};
+		return {left:left,top:top};
+	}
+
+	//动画
+	function Animation(startOpt, endOpt, callback, times, fn, endFn){
+		this._timer = null;
+		if(startOpt && endOpt && callback){
+			this.begin(startOpt, endOpt, callback, times, fn, endFn);
+		}
+	}
+	Animation.prototype = {
+		begin : function(startOpt, endOpt, callback, times, fn, endFn){
+			if(!(startOpt && endOpt && typeof callback == 'function')){
+				return;
+			};
+			this.startOpt = startOpt;
+			this.endOpt = endOpt;
+			this.callback = callback;
+			this.times = times || 3000;
+			this.endFn = endFn;
+			if(typeof fn === 'function'){
+				this.fn = fn;
+			}else if(fn == 'easeInOut'){
+				this.fn = this.Quad.easeInOut;
+			}else if(fn == 'easeIn'){
+				this.fn = this.Quad.easeIn;
+			}else if(fn == 'linear'){
+				this.fn = this.Quad.linear;
+			}else{
+				this.fn = this.Quad.easeOut;
+			};
+
+			clearTimeout(this._timer);
+			this.startTime = new Date();
+			
+			this._action();
+			
+		},
+		_action : function(){
+			var _self = this;
+			var sTime = new Date();
+			var opt = {},
+				now = sTime,
+				cf = now - this.startTime;
+
+			for(n in this.startOpt){
+				if(typeof this.startOpt[n] == 'number' && typeof this.endOpt[n] == 'number'){
+					opt[n] = this.fn(cf, this.startOpt[n], this.endOpt[n] - this.startOpt[n] ,this.times);
+				}
+			};
+			
+			if(cf >= this.times){ //end
+				this.callback(this.endOpt);
+				if(typeof this.endFn == 'function'){
+					this.endFn(this.endOpt);
+					this.endFn = null;
+				}
+			}else{
+				this.callback(opt);
+				this._timer = setTimeout(function(){
+					_self._action();
+				}, 20);
+			}
+		},
+		clear : function(){
+			clearTimeout(this._timer);
+			if(typeof this.endFn == 'function'){
+				this.endFn(this.endOpt);
+				this.endFn = null;
+			}
+		},
+		Quad : {
+			easeIn : function(t, b, c, d) {
+				return c * (t /= d) * t + b;
+			},
+			easeOut : function(t,b,c,d){
+				return -c *(t/=d)*(t-2) + b;
+			},
+			easeInOut: function(t,b,c,d){
+				if ((t/=d/2) < 1) return c/2*t*t + b;
+				return -c/2 * (( t)*(t-2) - 1) + b;
+			},
+			linear: function(t,b,c,d){ return c*t/d + b; }
+		}
+	};
+
+	document.documentElement.style.fontSize = 32 * viewScale + 'px';
+
+	var mapTouch = {
+		init : function(){
+			var _self = this;
+			this.box = Q('.mapBox');
+			this.map = Q('.map');
+			this.reporters = Q('.reporters');
+			this.setLeft(viewScale * 210);
+
+			var START_EVENT_NAME = 'mousedown',
+				MOVE_EVENT_NAME = 'mousemove',
+				END_EVENT_NAME = 'mouseup';
+			if(document.ontouchstart !== undefined){
+				START_EVENT_NAME = 'touchstart';
+				MOVE_EVENT_NAME = 'touchmove';
+				END_EVENT_NAME = 'touchend';
+			}
+			this.animation = new Animation();
+
+			var sx = null, sLeft, ix;
+			document.addEventListener(START_EVENT_NAME, function(e){
+				if(e.target.tagName == 'A' || e.target.parentNode.tagName == 'A' || this.boxType == 'list'){return};
+				this.animation.clear();
+
+				if(this.layerStatus == 'open' && e.target.tagName != 'LI'){
+					this.closeLayer();
+				};
+
+				e.preventDefault();
+
+				sx = e.targetTouches && e.targetTouches.length ? e.targetTouches[0].pageX : e.pageX;
+				sLeft = this.left;
+
+			}.bind(this), false);
+
+			var preX1 = null, preX2 = null;
+			document.addEventListener(MOVE_EVENT_NAME, function(e){
+				if(this.boxType == 'list'){return};
+				if(sx === null){return};
+
+				e.preventDefault();
+
+				nx = e.targetTouches && e.targetTouches.length ? e.targetTouches[0].pageX : e.pageX;
+
+				this.setLeft(sLeft - nx + sx);
+
+				preX2 = preX1;
+				preX1 = sLeft - nx + sx;
+			
+				if(this.arrShow && Math.abs(nx - sx) > 150 * viewScale){
+					//Q('.arr_left').style.display = 'none';
+					//Q('.arr_right').style.display = 'none';
+					this.arrShow = false;
+				};
+
+			}.bind(this), false);
+
+			document.addEventListener(END_EVENT_NAME, function(e){
+				if(e.target.tagName == 'A' || sx === null || this.boxType == 'list'){return};
+				e.preventDefault();
+				if(preX1 === null || preX2 === null){
+					sx = null;
+					return;
+				};
+				var cX = preX1 - preX2;
+				var sOpt = {
+						x : this.left
+					},
+					eOpt = {
+						x : this.left + cX * 5
+					};
+				this.animation.begin(sOpt, eOpt, function(opt){
+					this.setLeft(opt.x);
+				}.bind(this), 300, null);
+				preX1 = null;
+				preX2 = null;
+				sx = null;
+			}.bind(this), false);
+			
+			//list
+			var now = new Date();
+			// now.setHours(13);
+			now = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() < 12 ? 11 : 23, 59, 59);
+
+			var teams = [], teamsNoOpen = [], tTemp, temp, today = [];
+			for (var i = 0; i < data.length; i++) {
+				tTemp = data[i].teams.split(',');
+				data[i].dateTime = 0;
+				data[i].teamList = [];
+				for (var j = tTemp.length - 1; j >= 0; j--){
+					temp = {};
+					temp.name = tTemp[j];
+					temp.hotel = data[i].name;
+					temp.date = teamTime[temp.name] || '2016/03/16';
+					temp.dateTime = new Date(temp.date);
+					//today
+					if(temp.dateTime.getFullYear() == 2016 && temp.dateTime.getMonth() == now.getMonth() && temp.dateTime.getDate() == now.getDate() && temp.dateTime < now && temp.dateTime.getTime() > now.getTime() - 12*3600000){
+						today.push(temp.name);
+						data[i].live = true;
+						temp.live = true;
+					};
+					if(data[i].dateTime > temp.dateTime || data[i].dateTime == 0){
+						data[i].dateTime = temp.dateTime;
+					};
+					if(temp.date != '2016/03/16'){
+						if(temp.dateTime > now){
+							teamsNoOpen.push(temp);
+						}else{
+							teams.push(temp);
+						}
+						data[i].teamList.push(temp);
+					};
+					
+				};
+			};
+			teams.sort(function(a, b){
+				return b.dateTime - a.dateTime;
+			});
+			var html = '<dl>', date;
+			for (var i = 0; i < teams.length; i++) {
+				if(date != teams[i].dateTime.getMonth() + '-' + teams[i].dateTime.getDate()){
+					if(i != 0){
+						html += '</dl><dl>';
+					};
+					html += '<dt>' + teams[i].dateTime.getFullYear() + '年' + (teams[i].dateTime.getMonth() + 1) + '月' + teams[i].dateTime.getDate() + '日</dt>';
+					date = teams[i].dateTime.getMonth() + '-' + teams[i].dateTime.getDate();
+				};
+				html += '<dd><h3><a href="team.htm?t=' + encodeURI(encodeURI(teams[i].name)) + '">' + teams[i].name + '代表团</a></h3><p>' + teams[i].hotel + '</p></dd>';
+			};
+			html += '</dl>';
+			if(teamsNoOpen.length){
+				html += '<h2>未开始的直播</h2>';
+				teamsNoOpen.sort(function(a, b){
+					return a.dateTime - b.dateTime;
+				});
+				for (var i = 0; i < teamsNoOpen.length; i++) {
+					if(date != teamsNoOpen[i].dateTime.getMonth() + '-' + teamsNoOpen[i].dateTime.getDate()){
+						if(i != 0){
+							html += '</dl><dl>';
+						};
+						if(teamsNoOpen[i].dateTime.getFullYear() == 2016 && teamsNoOpen[i].dateTime.getMonth() == now.getMonth() && teamsNoOpen[i].dateTime.getDate() == now.getDate()){
+							html += '<dt class="noopen">' + teamsNoOpen[i].dateTime.getFullYear() + '年' + (teamsNoOpen[i].dateTime.getMonth() + 1) + '月' + teamsNoOpen[i].dateTime.getDate() + '日 下午</dt>';
+						}else{
+							html += '<dt class="noopen">' + teamsNoOpen[i].dateTime.getFullYear() + '年' + (teamsNoOpen[i].dateTime.getMonth() + 1) + '月' + teamsNoOpen[i].dateTime.getDate() + '日</dt>';
+						};
+						
+						date = teamsNoOpen[i].dateTime.getMonth() + '-' + teamsNoOpen[i].dateTime.getDate();
+					};
+					html += '<dd><h3>' + teamsNoOpen[i].name + '代表团</h3><p>' + teamsNoOpen[i].hotel + '</p></dd>';
+				};
+				html += '</dl>';
+			};
+
+			Q('.listBox').innerHTML = html;
+			today.sort(function(a, b){
+				return a.dateTime - b.dateTime;
+			});
+
+			//上午下午优先显示相应的内容
+			// var strAM = [], strPM = [], todayStr;
+			// for (var i = 0; i < today.length; i++) {
+			// 	if(today[i].dateTime.getHours() < 12){
+			// 		strAM.push(today[i].name);
+			// 	}else{
+			// 		strPM.push(today[i].name);
+			// 	};
+			// };
+			// if(now.getHours() < 12){
+			// 	todayStr = strAM.concat(strPM);
+			// }else{
+			// 	todayStr = strPM.concat(strAM);
+			// };
+			
+			if(today.length){
+				setShareInfo('今日直播：' + today.join('、') + '代表团开放日活动【人民网两会直播】', 'images/icon.jpg');
+			}else{
+				setShareInfo('', 'images/icon.jpg');
+			}
+
+			//reporters
+			var rTemp;
+			
+			for (var i = 0; i < data.length; i++) {
+				if(data[i].teamList.length == 0) continue;
+				rTemp = document.createElement('a');
+				rTemp.style.left = (data[i].x - 20) * viewScale + 'px';
+				rTemp.style.top = (data[i].y - 56) * viewScale + 'px';
+				rTemp.title = data[i].name;
+				rTemp.href = 'javascript:void(0)';
+				rTemp._id = i;
+				rTemp.innerHTML = '<span class="dot"></span>';
+				//if(now < data[i].dateTime){
+				if(!data[i].live){
+					rTemp.className = 'noOpen';
+				};
+				rTemp.onclick = function(){
+					_self.openLayer(this._id);
+				};
+				this.reporters.appendChild(rTemp);
+			};
+
+			Q('#tagBtn').onclick = function(){
+				this.switchBox();
+			}.bind(this);
+			if(location.search.indexOf('_t=list') !=+ -1){
+				this.switchBox('list');
+			}else if(sessionStorage.getItem('lh_t')){
+				this.switchBox(sessionStorage.getItem('lh_t'));
+			};
+
+			Q('.layer .close').onclick = function(){
+				this.closeLayer();
+			}.bind(this);
+		},
+		layerStatus : 'close',
+		openLayer : function(id){
+			var item = data[id], teams, html = '';
+			var now = new Date(), nowReal = new Date();
+			now = new Date(now.getFullYear(), now.getMonth(), now.getDate(), now.getHours() < 12 ? 11 : 23, 59, 59);
+			if(item){
+				teams = item.teamList;
+				for (var i = 0; i < teams.length; i++) {
+					if(now > teams[i].dateTime){
+						html += '<li><a href="team.htm?t=' + encodeURI(encodeURI(teams[i].name)) + '">' + teams[i].name + '代表团' + ((nowReal - teams[i].dateTime < 3 * 3600000 && nowReal > teams[i].dateTime)?'<span class="live">(直播)</span>':'') + '</a></li>';
+					}else{
+						html += '<li>' + teams[i].name + '代表团</li>';
+					}
+
+				};
+				Q('.layer ol').innerHTML = html;
+				Q('.layer').style.top = (item.y + 140) * viewScale + 'px';
+				if(item.x - this.left/viewScale > 320){
+					Q('.layer').style.left = (item.x - 325) * viewScale - this.left + 'px';
+				}else{
+					Q('.layer').style.left = (item.x + 5) * viewScale - this.left + 'px';
+				}
+				Q('.layer').style.display = 'block';
+				this.layerStatus = 'open';
+				var p = getOffset(Q('.layer'));
+				if(p.top + Q('.layer').offsetHeight > document.documentElement.clientHeight){
+					Q('.layer').style.top = (item.y + 130) * viewScale - (p.top + Q('.layer').offsetHeight - document.documentElement.clientHeight) + 'px';
+				};
+			};
+		},
+		closeLayer : function(){
+			this.layerStatus = 'close';
+			Q('.layer').style.display = 'none';
+		},
+		boxType : 'map',
+		switchBox : function(t){
+			t = t || (this.boxType == 'map'?'list':'map');
+			if(t == 'list'){
+				Q('.listBox').style.display = 'block';
+				Q('.mapBox').style.display = 'none';
+				Q('#tagBtn').className = 'mapBtn';
+				// document.documentElement.style.overflow = 'auto';
+				// document.body.style.overflow = 'auto';
+				this.boxType = 'list';
+				sessionStorage.setItem('lh_t', 'list');
+			}else if(t == 'map'){
+				Q('.listBox').style.display = 'none';
+				Q('.mapBox').style.display = 'block';
+				Q('#tagBtn').className = 'listBtn';
+				this.boxType = 'map';
+				// document.documentElement.style.overflow = 'hidden';
+				// document.body.style.overflow = 'hidden';
+				sessionStorage.setItem('lh_t', 'map');
+			};
+			this.closeLayer();
+			window.scrollTo(0, 0);
+		},
+		arrShow : true,
+		left : 0,
+		setLeft : function(left){
+			this.box.scrollLeft = left;
+			this.left = this.box.scrollLeft;
+			this.reporters.style.left = - this.left + 'px';
+		}
+	}
+	mapTouch.init();
+
+	function setShareInfo(title, img, url){
+		if(url && history.pushState){
+			history.pushState(null, document.title, url);
+		};
+		if(img){
+			var i = window._shareImg || new Image();
+			i.src = img;
+			i.style.position = 'absolute';
+			i.style.left = '-1000px';
+			i.style.top = '-1000px';
+			window._shareImg = i;
+			document.body.insertBefore(i, document.body.firstChild);
+		};
+		if(title){
+			document.title = title;
+		}
+	};
+})();
+</script>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

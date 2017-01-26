@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>指点里约——为中国奥运健儿,加油！</title>
+<!-- <base href="/microblog-v3/h5/aoyunliyue/"> -->
+
+<script src="mobileshow.js" type="text/javascript"></script>
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+
+<div class="slideshow">
+	
+	<div class="scenery page_cover">
+		<div class="bg"></div>
+			
+		<div class="title anItem" data-animationIn="fadeInDown 0.5s 0.2s"></div>
+		<a class="btn_start anItem" data-animationIn="fadeIn 1s 0.5s"></a>
+		<div class="txt anItem" data-animationIn="fadeInUp 0.5s 1s">限时<span>8</span>秒</div>
+		<div class="footer anItem"><div class="logo"></div></div>
+	</div>
+
+	<div class="scenery userScenery_01">
+		<div class="bg"></div>
+		<div class="timeLine anItem"><span></span></div>
+		<div class="timedown anItem"><span id="timedown">8</span>秒</div>
+		<div class="score anItem"><span id="score">0</span>次</div>
+		<a class="anItem stick" id="stick" href="javascript:0"><span class="mask" id="mask"></span></a>
+		<div class="anItem fire"></div>
+		<div class="anItem stickL"></div>
+		<div class="anItem stickR"></div>
+		<div class="footer anItem"><div class="logo"></div></div>
+		<table class="timeLayer anItem">
+			<tbody>
+				<tr>
+					<td id="clickBox">狂点这里<br>看你有多快</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<div class="scenery page_end_01">
+		<div class="txt_01" >你在8秒内<br />为中国奥运健儿加油<br /><span class="count">--次</span><br/>获得<span id="gameTitle">--</span>称号</div>
+		<div class="arrLink"><a href="javascript:void(0)" id="playAgain" ></a><a href="javascript:void(0)" id="btn_share" ></a><a href="javascript:void(0)" id="smt_count" ></a><span class="smt_memo">达到50次可获得抽奖资格</span><br/>
+		<!-- <a href="hjmd.htm" title="" class="namePaper"></a> -->
+		</div>
+	</div>
+	
+	<div class="scenery page_info">
+	<div class="wrap">
+	 <div class="AwardList">
+				<div class="AwardItem Award01">
+						<div class="AwardImg">
+								<a href="#cj"><img src="images/jp_01.jpg" ></a>
+								<span class="price">￥2698</span>
+						</div>
+				</div>
+				<div class="AwardItem Award02">
+						<div class="AwardImg">
+								<a href="#cj"><img src="images/jp_02.jpg" ></a>
+								<span class="price">￥2000</span>
+						</div>
+				</div>
+		</div>
+		<p class="tips">*奖品图示供参考，以实物为准</p>
+		<form>
+			<input type="text" placeholder="请输入手机号参与赢奖" id="userPhone" onfocus="this.style.color='#333'" onblur="this.style.color='#999'">
+			<a href="javascript:void(0)" id="smtInfo"></a>
+		</form>
+		<div class="actIntro clearfix">
+			<ol>
+				<li>周奖名单于每周五发布，
+		大奖名单于8月21日公布。
+</li>
+<li>请确保手机号真实有效，
+		以便领取奖品。</li>
+<li>关注人民网官方微信，
+		获取中奖信息。</li>
+			</ol>
+			<div class="rmwWX"><img src="images/wx.png" ><p>人民网官方微信</p></div>
+		</div> 
+	 </div>     
+	</div>
+</div>
+
+</div>
+
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+var src = "http://58.68.146.12/weixin/JS.js?url=" + encodeURIComponent(location.href.split('#')[0]);
+var left = unescape('%3c');
+var right = unescape('%3E');
+document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+<script>
+var shareData = {
+	imgUrl : 'http://mblog.people.com.cn/microblog-v3/h5/aoyunliyue/images/icon.jpg',
+	link :  'http://mblog.people.com.cn/h5/aoyunliyue',
+	title : document.title,
+	desc : '人民网邀你指点里约，为中国奥运健儿加油，开心赢大奖！'
+};
+
+peopleWXConfig.jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'];
+wx.config(peopleWXConfig);
+function initWXShare(){
+		wx.onMenuShareAppMessage({
+				title: shareData.title,
+				desc: shareData.desc,
+				link: shareData.link,
+				imgUrl: shareData.imgUrl
+		});
+		wx.onMenuShareTimeline({
+				title: shareData.title,
+				link: shareData.link,
+				imgUrl: shareData.imgUrl
+		});
+		wx.onMenuShareQQ({
+				title: shareData.title,
+				desc: shareData.desc,
+				link: shareData.link,
+				imgUrl: shareData.imgUrl
+		});
+		wx.onMenuShareWeibo({
+				title: shareData.title,
+				desc: shareData.desc,
+				link: shareData.link,
+				imgUrl: shareData.imgUrl
+		});
+}
+wx.ready(initWXShare);
+</script>
+<script>
+(function(){
+	document.body.addEventListener('touchmove', function(e){
+		e.preventDefault();
+		return false;
+	}, false);
+
+	function Q(s, p){
+		return (p || document).querySelector(s);
+	};
+	function QA(s, p){
+		return (p || document).querySelectorAll(s);
+	}; 
+	
+	var viewWidth = document.body.clientWidth;
+	var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+	var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+	isMobile = isMobile ? isMobile[0] : false;
+	var f = 32;
+	if(isMobile){
+		f = document.documentElement.clientWidth / 640 * 32;
+		
+		if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+			//小屏幕手机单独定义CSS
+			//document.body.className = 'smallScreen';
+			f = document.documentElement.clientHeight / 1008 * 32;
+		}
+		document.documentElement.style['font-size'] = f + 'px';
+		document.body.style['max-width'] = '20rem';
+		document.body.style['width'] = viewWidth + 'px';
+		document.body.style['position'] = 'relative';
+	}else{
+		f = document.documentElement.clientHeight / 504 * 16,
+			viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+		document.documentElement.style['font-size'] = f + 'px';
+		document.body.style['overflow'] = 'hidden';
+		document.body.style['max-width'] = '640px';
+		document.body.style['width'] = viewWidth + 'px';
+		document.body.style['position'] = 'relative';
+	};
+
+	var preload = [
+		'images/bg_cover.jpg',
+		'images/btn_gmStart.png',
+		'images/cover_title.png',
+		'images/footer_bg.png',
+		'images/logo.png'
+	];
+	mobileshow.loop = false;
+	mobileshow.touch = false;
+	mobileshow.reindex = false;
+	mobileshow.onchange = function(){
+		if(this.index == 3){
+			this.touch = true;
+		}else{
+			this.touch = false;
+		}
+	}
+	mobileshow.init('.slideshow', preload);
+
+	Q('.btn_start').onclick = function(){
+		mobileshow.next();
+	}
+	Q('#playAgain').onclick = function(){
+		init();
+		mobileshow.select(1);
+	}
+	Q('#smt_count').onclick = function(){
+		if(score < 50){
+			alert('达到50次才能获得抽奖资格，您还需继续努力！');
+			return;
+		}
+		mobileshow.next();
+	};
+	Q('#btn_share').onclick = function(){
+		Q('#shareAlert').style.display = 'block';
+		setTimeout(function(){
+			Q('#shareAlert').style.display = 'none';
+		}, 5000);
+	};
+	
+	var userPhone = localStorage.getItem('userPhone');
+	var maxScore = parseInt(localStorage.getItem('aoyunliyueMS'));
+	if(!maxScore){
+		maxScore = 0;
+	}
+	if(userPhone){
+		Q('#userPhone').value = userPhone;
+	}
+	Q('#smtInfo').onclick = function(){
+		userPhone = Q('#userPhone').value.replace(/^\s+|\s+$/g, '');
+		if(!/^1[34578]\d{9}$/.test(userPhone)){
+			alert('您填写的手机号码不正确！');
+			return;
+		};
+		localStorage.setItem('userPhone', userPhone);
+
+		if(maxScore > score){ //小于最高分
+			alert('提交成功，请关注人民网微信号，查询获奖名单。');
+			mobileshow.pre();
+		};
+		
+		var API = '/saveAoyunliyueAjax.action';
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState == 4 && xhr.status == 200){
+				if(xhr.responseText.indexOf('"result":"1"') >= 0){
+					localStorage.setItem('aoyunliyueMS', score);
+					alert('提交成功，请关注人民网微信号，查询获奖名单。');
+					mobileshow.pre();
+				}else{
+					alert('提交失败，请稍后再试！');
+				};
+			}else if(xhr.readyState == 4){
+				alert('网络忙，请稍后再试！code:' + xhr.status);
+			};
+		};
+		xhr.open('POST', API, true);
+		xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		xhr.send('mobile=' + userPhone + '&score=' + score);
+	}
+
+	var _timer, _gmTimer,
+		// clickBox = Q('#clickBox'),
+		timeline = Q('.timeLine span'),
+		gmStatus = "ready",reTime=3,
+		status = '', score = 0, timeSum = 8;
+	clickBox.ontouchstart = clickBox.onmousedown =function () {
+		if(gmStatus == 'ready'){
+			beginCache();
+		};
+		if(gmStatus != 'begin'){
+			return;
+		}
+	};
+	stick.ontouchstart = stick.onmousedown =Q('.stickL').ontouchstart = Q('.stickL').onmousedown =Q('.stickR').ontouchstart = Q('.stickR').onmousedown = function(e){
+		if(status == 'ready'){
+			begin();
+		};
+		if(status != 'begin'){
+			return;
+		}
+		score ++;
+		Q('#score').innerHTML = score;
+		// 设置效果
+		mask.style.display="block";
+		Q('.fire').style.display="block";
+		var baseX=(document.documentElement.clientWidth-document.body.clientWidth)/2,baseY=(document.documentElement.clientHeight-document.body.clientHeight)/2,
+			eX=e.clientX||e.changedTouches[0].clientX,
+			eY=e.clientY||e.changedTouches[0].clientY,
+			disX=eX-baseX,disY=eY-baseY;
+
+		if (eX < document.documentElement.clientWidth/2) {
+			Q('.stickL').style.display="none";
+			Q('.stickR').style.display="none";
+			Q('.stickL').style.display="block";
+			Q('.stickL').style.left=disX+'px';
+			Q('.stickL').style.top=disY+'px';
+		}else{
+			Q('.stickL').style.display="none";
+			Q('.stickR').style.display="none";
+			Q('.stickR').style.display="block";
+			Q('.stickR').style.left=disX+'px';
+			Q('.stickR').style.top=disY+'px';
+		}
+		Q('.fire').style.left=disX+'px';
+		Q('.fire').style.top=disY+'px';
+		return false;
+	};
+	Q('.fire').ontouchend = Q('.fire').onmouseup =Q('.stickL').ontouchend = Q('.stickL').onmouseup =Q('.stickR').ontouchend = Q('.stickR').onmouseup =stick.ontouchend = stick.onmouseup =function() {	
+		mask.style.display="none";
+		Q('.fire').style.display="none";
+		return false;
+	};
+	function init(){
+		gmStatus = 'ready';
+		Q(".timeLayer").style.display="table";
+		Q('#clickBox').innerHTML = "狂点这里<br>看你有多快";
+		Q('.stickL').style.display="none";
+		Q('.stickR').style.display="none";
+		reTime=3,status = '';
+		timeSum = 8;
+		score = 0;
+		Q('#score').innerHTML = 0;
+		timeline.style.width = '13.125rem';
+
+		Q('#timedown').innerHTML = timeSum;
+	}
+	function beginCache(){
+		gmStatus = 'begin';
+		Q('#clickBox').innerHTML = "倒计时<br/>"+reTime;
+		reTime --;
+		clearInterval(_gmTimer);
+		_gmTimer = setInterval(function(){
+			Q('#clickBox').innerHTML = "倒计时<br/>"+reTime;
+			reTime --;
+			if(reTime < 0){
+				clearInterval(_gmTimer);
+				gmStatus = 'end';
+				Q(".timeLayer").style.display="none";
+				status = 'ready';
+				begin();
+			}
+			
+		}, 1000);
+	}
+	function begin(){
+		status = 'begin';
+		timeline.style.width = 0;
+
+		Q('#timedown').innerHTML = timeSum;
+
+		clearInterval(_timer);
+		_timer = setInterval(function(){
+			timeSum --;
+			if(timeSum <= 0){
+				end();
+			}
+			
+			Q('#timedown').innerHTML = timeSum;
+		}, 1000);
+	}
+	function end(){
+		var gameTitle;
+		if(score >= 80){
+			gameTitle = '黄金右手';
+		}else if(score >= 40){
+			gameTitle = '赛季新秀';
+		}else{
+			gameTitle = '手残党';
+		};
+
+		status = 'end';
+		clearInterval(_timer);
+
+		Q('.count').innerHTML = score + '次';
+		Q('#gameTitle').innerHTML = gameTitle;
+
+		shareData.title = document.title = '我在8秒内为中国奥运健儿加油了' + score + '！超过我有大奖抽，谁来？';
+		initWXShare();
+		setTimeout(function(){
+			mobileshow.next();
+		}, 500);
+	}
+})();
+
+</script>
+
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

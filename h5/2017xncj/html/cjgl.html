@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <link rel="stylesheet" href="../css/index.css"/>
+</head>
+<body>
+<div class="contain">
+    <section class="sec1">
+        <div><a href="instr.html"></a></div>
+    </section>
+    <section class="sec2">
+        <div class="tlt">
+            <span>您每天有</span>
+            <span>2</span>
+            <span>次摇一摇机会哦</span>
+        </div>
+    </section>
+    <section class="sec3">
+        <div class="mid">
+                <img src="../images/yaoji_03 (2).png" alt=""/>
+        </div>
+        <div class="egg">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="gift">
+            <div class="giftItem2"></div>
+            <div class="giftItem4"></div>
+            <div class="giftItem"></div>
+            <div class="giftItem3"></div>
+            <div class="giftItem6"></div>
+            <div class="giftItem5"></div>
+            <div class="giftItem7"></div>
+            <div class="giftItem8"></div>
+        </div>
+    </section>
+    <section class="sec4">
+        <div>
+            <button><a href="qbjp.html">更多好礼</a></button>
+            <button><a href="cjxx.html">中奖纪录</a></button>
+        </div>
+    </section>
+    <section class="sec5">
+        <div style="margin-left: 1.4rem"><img src="../images/logoB_03.png" alt=""/></div>
+        <div><img src="../images/shuanghui_03.png" alt=""/></div>
+    </section>
+</div>
+<div class="filter">
+    <div class="inner">
+        <div class="fil_top">
+            <img src="../images/fj_03.png" alt=""/>
+            <span>好可惜</span>
+        </div>
+        <div class="fil_bot">
+            <div class="close"></div>
+            <div class="again">
+                <div class="changeTxt">
+                    <h3>奖品一不小心溜走了</h3>
+                    <span>别灰心<br>据说面朝东方风水更好哦</span>
+                </div>
+                <button class="againShake">再摇一次</button>
+            </div>
+            <div class="over">
+                <h2>今日机会已用完</h2>
+                <span>明天再来吧！</span>
+            </div>
+            <div class="shareAgain">
+                <h2>机会已用完</h2>
+                <span>分享朋友圈再得一次抽奖机会哦</span>
+                <img src="../images/huotui_03.png" alt=""/>
+                <div>
+                    <img src="../images/zhizhen_03.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/zepto.min.js"></script>
+<script>
+/*摇一摇*/
+(function(){
+    //判断浏览器
+    var iOS = navigator.userAgent.match(/ OS (\d+).*? Mac OS/) || false;
+    var isAndroid = (/android/i).test(navigator.userAgent) || false;
+    //适配
+    var viewWidth, viewScale;
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76){
+        viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+        viewScale = viewWidth / 640;
+    }else{
+        viewScale = document.documentElement.clientWidth / 640;
+    };
+    document.documentElement.style.fontSize = 100 * viewScale + 'px';
+    window.openItem = openItem;
+
+
+    var shake=$('.sec3>.mid>img'),filter=$('.filter'),shareAgain=$('.shareAgain'),over=$('.over'),again=$('.again');
+    var audioObj = document.createElement("audio");
+    audioObj.src = 'shake.mp3';
+
+    function init(n) {
+        var SHAKE_THRESHOLD = 1500;
+        var last_update = 0;
+        var x = y = z = last_x = last_y = last_z = 0;
+        var lTime = 0, _timeLimit = 1000;
+        function deviceMotionHandler(eventData) {
+            if(shakeOn === false){return}
+            var acceleration = eventData.accelerationIncludingGravity;
+            var curTime = new Date().getTime();
+            if ((curTime - last_update) > 100) {
+                var diffTime = curTime - last_update;
+                last_update = curTime;
+                x = acceleration.x;
+                y = acceleration.y;
+                z = acceleration.z;
+                var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
+                var a=0;
+                if (speed > SHAKE_THRESHOLD) {
+                    if(new Date() - lTime > _timeLimit){
+                        audioObj.play();
+                        lTime = new Date();
+                        //动画效果
+                        shake[0].id='shake';
+                        $('.gift div').each(function(index,item){
+                            $(item).attr("id",item.className)
+                        })
+                    };
+                    a=1
+                }
+                if (speed < SHAKE_THRESHOLD){
+                    if(a=1){
+                        setTimeout(function(){
+                            shake[0].id='';
+                            $('.gift div').each(function(index,item){
+                                $(item).attr("id","")
+                            });
+                            prize();
+                        },2000);
+
+                    }
+
+                }
+                last_x = x;
+                last_y = y;
+                last_z = z;
+            }
+        }
+        if (window.DeviceMotionEvent) {
+            window.addEventListener('devicemotion', deviceMotionHandler, false);
+        }
+    }
+    var shakeOn = true;
+
+
+
+    //n代表状态 0 就是今天没摇过  1就是摇过一次  2就是摇过两次 3表示分享过
+    //摇一次向后台发一次请求 null表示没有中奖  其他表示奖品 1 开头表示虚拟 2 开头表示实物
+    /*数据格式*/
+    /*{
+        num:1,
+        prize:null
+    }*/
+    var inner=['<h3>奖品一不小心溜走了</h3><span>别灰心<br>据说面朝东方风水更好哦</span>','<h3>大奖没有投入你的怀抱</h3><span>你和奖品还差再摇一次的距离</span>','<h3>大奖就差一点点</h3><span>可能姿势不对哦</span>'];
+    //随机数
+    function ran(a,b){
+        return Math.round(Math.random()*(b-a)+a);
+    }
+    var innerIndex=ran(0,2);
+
+    //处理中奖奖品
+    function prize(){
+        $.ajax({
+            url: "http://t.people.com.cn/queryUserList.action",
+            type: "get",
+            success: openItem(data),
+        });
+    }
+    function openItem(data){
+        var n=data.n,pri=data.prize;
+        //显示弹出层
+        filter.css('display','block');
+        again.css('display','none');
+        shareAgain.css('display','none');
+        over.css('display','none');
+        if(!pri){//未中奖
+            if(n==2){//表示摇过两次
+                shareAgain.css('display','block');
+            }else if(n==3){
+                over.css('display','block');
+            }else{
+                $('.changeTxt').html(inner[innerIndex])
+                again.css('display','block');
+            }
+        }else{//中奖啦
+            if(/流量券/.test(pri)){//如果是流量券  传入流量值
+                window.location.href='zjl.html?'+encodeURIComponent(pri.replace(/[^0-9]+/g,""));
+            }else{//实物奖品 直接传入奖品名
+                window.location.href='wsxx.html?'+encodeURIComponent(pri);
+            }
+        }
+    };
+    $('.close').singleTap(function(){
+        filter.css('display','none');
+    })
+    $('.againShake').singleTap(function(){
+        filter.css('display','none');
+    })
+    /*openItem({
+        n:1,
+        prize:'Iphone'
+    })*/
+})();
+</script>
+</body>
+</html>

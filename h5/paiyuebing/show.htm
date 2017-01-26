@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>我拍大阅兵</title>
+<base href="/microblog-v3/h5/paiyuebing/">
+
+<link rel="stylesheet" href="style.css" type="text/css">
+<style>
+body{position:relative;}
+</style>
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+
+<div class="pageWrap">
+	<div class="banner"></div>
+	<div class="userPhone"></div>
+	<div class="userPhotos" id="userPhotos">载入中...</div>
+	
+	<div class="btns"><a href="javascript:void(0)" class="voteBtn">投票(已有--票)</a></div>
+	<div class="btns"><a href="/h5/paiyuebing" class="btn_01">我也参与</a> <a href="javascript:void(0)" class="btn_01" id="shareBtn" style="margin-left:1em">我要分享</a></div>
+	
+	<div id="otherBox">
+		<div class="line"></div>
+		<div class="pageText">
+			<p>参与须知：</p>
+			<p>1. 上传阅兵照片，并分享到朋友圈；</p>
+			<p>2. 关注 <a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI3NDg4MA==&mid=202118832&idx=1&sn=537a80cac54948c45ea94ec135232d93#rd">人民网微信号</a>，才能参与抽奖；</p>
+			<p>3. 活动解释权归人民网所有，<a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI3NDg4MA==&mid=209407520&idx=1&sn=3222cdf8a789dba0144bdb84d8b43f5a#rd">详情&gt;&gt;</a></p>
+		</div>
+		<div class="line"></div>
+		<div class="pageText">
+			<p id="toplistTit">最新上传：</p>
+		</div>
+		<div class="userPhotos" style="padding-bottom:1em;" id="toplist">载入中...</div>
+	</div>
+</div>
+
+<canvas id="photosCanvas"></canvas>
+
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+
+
+<script>
+window.onload = function(){
+	if(navigator.userAgent.match(/MSIE (6|7|8|9)/)){
+		document.write('<h2>您的浏览器版本太低，无法显示。</h2><h2>建议使用手机或Chrome浏览器查看。</h2>');
+	};
+};
+window.shareData = {
+	image: '',
+	link: location.href,
+	title: "快来为我的大阅兵照片投票吧！上传阅兵照片，赢iPhone手机！",
+	content: ""
+};
+function setShareTitle(){
+	document.title = shareData.title;// + '............' + getRanomTitle();
+	shareData.image = [
+		'images/icon_01.jpg',
+		'images/icon_02.jpg',
+		'images/icon_03.jpg',
+		'images/icon_04.jpg'
+	][Math.round(3 * Math.random())];
+	if(shareData.image){
+		var img = new Image();
+		img.src = shareData.image;
+		img.style.position = 'absolute';
+		img.style.top = '-1000px';
+		img.style.left = '-1000px';
+		document.body.insertBefore(img, document.body.firstChild);
+	};
+};
+setShareTitle();
+
+var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+function getRanomTitle(){
+	if(!isWX){return ''}
+	var m = Math.abs(Math.round(new Date().getTime() / 600000) - 2383523); //10分钟
+	m = m.toString(36);
+	return '[' + m + ']';
+};
+
+function shareSina(){
+	window.open('http://service.weibo.com/share/share.php?url=' + encodeURIComponent(shareData.link) + '&appkey=&title=' + encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')) + '&ralateUid=&language=&sudaref=service.weibo.com');
+};
+function shareTencent(){
+	window.open('http://share.v.t.qq.com/index.php?c=share&a=index&url=' + encodeURIComponent(shareData.link) + '&title=' + encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')));
+};
+function sharePeople(){
+	window.open('http://t.people.com.cn/toshareinfo.action?url=' + encodeURIComponent(shareData.link) + '&appkey=&title=' 
++ encodeURIComponent(shareData.title) + '&pic=' + encodeURIComponent(shareData.image.replace('s_', '')) + '&site=');
+};
+</script>
+
+<script>
+//mengjia 2015.8.29
+eval(function(p,a,c,k,e,r){e=function(c){return(c<62?'':e(parseInt(c/62)))+((c=c%62)>35?String.fromCharCode(c+29):c.toString(36))};if('0'.replace(0,e)==0){while(c--)r[e(c)]=k[c];k=[function(e){return r[e]||e}];e=function(){return'([689E]|[1-3]\\w)'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('(8(){8 e(a){6.f=6.1s=a.1s||19.createElement("1s");6.f.11=a.11||800;6.f.14=a.14||600;6.b=a.11;6.d=a.14;6.o=6.f.getContext("2d");6.E=a.E||1;6.L=a.L||!1;6.1f=a.1f;6.x=a.x||0;6.y=a.y||0;6.k=1a p;6.U=8(){12 a,c,d;6.b/6.d<6.a.11/6.a.14&&6.L?(a=6.d/6.a.14,c=(6.b-6.a.11*a)/2,d=0):(a=6.b/6.a.11,c=0,d=(6.d-6.a.14*a)/2);6.i(a,c,d)}.1c(6);6.Z()}8 p(a,b,c,d,m,e){6.B=9;a&&b&&c&&6.l(a,b,c,d,m,e)}(8(){1t(12 a=0,b=["webkit","moz"],c=0;c<b.1d&&!15.1G;++c)15.1G=15[b[c]+"RequestAnimationFrame"],15.1Q=15[b[c]+"CancelAnimationFrame"]||15[b[c]+"CancelRequestAnimationFrame"];15.1G||(15.1G=8(b){12 c=(1a 1H).getTime(),e=1g.max(0,30-(c-a)),k=15.2c(8(){b(c+e)},e);a=c+e;1k k});15.1Q||(15.1Q=8(a){2Q(a)})})();e.2e={s:3,n:9,q:9,v:9,I:9,1b:-1,g:9,2R:8(a){if(!(a==6.1b||0>a||a>=6.g.1d)){6.1b=a;12 b,c,d;b=6.g[a];a<6.g.1d-1&&(d=6.g[a+1]);0<a&&(c=6.g[a-1]);6.X(b);6.H(c);6.G(d)}},2S:8(){6.e&&(6.c=6.a,6.w=6.y,6.h=6.E,6.1b++,6.a=6.e,6.y=6.t,6.x=6.c.11*6.h+6.x,6.E=6.j,6.1b<6.g.1d-1?6.G(6.g[6.1b+1]):6.e=9,6.k.l({x:6.x},{x:0},8(a){6.i(6.E,a.x,6.y)}.1c(6),1I,9,8(){6.H(6.g[6.1b-1])}.1c(6)))},Y:8(){6.c&&(6.e=6.a,6.t=6.y,6.j=6.E,6.1b--,6.a=6.c,6.y=6.w,6.x=6.x-6.c.11*6.h-6.b/10,6.E=6.h,0<6.1b?6.H(6.g[6.1b-1]):6.c=9,6.k.l({x:6.x},{x:0},8(a){6.i(6.E,a.x,6.y)}.1c(6),1I,9,8(){6.G(6.g[6.1b+1])}.1c(6)))},F:8(a,b){if("2T"==1o a)b.18=a;1l if(a.V||!a.1J)b.18=a.18;1l{b.18=a.1J;12 c=1a 1R;c.1x=8(){b.18=a.18;a.V=!0};c.18=a.18}},X:8(a){6.a=1a 1R;6.a.1x=6.U;6.F(a,6.a)},H:8(a){a?(6.h=6.w=6.N=9,6.c=1a 1R,6.c.1x=8(){6.c&&(6.h=6.b/6.c.11,6.w=6.c.14*6.h<6.d?(6.d-6.c.14*6.h)/2:0)}.1c(6),6.F(a,6.c)):(6.c&&(6.c.1x=9),6.c=9)},G:8(a){a?(6.j=6.t=6.M=9,6.e=1a 1R,6.e.1x=8(){6.e&&(6.j=6.b/6.e.11,6.t=6.e.14*6.j<6.d?(6.d-6.e.14*6.j)/2:0)}.1c(6),6.F(a,6.e)):(6.e&&(6.e.1x=9),6.e=9)},Z:8(){12 a=9,b=9,c=9,d=9,e=9,f=9,k=9,q=9,t,u,l="mousedown",g="mousemove",p="mouseup";1S 0!==19.ontouchstart&&(l="touchstart",g="touchmove",p="touchend");6.f.2f(l,8(h){6.$=1a 1H;6.O=!1;6.k.2U();h.2g();q=6.E;h.13||(h.13=[{1h:h.1h,1i:h.1i}]);a=h.13[0].1h-6.f.1m().1u;b=h.13[0].1i-6.f.1m().1y;2==h.13.1d?(c=h.13[1].1h-6.f.1m().1u,d=h.13[1].1i-6.f.1m().1y,e=a+(c-a)/2,f=b+(d-b)/2,k=1g.2V(1g.1T(c-a,2)+1g.1T(d-b,2))):(e=a,f=b,k=0);t=e-6.x;u=f-6.y;6.n=h.13[0].1h;6.q=h.13[0].1i;6.a.11*6.E<=6.b&&(6.D=6.C=!0)}.1c(6),!1);12 r=9,s=9,v=9,w=9,x=9,y=9,z=9;6.f.2f(g,8(a){a.2g();if(9!==k){a.13||(a.13=[{1h:a.1h,1i:a.1i}]);6.O=!0;12 b=6.E,c,d;r=a.13[0].1h-6.f.1m().1u;s=a.13[0].1i-6.f.1m().1y;2==a.13.1d?(v=a.13[1].1h-6.f.1m().1u,w=a.13[1].1i-6.f.1m().1y,x=r+(v-r)/2,y=s+(w-s)/2,z=1g.2V(1g.1T(v-r,2)+1g.1T(w-s,2)),b=q*(z/k||1)):(x=r,y=s,z=0);b*6.a.11<6.b?b-=.7*(b-6.b/6.a.11):b*6.a.11>6.b*6.s&&(b-=.7*(b-6.b*6.s/6.a.11));c=x-t/q*b;d=y-u/q*b;6.v=6.n;6.I=6.q;6.n=a.13[0].1h;6.q=a.13[0].1i;a=6.u(b,c,d);a.x!=c&&(!(0<c)||6.c&&6.C?!(0>c)||6.e&&6.D||(c=a.x+.3*(c-a.x)):c=a.x+.3*(c-a.x));a.y!=d&&(d=a.y+.3*(d-a.y));6.i(b,c,d)}}.1c(6),!1);6.f.2f(p,8(a){a.2g();if(0==6.O&&1E3>1a 1H-6.$&&"8"==1o 6.1f)6.1f(6.1b);a.13||(a.13=[]);1==a.13.1d?(d=c=9,e=a.13[0].1h-6.f.1m().1u,f=a.13[0].1i-6.f.1m().1u,t=e-6.x,u=f-6.y,q=6.E,k=0):(k=f=e=9,6.aa(a))}.1c(6),!1)},aa:8(){12 a={},b={};if(6.E*6.a.11<6.b)a.E=6.E,b.E=6.b/6.a.11,a.x=6.x,b.x=0,a.y=6.y,b.y=b.E/a.E*(6.y-6.d/2)+6.d/2,0<b.y&&(b.y=0),6.k.l(a,b,8(a){6.i(a.E,a.x,a.y)}.1c(6),1U);1l if(6.E*6.a.11>6.b*6.s)a.E=6.E,b.E=6.b/6.a.11*6.s,a.x=6.x,b.x=b.E/a.E*(6.x-6.b/2)+6.b/2,a.y=6.y,b.y=b.E/a.E*(6.y-6.d/2)+6.d/2,b=6.u(b.E,b.x,b.y),6.k.l(a,b,8(a){6.i(a.E,a.x,a.y)}.1c(6),1U);1l if(9!==6.n&&9!==6.v){12 c=6.n-6.v,d=6.q-6.I;a.x=6.x;a.y=6.y;12 e=6.b/3,f=6.b/50,k=6.u(6.E,a.x,a.y);6.a.11*6.E>=6.b&&(6.D=6.C=!1,0<=6.x&&(6.C=!0),6.x<=-1g.floor(6.a.11*6.E-6.b)&&(6.D=!0));if(k.x!=a.x&&(1g.2X(c)>f&&6.a.11*6.E<=6.b&&6.a.14*6.E<=6.d||1g.2X(a.x-k.x)>e)){if(0<a.x&&6.c){6.Y();1k}if(0>a.x&&6.e){6.2S();1k}}b.x=6.x+5*c;b.y=6.y+5*d;b=6.u(6.E,b.x,b.y);6.k.l(a,b,8(a){6.i(6.E,a.x,a.y)}.1c(6),1U,9)}6.I=6.v=6.q=6.n=9},u:8(a,b,c){12 d={};d.E=a;d.x=b;d.y=c;0<b?d.x=0:b<-(6.a.11*a-6.b)&&(d.x=-6.a.11*a+6.b);6.a.14*a<6.d?d.y=(6.d-6.a.14*a)/2:0<c?d.y=0:c<-(6.a.14*a-6.d)&&(d.y=-6.a.14*a+6.d);1k d},i:8(a,b,c){6.a.14*a<6.d&&(c=(6.d-6.a.14*a)/2);6.E=a;6.x=b;6.y=c;6.o.fillStyle="#000";6.o.fillRect(0,0,6.b,6.d);6.o.2h(6.a,b,c,a*6.a.11,6.E*6.a.14);6.x>6.b/10&&6.c&&(6.N=-6.c.11*6.h+6.x-6.b/10,6.o.2h(6.c,6.N,6.w,6.h*6.c.11,6.h*6.c.14));6.x<-(6.a.11*6.E-6.b)-6.b/10&&6.e&&(6.M=6.x+6.a.11*6.E+6.b/10,6.o.2h(6.e,6.M,6.t,6.j*6.e.11,6.j*6.e.14))}};e.2e.2Y=8(a,b){if(a.1d){6.g=[];1t(12 c,d=0;d<a.1d;d++)c="2T"===1o a[d]?{18:a[d]}:{18:a[d].18,1J:a[d].1J},6.g.2Z(c);6.1b=-1;6.2R(parseInt(b)||0)}};p.2e={l:8(a,b,c,d,e,f){a&&b&&"8"==1o c&&(6.A=a,6.p=b,6.K=c,6.P=d||3E3,6.m=f,6.T="8"===1o e?e:"easeInOut"==e?6.r.R:"easeIn"==e?6.r.Q:"linear"==e?6.r.W:6.r.S,2Q(6.B),6.31=1a 1H,6.J())},J:8(){12 a=6,b={},c=1a 1H-6.31;1t(n in 6.A)"33"==1o 6.A[n]&&"33"==1o 6.p[n]&&(b[n]=6.T(c,6.A[n],6.p[n]-6.A[n],6.P));c>=6.P?(6.K(6.p),"8"==1o 6.m&&(6.m(6.p),6.m=9)):(6.K(b),6.B=1G(8(){a.J()}))},2U:8(){1Q(6.B);"8"==1o 6.m&&(6.m(6.p),6.m=9)},r:{Q:8(a,b,c,d){1k c*(a/=d)*a+b},S:8(a,b,c,d){1k-c*(a/=d)*(a-2)+b},R:8(a,b,c,d){1k 1>(a/=d/2)?c/2*a*a+b:-c/2*(a*(a-2)-1)+b},W:8(a,b,c,d){1k c*a/d+b}}};15.34=e})();(8(){8 e(a,b){1k(b||19).querySelector(a)}8 p(a,b){12 c=0,d=0,e=a;try{1t(;9!=e&&e!=19.1v&&e!=19.2i&&e!=b;)c+=e.offsetLeft,d+=e.offsetTop,e=e.offsetParent}catch(g){}1k{1u:c,1y:d}}8 a(a){b||(19.35("2j").1n=\'<1z 2k="othersShare">\\2l\\2m\\36<a 1w="2n:1S(0)" 1f="shareSina()"><1A 18="/2o-v3/2q/2r/2s/sina.2t"></a> <a 1w="2n:1S(0)" 1f="sharePeople()"><1A 18="/2o-v3/2q/2r/2s/2u.2t"></a> <a 1w="2n:1S(0)" 1f="shareTencent()"><1A 18="/2o-v3/2q/2r/2s/tencent.2t"></a></1z>\');e("#2j").1q.1K="block";2c(8(){e("#2j").1q.1K="1V"},5E3)}1W.1X.1B(/ OS (\\d+).*? Mac OS/);1W.1X.38("NetType/WIFI");12 b=-1!==1W.1X.38("Messenger"),c=1W.1X.1B(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/),c=c?c[0]:!1;if(b&&"t.2u.39.cn"!=1Y.host)1Y.1w="3a://t.2u.39.cn/h5/3c";1l{12 d=19.1v.clientWidth,m=19.1v.1Z,d=20<d?20:d,m=3d<m?3d:m,f=d/20;c?20>d&&(19.1v.1q["3e-3f"]=32*f+"px"):(c=19.2i.1Z/3g*16,d=1g.round(19.2i.1Z/3g*320),19.1v.1q["3e-3f"]=c+"px",19.1v.1q.11=d+"px");({page:1,1C:"3a://i0.peopleurl.cn/",3h:8(){12 b=6,c=1Y.1w.1B(/\\/(\\d+)($|\\?)/)||1Y.1w.1B(/id=(\\d+)($|\\&)/);if(c){6.1D=c=c[1];12 e=1a 2x;e.2y=8(){if(4==e.21&&1I==e.1L){12 d=e.2z;15.1e&&1e.3i==c&&(a(),1e.3i="");d=2A("("+d+")");b.3j(d)}1l 4==e.21&&1E("\\1M\\1N\\u5fd9\\1O\\22\\3k\\3l\\2B\\2C\\uff01code:"+e.1L)};e.2D=8(a){1E("\\1M\\1N\\2E\\u7ed9\\3m\\1O\\22\\3n\\u8f83\\3o\\2F\\1M\\1N\\u73af\\u5883\\u4e2d\\2B\\2C\\1F")};e.2G("3p","/getYbRecord.2H?23="+c,!0);e.2I(9);6.1P=1a 34({1s:19.35("photosCanvas"),11:d,14:m,1f:8(){b.1P.1s.2J="canvasHide";2c(8(){b.1P.1s.2J=""},1U)}})}1l 1E("\\22\\u6307\\u5b9aid")},3j:8(b){12 c=6;if(1==b.24&&b.1j&&b.1j.1d){1t(12 d=[],f=!0,l="<ul>",g=0;g<b.1j.1d;g++)2!=b.1j[g].1L&&(f=!1),l+=\'<li><1A 18="\'+6.1C+b.1j[g].2K+\'" 2L-18="\'+6.1C+b.1j[g].3q+\'" 2L-1b="\'+g+\'" /></li>\',d.2Z({18:6.1C+b.1j[g].3q,1J:6.1C+b.1j[g].2K});l+="</ul>";f||15.1e&&1e.3r&&1e.3r.1B(1a 3s("(^|_)"+6.1D+"(_|$)"))||(l=\'<1z 2k="3t">\\u56fe\\3u\\3v\\3n\\u8def\\2M\\1O\\u9a6c\\2M\\u5c31\\2N^_^</1z>\',15.27=9,6.1p=!0,e("#3w").1q.1K="1V");e(".userPhone").1n="<3x>"+b.mobile+"</3x> \\2F\\u4f5c\\u54c1";e("#2O").1n=l;e(".28").1n="\\29\\1r(\\3y\\3z"+b.dzCount+"\\1r)";b=19.querySelectorAll("#2O 1A");c=6;3A=8(){c.1P.2Y(d,6.getAttribute("2L-1b"));c.1P.1s.2J="canvasShow"};1t(g=0;g<b.1d;g++)b[g].1f=3A;e("#shareBtn").1f=8(){a()};e(".28").1f=8(){6.3B()}.1c(6);12 m=p(e("#1p"));15.27=8(){15.pageYOffset+19.1v.1Z>=m.1y&&c.3C()}}1l e("#2O").1n=\'<1z 2k="3t">\\u256e(\\u256f_\\u2570)\\u256d<br>\\u7167\\3u\\u62cd\\2F\\2E\\u591f\\3o\\1O\\u7ee7\\u7eed\\u52aa\\3m\\1F</1z>\',15.27=9,6.1p=!0,e("#3w").1q.1K="1V",e(".28").1q.1K="1V"},1p:!1,3C:8(){if(!6.1p){12 a=6;15.27=9;6.1p=!0;12 b=1a 2x;b.2y=8(){if(4==b.21&&1I==b.1L){12 c=2A("("+b.2z+")");if(c&&1==c.24){1t(12 d="<ul>",f=0;f<c.1j.1d;f++)d+=\'<li><a 1w="/h5/3c/\'+c.1j[f].23+\'"><1A 18="\'+a.1C+c.1j[f].2K+\'" /></a></li>\';d+="</ul>";e("#1p").1n=d;c.3D&&(e("#toplistTit").1n="\\u6700\\u65b0\\2M\\u4f20\\36(\\u5171"+c.3D+"\\u7ec4)")}1l e("#1p").1n="\\u8f7d\\u5165\\u5931\\u8d25"}};b.2D=8(a){e("#1p").1n="\\1M\\1N\\3E\\3F"};b.2G("3p","/getYbNewImageList.2H?23="+6.1D,!0);b.3G("3H-3I","3J/x-3K-3L-3M");b.2I()}},3B:8(){12 a=6;if(15.1e&&1e.2a&&1e.2a.1B(1a 3s("(^|_)"+6.1D+"(_|$)")))1E("\\2E\\u80fd\\u91cd\\u590d\\29\\1r\\1F \\3v\\u662f\\2l\\2m\\2N\\3N\\3O\\3P\\3Q\\2P\\2b\\2b\\1r\\3R\\1F^_^");1l{12 b=1a 2x;b.2y=8(){if(4==b.21&&1I==b.1L){12 c=2A("("+b.2z+")");c&&0<c.24&&(15.1e&&(1e.2a=1e.2a+"_"+a.1D),e(".28").1n="\\29\\1r(\\3y\\3z"+c.24+"\\1r)",1E("\\u611f\\u8c22\\u60a8\\u4e3a\\2P\\29\\1r, \\u987a\\u624b\\3Q\\2P\\2l\\2m\\2N\\3N\\3O\\3P\\2b\\2b\\1r\\3R\\1F^_^"))}};b.2D=8(a){1E("\\1M\\1N\\3E\\3F\\1O\\22\\3k\\3l\\2B\\2C\\1F")};b.2G("POST","/addYbDianzan.2H",!0);b.3G("3H-3I","3J/x-3K-3L-3M");b.2I("23="+6.1D)}}}).3h()}})();',[],240,'||||||this||function|null|||||||||||||||||||||||||||||||scale|||||||||||||||||||||||width|var|targetTouches|height|window|||src|document|new|index|bind|length|localStorage|onclick|Math|pageX|pageY|imageList|return|else|getBoundingClientRect|innerHTML|typeof|toplist|style|u7968|canvas|for|left|body|href|onload|top|div|img|match|imgDomain|dataId|alert|uff01|requestAnimationFrame|Date|200|small|display|status|u7f51|u7edc|uff0c|touchPhotos|cancelAnimationFrame|Image|void|pow|300|none|navigator|userAgent|location|clientHeight|640|readyState|u8bf7|contentId|result|||onscroll|voteBtn|u6295|ybVoteList|u62c9|setTimeout||prototype|addEventListener|preventDefault|drawImage|documentElement|shareAlert|class|u5206|u4eab|javascript|microblog||2014subject|1216_oneword|images|png|people|||XMLHttpRequest|onreadystatechange|responseText|eval|u518d|u8bd5|ontimeout|u4e0d|u7684|open|action|send|className|smallPicName|data|u4e0a|u5230|userPhotos|u6211|clearTimeout|select|next|string|clear|sqrt||abs|setImages|push||startTime||number|TouchPhotos|getElementById|uff1a||indexOf|com|http||paiyuebing|1008|font|size|504|init|ybId|preview|u7a0d|u540e|u529b|u5728|u597d|GET|picName|myYbIdList|RegExp|errorTxt|u7247|u8fd8|otherBox|span|u5df2|u6709|cFN|vote|loadTopList|total|u8d85|u65f6|setRequestHeader|Content|Type|application|www|form|urlencoded|u670b|u53cb|u5708|u5e2e|u5427'.split('|'),0,{}))
+</script>
+
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

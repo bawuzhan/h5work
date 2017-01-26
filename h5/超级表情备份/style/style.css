@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Î¢ÈíÑÅºÚ";
+}
+a, a:hover, a:target, a:visited, a:active {
+    color: #000;
+    display: block;
+    text-decoration:none;
+}
+html{
+    font-size: 100px;
+}
+.container{
+    width: 6.4rem;
+    font-size: .2rem;
+}
+.toolbar{
+    font-size: .25rem;
+    line-height: .5rem;
+    height: .5rem;
+    width: 100%;
+    margin-bottom: .2rem;
+}
+form{
+    margin-left: .2rem;
+    width: 6rem;
+    height: .4rem;
+    font-size: .25rem;
+    text-align: center;
+}
+#strength{
+    height: .3rem;
+    font-size: .25rem;
+    width: 1rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border: 1px solid blue;
+}
+#action{
+    font-size: .2rem;
+    height: .32rem;
+    width: .8rem;
+    background: #b6b6b6;
+    line-height: .32rem;
+    border-radius: .1rem;
+    color: red;
+}
+#download{
+    display: block;
+    font-size: .2rem;
+    height: .32rem;
+    width: 1rem;
+    margin-top: .1rem;
+    background: #b6b6b6;
+    line-height: .32rem;
+    border-radius: .1rem;
+    color:blue;
+}
+.body{
+    height: auto;
+    position: relative;
+    border: 1px solid #C3C3C3;
+    background: #e9e9e9;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+}
+
+.body canvas{
+    margin: 0 auto;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    background: #fff;
+    width:100%;
+}
+.body .dropper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.body .dropper h2{
+    margin: 20% auto 0;
+    font-size: .25rem;
+    text-align: center;
+}
+.link-button{
+    float: right;
+    font-weight: normal;
+    font-size: .14rem;
+    margin: 0 5px;
+}
+.download-button{
+    float: right;
+}
+#scaleRange{
+    display: block;
+    width: 100%;
+    height: .4rem;
+    line-height: .4rem;
+    font-size: .3rem;
+    font-weight: bolder;
+}
+.bottom{
+    width: 100%;
+    text-align: center;
+}
+#btn,#btn2,#take{
+    width: 1rem;
+    height: .5rem;
+    font-size: .25rem;
+    text-align: center;
+}
+.grid{
+    background-image: -webkit-linear-gradient(top, transparent 39px, rgba(200, 200, 200, 0.5) 40px), -webkit-linear-gradient(left, transparent 39px, rgba(200, 200, 200, 0.5) 40px)
+    ;
+    background-image: -moz-linear-gradient(top, transparent 39px, rgba(200, 200, 200, 0.5) 40px), -moz-linear-gradient(left, transparent 39px, rgba(200, 200, 200, 0.5) 40px)
+    ;
+    background-image: -o-linear-gradient(top, transparent 39px, rgba(200, 200, 200, 0.5) 40px), -o-linear-gradient(left, transparent 39px, rgba(200, 200, 200, 0.5) 40px)
+    ;
+    background-image: -ms-linear-gradient(top, transparent 39px, rgba(200, 200, 200, 0.5) 40px), -ms-linear-gradient(left, transparent 39px, rgba(200, 200, 200, 0.5) 40px)
+    ;
+    background-image:
+    linear-gradient(top, transparent 39px, rgba(200, 200, 200, 0.5) 40px), 
+    linear-gradient(left, transparent 39px, rgba(200, 200, 200, 0.5) 40px)
+    ;
+    -webkit-background-size: 40px 40px;
+    -moz-background-size: 40px 40px;
+    background-size: 40px 40px;
+}
+.copyright{
+    text-align: center;
+}
+.mul{
+    width: 100%;
+    height: 2.56rem;
+    position: absolute;
+    bottom:-2.56rem;
+    background: #b6b6b6;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.mul ul{
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.mul ul li{
+    float: left;
+    width: 20%;
+    height:50%;
+}
+.mul ul li img{
+    display: block;
+    padding: .1rem;
+    width: 100%;
+    height: 100%;
+}
+.item{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 2rem;
+}
+.item img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.bottom{
+    display: none;
+}

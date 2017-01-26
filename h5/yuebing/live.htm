@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>人民网记者现场直播大阅兵(凌晨1点开始)</title>
+<base href="/microblog-v3/h5/yuebing/">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+*{-webkit-text-size-adjust:none;}
+html{font-size:32px;background:#f2eee9;font-family:Arial;height:100%;}
+body{padding:0;margin:0;-webkit-transform-origin:top left;transform-origin: top left;background:#f2eee9 url(images/bg.jpg) repeat-y 0 0;background-size:20rem;width:20rem;min-height:100%;padding-bottom:3em;}
+dl, dt, dd{padding:0;margin:0;}
+
+.banner{height:6.8125em;}
+.banner img{width:20em;height:6.8125em;}
+
+.cont_video{width:18.0625rem;margin:0 auto;padding:0.75rem 0;}
+#c_video{background:#000;}
+
+.toTop{position:fixed;bottom:0;left:0;width:100%;height:2.28125rem;background:rgba(0,0,0,0.3);text-align:center;}
+.toTop a{display:inline-block;font-size:0.75rem;color:#fff;text-decoration:none;line-height:1.3125rem;background:url(images/v_03.png) no-repeat 0 0;background-size:1.3125rem;padding-left:1.5625rem;margin-top:0.625rem;}
+
+.btns{margin:1.5em 0 0 1em;}
+a.btn_01{width:8.90625em;height:2.8125em;background:url(images/v_01.png) no-repeat 0 0;background-size:100%;text-transform:none;display:inline-block;}
+a.btn_02{width:8.90625em;height:2.8125em;background:url(images/v_02.png) no-repeat 0 0;background-size:100%;text-transform:none;margin-left:0.3125em;display:inline-block;}
+
+#shareAlert{background:rgba(0, 0, 0, .8);width:100%;height:100%;position:absolute;left:0;top:0;z-index:2000;display:none;}
+.shareArr{width:2.625em;height:5.1875em;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFQAAACmCAMAAABz71jhAAAAYFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////98JRy6AAAAH3RSTlMA+i4Q7M4Z9MMJlyMC5d1JoXusimtTQDYFg16zunLWREEM4wAAA4pJREFUaN7Nmsm24jAMRDNPODMhI9H//2U/J0o/updwfQ5asapjS6VSycHDYtmqh8dG2IlIlrOYq/yEzx61lyPuJObon6BPErQT/qQPX0EHELQREbpQwXXQKOBAC9GobtxBIxhUM4pf/3HWCK3+tFm0ZkXJv1iwODxBGwYz320uRy87K8XIVGuxWi+M5QikUrfIXj73bhWoKI0258XVDcAcLFDxIinl5/RPdouT/PyqRWP5FNN0qqFKLIRU85HFSUmQdsf9w88YesylNLiEKh1tMqT+aCxlrxzqRFLTa9nejaA5y91NpwDEIpU5xt/+dlPdlZZVoqkoRbLJVJa19buYoqwMLm75Ip0qa/8mPcsTcw9e535xKdZb91emp0Xyj/49Lfb7onIrsnhtx1etOnspqU7NYqI4CWoOqc4g0E2H3iwqBkCEsY7n2ldSAXErteg5lVRV0/XXp3YI6PC354PUMhWbfs9fOUwx41NfC0XaAIU6Ncq/hpMJodUkEilzj43AThUDgy5afDR6nalorFp8MsIY9NCvnj8OYdDhv3bHmnRGEdVRDTBoXv02KdpP1QSDLmog0Sgc9NOU0W8nOvQquk6Dummc+j2MaTaa+jpK0gQGrdWRodG7UJNMVZ9maemCpauLxm9hzNBqqZr/79bS1oU3cdGjQUQTSidJB9s90zmYJIlVKLydXChURz/C69qf0hZy4b+WeKZRMaFrz9/eRe03B8wPInp9UNVbYSnNY30sJeOhz5poNLjm68scbXWfwm95eaYCRZcpog1k52DNuUUOyjQ7UNKkcqAld33PJGOKHXTTILx/zDda9HTJ8Wmrt+lbPhkPn+aTOr0qwQ/KW4jVAfFrn1/vp1V4n6vfSemu523JXeiMqo5GcEZnoZ8hdDLt7LA3jfCb6Jjy3wimzPJ+xOnEV6mkLZn60bSmBxPf9GHMUlR7iX8jDlK+8nnmwOW1uIpqfy5w5TMHJm920Eq1zyc02V+s0zfvoC7WxUcqEqkwf/Nuk68OtsXWQUIHB5MuKPmEhpmDhHYOBkhvEwoPkLvwS0htdXk1bOEj/dcvLXd+zZNJehbz/M8Xyqa8E3wiT4XwjwS98AmdRfCv4M8Dc094zGhkMfkitXLEk8aEva3pT8z+qzFNMjaKaShrM3f7CenfsR5KRSPiuFSKRgxy/rp6QQpocR6THR61hVzwzyDZYjw2/gATH3kr/bGDygAAAABJRU5ErkJggg==) no-repeat 0 0;position:absolute;right:1.5em;top:1.5em;background-size:100%;}
+.shareText{text-align:center;font-size:1.75em;line-height:1.85em;color:#fff;position:absolute;top:5.0em;width:100%;}
+.othersShare{margin-top:11em;text-align:center;font-size:1em;color:#fff;}
+.othersShare img{width:3em;height:3em;margin:0 0.5em;}
+</style>
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+<div class="banner"><img src="images/banner.jpg" alt=""></div>
+
+<div class="cont_video">
+	<div id="c_video"></div>
+</div>
+
+<div class="btns"><a href="javascript:location.reload()" class="btn_01"></a><a href="javascript:showShare()" class="btn_02"></a></div>
+
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">点击这里<br>点击【分享到朋友圈】</div></div>
+
+<div class="toTop"><a href="index.htm">返回直播地图</a></div>
+<script>
+(function(){
+	var iOS = navigator.userAgent.match(/ OS (\d+).*? Mac OS/) || false;
+	var isAndroid = (/android/i).test(navigator.userAgent) || false;
+	var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+	function Q(s, p){
+		return (p || document).querySelector(s);
+	};
+	function QA(s, p){
+		return (p || document).querySelectorAll(s);
+	};
+	var viewScale;
+	var viewWidth, viewScale;
+	if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.76){
+		viewWidth = Math.round(document.documentElement.clientHeight / 416 * 320);
+		viewScale = viewWidth / 640;
+	}else{
+		viewScale = document.documentElement.clientWidth / 640;
+	};
+	
+	document.documentElement.style.fontSize = 32 * viewScale + 'px';
+
+	//视频
+	var v_w = 578 * viewScale,
+		v_h = 434 * viewScale,
+		v_id = 'video_01',
+		v_s = 's1'; //视频id
+	var v_html;
+	if(isAndroid){
+		v_html = '<video width="' + v_w + '" height="' + v_h + '" controls="controls" autoplay="autoplay" id="' + v_id + '" webkit-playsinline="true" src="http://ptvlivefhlstv.people.com.cn/2010/cctv13/hls/live_600.m3u8"></video>';
+	}else{
+		v_html = '<video width="' + v_w + '" height="' + v_h + '" controls="controls" autoplay="autoplay" id="' + v_id + '" webkit-playsinline="true" src="http://ptvlivefhlstv.people.com.cn/2010/cctv13/hls/live_600.m3u8"></video>';
+	};
+	Q('#c_video').innerHTML = v_html;
+
+	window.showShare = function(){
+		if(!isWX){
+			document.getElementById('shareAlert').innerHTML = '<div class="othersShare">分享：<a href="javascript:void(0)" onclick="shareSina()"><img src="http://i0.peopleurl.cn/microblog-v3/2014subject/1216_oneword/images/sina.png"></a> <a href="javascript:void(0)" onclick="sharePeople()"><img src="http://i0.peopleurl.cn/microblog-v3/2014subject/1216_oneword/images/people.png"></a> <a href="javascript:void(0)" onclick="shareTencent()"><img src="http://i0.peopleurl.cn/microblog-v3/2014subject/1216_oneword/images/tencent.png"></a></div>';
+		};
+		Q('#shareAlert').style.display = 'block';
+		setTimeout(function(){
+			Q('#shareAlert').style.display = 'none';
+		}, 5000);
+	};
+})();
+</script>
+<script>
+var img = new Image();
+img.src = 'images/icon.jpg';
+img.style.position = 'absolute';
+img.style.top = '-1000px';
+img.style.left = '-1000px';
+document.body.insertBefore(img, document.body.firstChild);
+</script>
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+   <!-- <base href="/microblog-v3/h5/2017xncj/html/">-->
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <style>
+        html {
+            font-size: 100px;
+            height: 100%;
+        }
+        a, a:hover, a:target, a:visited, a:active {
+            color: #000;
+            display: block;
+        }
+        html,body{
+            width: 100%;
+            overflow-x: hidden;
+            background:url("../images/bg0_02.png") repeat-y;
+            font-family: "微软雅黑";
+        }
+        .head{
+            width: 100%;
+            height: 4.85rem;
+            background: url("../images/title_01.png") no-repeat;
+            background-size: cover;
+        }
+        .head span{
+            display: block;
+            width: 100%;
+            font-size: .34rem;
+            line-height: .6rem;
+            color:#b22d1a;
+            text-align: center;
+            position: absolute;
+            top: 3.35rem;
+        }
+        .contain{
+            height: auto;
+            width: 5.6rem;
+            margin: 0 auto;
+        }
+        .step1{
+            height: 6.83rem;
+            width: 100%;
+            position: relative;
+        }
+        .tit{
+            width: 5.4rem;
+            height: auto;
+            padding-bottom: .1rem;
+            background: url("../images/red_03.png") no-repeat;
+            background-size:100% 100%;
+            color: #fff;
+            padding: .1rem;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .tit i{
+            font-family: Helvetica;
+            font-size: .6rem;
+            height: .46rem;
+            line-height: .46rem;
+            margin-left: .1rem;
+            float: left;
+        }
+        .tit p{
+            float: left;
+            width: 4.5rem;
+            font-size: .28rem;
+            line-height: .46rem;
+            margin-left: .1rem;
+        }
+        .step2{
+            height: 7.34rem;
+            width: 100%;
+        }
+        .prize{
+            margin-top: .48rem;
+            width: 100%;
+            height: 5.64rem;
+            position: relative;
+        }
+        .prize ul{
+            width: 5.61rem;
+            height: 5.6rem;
+            overflow: hidden;
+            border-top: 1px solid #b22d1a;
+            border-left: 1px solid #b22d1a;
+            border-radius: .05rem;
+        }
+        .prize ul li{
+            float: left;
+            width: 1.85rem;
+            height: 1.85rem;
+            border-bottom: 1px solid #b22d1a;
+            border-right:  1px solid #b22d1a;
+        }
+        .prize ul li img{
+            display: block;
+            width: 1.84rem;
+            height: 1.85rem;
+        }
+        .prize div{
+            position: absolute;
+            width: 2.88rem;
+            height: 2.82rem;
+            top: 1.4rem;
+            left: 1.4rem;
+        }
+        .prize div img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .step3{
+            height: 4.37rem;
+            width: 100%;
+        }
+        .share{
+            width: 1.85rem;
+            height: 2.24rem;
+            margin: .4rem auto;
+        }
+        .share img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .step4{
+            width: 100%;
+            height: 9.06rem;
+            background: url("../images/bag_03.png") no-repeat;
+            background-size:100% 100%;
+            margin-bottom: .6rem;
+        }
+        .step4>span{
+            display: block;
+            width: 100%;
+            height: .36rem;
+            padding-top: 1.34rem;
+            font-size: .32rem;
+            line-height: .36rem;
+            color: #fff;
+            text-align: center;
+        }
+        .step4>div{
+            width: 2rem;
+            height: 2.72rem;
+            margin: 0 auto;
+            margin-top: .46rem;
+        }
+        .step4>div img{
+            display: block;
+            width: 2rem;
+            height: 2rem;
+        }
+        .step4>div>span{
+            display: block;
+            width: 2rem;
+            height: .4rem;
+            margin: 0 auto;
+            margin-top: .32rem;
+            background: #9f231b;
+            line-height: .4rem;
+            color: #fff;
+            border-radius: .2rem;
+            border:  1px solid #333;
+            font-size: .22rem;
+            text-align: center;
+        }
+        .step4>h3{
+            width: 100%;
+            font-size: .32rem;
+            line-height: .36rem;
+            margin-top: .3rem;
+            text-align: center;
+            color: #fff;
+        }
+        .step4>ul{
+            width: 4.4rem;
+            margin: .05rem auto;
+        }
+        .step4>ul li{
+            width: 100%;
+            font-size: .22rem;
+            line-height: .28rem;
+            color: #fff;
+        }
+        .inner{
+            position: relative;
+            height: 4.6rem;
+            margin-top: .4rem;
+        }
+        .inner div:nth-of-type(1){
+            width: 3.34rem;
+            height: 3.8rem;
+            position: absolute;
+            right: 0.5rem;
+            top: 0;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .inner div:nth-of-type(2){
+            width: 2.7rem;
+            height: 2.7rem;
+            position: absolute;
+            left: .15rem;
+            bottom: 0;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="head">
+    <span>&nbsp;&nbsp;抽奖攻略</span>
+</div>
+<div class="contain">
+    <section class="step1">
+        <div class="tit">
+            <i>1</i>
+            <p>进入人民网官方微信，点击菜单栏上的“吉星高照赢好礼”参与抽奖。</p>
+        </div>
+        <div class="inner">
+            <div>
+                <img src="../images/ins1_03.png" alt=""/>
+            </div>
+            <div>
+                <img src="../images/ins2_03.png" alt=""/>
+            </div>
+        </div>
+    </section>
+    <section class="step2">
+        <div class="tit">
+            <i>2</i>
+            <p>举起手机，摇一摇，大奖在向你招手</p>
+        </div>
+        <div class="prize">
+            <ul>
+                <li><img src="../images/jpList1-8_03.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_05.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_07.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_14.png" alt=""/></li>
+                <li><img src="" alt=""/></li>
+                <li><img src="../images/jpList1-8_12.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_17.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_20.png" alt=""/></li>
+                <li><img src="../images/jpList1-8_21.png" alt=""/></li>
+            </ul>
+            <div><img src="../images/yaoji_03.png" alt=""/></div>
+        </div>
+
+    </section>
+   <!-- <section  class="step3">
+        <div class="tit">
+            <i>3</i>
+            <p>好事不独享，分享朋友圈奖励一次抽奖机会</p>
+        </div>
+        <div class="share"><img src="../images/share_03.png" alt=""/></div>
+    </section>-->
+    <section  class="step4">
+        <span>人民网官方微信快速入口</span>
+        <div>
+            <img src="../images/gwEWM_03.png" alt=""/>
+            <span>长按识别二维码</span>
+        </div>
+        <h3>活动说明</h3>
+        <ul>
+            <li>1、活动期间进入人民网微信，参与“吉星高照赢好礼”活动，即可参与抽奖。</li>
+            <li>2、每个微信账号每天有三次抽奖机会。</li>
+            <li>3、抽奖时间：2016年12月29日—2017年2月11日</li>
+            <li>4、用户领奖需提供姓名、证件号、电话、地址等信息，若信息不准确、有误、漏填，均视为自动放弃奖品。</li>
+            <li>5、所有奖品将在活动结束后10个工作日内寄出。</li>
+            <li>6、人民网拥有对此次活动的唯一解释权。</li>
+        </ul>
+    </section>
+</div>
+<script src="../js/index.js"></script>
+<script type="text/javascript">
+    var src = "http://mblog.people.com.cn/weixinJS.action?url=" + encodeURIComponent(location.href.split('#')[0]);
+    var left = unescape('%3c');
+    var right = unescape('%3E');
+    document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script><script src="../js/share.js"></script>
+<script 

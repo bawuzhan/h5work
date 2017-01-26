@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>奔跑吧！创客！</title>
+<!-- <base href="/microblog-v3/h5/chuangke/"> -->
+
+<script src="mobileshow.js" type="text/javascript"></script>
+<link rel="stylesheet" href="animation.css" type="text/css">
+<link rel="stylesheet" href="style.css" type="text/css">
+<!-- 天润测试代码 -->
+<META name="filetype" content="1">
+<META name="publishedtype" content="1">
+<META name="pagetype" content="2">
+<META name="catalogs" content="SQ_0002001">
+<!-- /天润测试代码 -->
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?8d2077d60272dd9e6d0ea4e1e413b118";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- /百度统计 -->
+</head>
+<body>
+
+<div class="slideshow">
+	<div class="globalPackage"><div class="sound s_off"></div><div class="moveArr"></div></div>
+  <!-- 自定义场景 begin -->
+  <!-- 封面 -->
+	<div class="scenery page_cover">
+		<div class="bg"></div>
+        
+    <div class="title anItem" data-animationIn="fadeInDown 1s 0.5s"></div>
+		<a class="btn_start anItem" data-animationIn="fadeInLeft 1s 1s" href="javascript:0"></a>
+    <div class="txt anItem" data-animationIn="fadeInRight 1s 2s">限时<span>8</span>秒</div>
+		<div class="footer anItem"><div class="logo"></div></div>
+	</div>
+  <!-- 内页 -->
+  <!-- P1 -->
+  <div class="scenery userScenery_01">
+    <div class="bg"></div>
+    <div class="tiemLine anItem"><span></span></div>
+    <div class="txt anItem"><span>0</span>次</div> 
+    <a class="anItem stick" href="javascript:0"><span class="mask"></sapn></a>
+    <div class="anItem fire"></div>
+    <div class="footer anItem"><div class="logo"></div></div>
+    <table class="timeLayer anItem">
+      <tbody>
+        <tr>
+          <td>倒计时<p>3</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+ 
+<!-- 封底 -->
+	<div class="scenery page_end_01">
+    <div class="txt_01" >你在8秒内<br />为中国奥运健儿加油<br /><span class="count">23次</span><br/>获得<span>黄金右手</span>称号</div>
+    <div class="arrLink"><a href="javascript:void(0)" id="playAgain" ></a><a href="javascript:void(0)" id="btn_share" ></a><a href="javascript:void(0)" id="smt_count" ></a><br/>
+    <a href="#" title="" class="namePaper"></a>
+    </div>
+     
+    </div>
+	</div>
+
+  <!-- 自定义场景 end -->
+</div>
+<div id="shareAlert"><div class="shareArr"></div><div class="shareText">现在可以点击这里<br>点击【分享到朋友圈】</div></div>
+
+<script>
+(function(){
+  if(document.addEventListener){
+  document.addEventListener('touchmove', function(e){
+    e.preventDefault();
+  }, false); 
+  }
+  function Q(s, p){
+    return (p || document).querySelector(s);
+  };
+  function QA(s, p){
+    return (p || document).querySelectorAll(s);
+  };
+  //预载图片
+  var preload = [
+    'images/bg_cover.jpg',
+    'images/cover_title.png',
+    'images/cover_title_2.png',
+    'images/cover_txt_01.png',
+    'images/cover_txt_02.png'
+  ];
+  mobileshow.init('.slideshow', preload);
+  
+  var viewWidth = document.body.clientWidth;
+  var isMobile = navigator.userAgent.match(/(?:Windows Phone|SymbianOS|Android|iPad|iPod|iPhone)/);
+  var isWX =  navigator.userAgent.indexOf('Messenger') !== -1;
+
+  isMobile = isMobile ? isMobile[0] : false;
+  
+  if(isMobile){
+    var f = document.documentElement.clientWidth / 640 * 32;
+    
+    if(document.documentElement.clientWidth / document.documentElement.clientHeight > 0.6349){
+      //小屏幕手机单独定义CSS
+      //document.body.className = 'smallScreen';
+      f = document.documentElement.clientHeight / 1008 * 32;
+    }
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['max-width'] = '20rem';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+  }else{
+    var f = document.documentElement.clientHeight / 504 * 16,
+      viewWidth = Math.round(document.documentElement.clientHeight / 504 * 320);
+    document.documentElement.style['font-size'] = f + 'px';
+    document.body.style['overflow'] = 'hidden';
+    document.body.style['max-width'] = '640px';
+    document.body.style['width'] = viewWidth + 'px';
+    document.body.style['position'] = 'relative';
+
+    var pb = document.createElement('div');
+    pb.className = 'pageBtn';
+    pb.style.left = viewWidth + 'px';
+    pb.innerHTML = '<a href="javascript:void(0)" id="preBtn">上一页</a><a href="javascript:void(0)" id="nextBtn">下一页</a>'
+    document.body.appendChild(pb);
+
+    Q('#preBtn').onclick = function(){
+      mobileshow.pre();
+      return false;
+    };
+    Q('#nextBtn').onclick = function(){
+      mobileshow.next();
+      return false;
+    };
+    Q('.btn_start').onclick = function(){
+      mobileshow.next();
+      return false;
+    };
+  };
+
+
+//微信分享时的缩略图
+if(isWX){
+  setShareInfo("奔跑吧！创客！","images/icon.jpg","http://t.people.com.cn/h5/chuangke");
+};
+
+function setShareInfo(title, img, url){
+if(url && history.pushState){
+history.pushState(null, document.title, url);
+};
+if(img){
+var i = window._shareImg || new Image();
+i.src = img;
+i.style.position = 'absolute';
+i.style.left = '-1000px';
+i.style.top = '-1000px';
+window._shareImg = i;
+document.body.insertBefore(i, document.body.firstChild);
+};
+if(title){
+document.title = title;
+}
+}
+ 
+// 分享按钮
+Q('#btn_share').onclick=function(){showShare();} 
+//显示分享提示，分享按钮可以调用
+function showShare(){
+  if(!isWX){
+    document.getElementById('shareAlert').innerHTML = '<div class="othersShare">分享：<a href="javascript:void(0)" onclick="shareSina()"><img src="/microblog-v3/2014subject/1216_oneword/images/sina.png"></a> <a href="javascript:void(0)" onclick="sharePeople()"><img src="/microblog-v3/2014subject/1216_oneword/images/people.png"></a> <a href="javascript:void(0)" onclick="shareTencent()"><img src="/microblog-v3/2014subject/1216_oneword/images/tencent.png"></a></div>';
+  };
+  Q('#shareAlert').style.display = 'block';
+  Q('#shareAlert').onclick=function(){
+    Q('#shareAlert').style.display = 'none';
+    clearTimeout(st);
+  };
+  var st = setTimeout(function(){
+    clearTimeout(st);
+    Q('#shareAlert').style.display = 'none';
+  }, 5000);
+};
+
+
+})();
+function shareSina () {
+    location.href='http://service.weibo.com/share/share.php?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title)+'&amp;ralateUid=2286908003&amp;source='
+}
+function sharePeople () {
+  location.href='http://t.people.com.cn/bbsShare.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title)+'&amp;showtype=&amp;bigtype=&amp;appkey=2592306546&amp;pic=&amp;site='
+}
+function shareTencent () {
+  location.href='http://v.t.qq.com/share/share.php?title='+encodeURI(document.title)+'&url='+encodeURIComponent(location.href);
+}
+
+</script>
+<!-- 微信分享接口 -->
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+
+var src = "http://58.68.146.12/weixin/JS.js?url=" + encodeURIComponent(location.href.split('#')[0]);
+var left = unescape('%3c');
+var right = unescape('%3E');
+document.write(left + 'script src="' + src + '"' + right + left + '/script' + right);
+</script>
+<script>
+var imgUrl = 'http://mblog.people.com.cn/microblog-v3/h5/chuangke/images/icon.jpg';
+var link =  'http://mblog.people.com.cn/h5/chuangke';
+var title = '奔跑吧！创客！';
+var desc= '“创新”出彩！他们都赚翻了，你还没有心动吗？';
+
+peopleWXConfig.jsApiList = ['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'];
+wx.config(peopleWXConfig);
+wx.ready(function() {
+
+    wx.onMenuShareAppMessage({
+        title: title,
+        desc:desc,
+        link: link,
+        imgUrl:imgUrl
+    });
+    wx.onMenuShareTimeline({
+        title: title,
+        link: link,
+        imgUrl:imgUrl
+    });
+    wx.onMenuShareQQ({
+        title: title,
+        desc:desc,
+        link: link,
+        imgUrl:imgUrl
+    });
+    wx.onMenuShareWeibo({
+        title: title,
+        desc:desc,
+        link: link,
+        imgUrl:imgUrl
+    });
+});
+</script>
+
+<!-- 天润测试代码 -->
+<script src="http://www.people.com.cn/css/2010tianrun/webdig_test.js" type="text/javascript"></script>
+<!-- /天润测试代码 -->
+</body>
+</html>

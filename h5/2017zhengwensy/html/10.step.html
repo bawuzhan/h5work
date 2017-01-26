@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title></title>
+    <link rel="stylesheet" href="../css/reset.min.css"/>
+    <style>
+        html {
+            font-size: 100px;
+        }
+        a, a:hover, a:target, a:visited, a:active {
+            color: #000;
+            display: block;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        body{
+            width: 100%;
+            overflow-x: hidden;
+            background: url("../images/bg.png") no-repeat;
+            background-size: 100% 100%;
+            font-family: 'Adobe 黑体 Std';
+        }
+        .contain{
+            width: 5.1rem;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .title{
+            height: 2.9rem;
+            width: 100%;
+            background: url("../images/find_01.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .tit{
+            height: .63rem;
+            margin-top: .3rem;
+            width: 2.4rem;
+            background: url("../images/tStep_03.png") no-repeat 0;
+            background-size:100% 100%;
+            border-radius: .1rem;
+            line-height: .63rem;
+            font-size: .3rem;
+            padding: 0 0.1rem 0 0.1rem;
+            color: #fff;
+            font-family:MFBanHei_Nomcommercial;
+            font-weight: bold;
+        }
+        .tit.Act_instr{
+            background: url("../images/tStep_03.png") no-repeat -2.7rem;
+            border-radius: .1rem;
+        }
+        .footer{
+            position: relative;
+            bottom: 0;
+            height: .6rem;
+            padding: .21rem 0;
+            width: 100%;
+            text-align: center;
+            font-size: .2rem;
+            line-height: .24rem;
+            color: #d90014;
+            background: rgba(255,255,255,0.4);
+            overflow: hidden;
+        }
+        .footer i{
+            float: left;
+            display: block;
+            width: 1.95rem;
+            height: .6rem;
+            margin-left: .65rem;
+            background: url("../images/logo2_03.png") no-repeat;
+            background-size: 100% 100%;
+        }
+        .footer p{
+            float: left;
+            margin-left: .2rem;
+            width: 3.3rem;
+        }
+        .step{
+            width: 4.9rem;
+            margin: 0 auto;
+        }
+        .firStep{
+            width: 100%;
+            margin-bottom: .65rem;
+        }
+        .firStep .inner{
+            position: relative;
+            height: 4.6rem;
+        }
+        .firStep p{
+            font-family: "Adobe 宋体 Std";
+            line-height: .46rem;
+            font-size: .28rem;
+            color: #3e280d;
+            margin-top: .35rem;
+            margin-bottom: .2rem;
+        }
+        .firStep .inner div:nth-of-type(1){
+            width: 3.34rem;
+            height: 3.8rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        .firStep .inner div:nth-of-type(2){
+            width: 2.7rem;
+            height: 2.7rem;
+            position: absolute;
+            left: .15rem;
+            bottom: 0;
+        }
+        .firStep p,.secStep p{
+            margin: .1rem auto;
+            color: #69140e;
+            font-size: .28rem;
+            font-family:  Hiragino Sans GB, STHeiti, Microsoft Yahei, sans-serif;
+            font-weight: bold;
+            line-height: .4rem;
+
+        }
+        .firStep p i,.secStep p i{
+            display: inline-block;
+            width: .34rem;
+            height: .34rem;
+            line-height: .34rem;
+            font-style: normal;
+            color: #fff;
+            font-size: .32rem;
+            background: #fd7c00;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .firStep p span{
+            color: #ca0a0a;
+        }
+        .firStep .ewm{
+            text-align: center;
+            margin-top: .9rem;
+        }
+        .firStep .ewm span{
+            font-family:  Hiragino Sans GB, STHeiti, Microsoft Yahei, sans-serif;
+            font-weight: bold;
+            font-weight: bolder;
+            color: #dc363a;
+            font-size: .32rem;
+            line-height: .36rem;
+        }
+        .firStep .ewm img{
+            display: inline-block;
+            margin-top: .2rem;
+            width: 2rem;
+            height: 2rem;
+        }
+        .secStep div{
+            width: 4.5rem;
+            height: 3.6rem;
+            margin: .1rem auto;
+        }
+        .instr ul{
+            margin-top: .1rem;
+        }
+        .instr ul li{
+            font-size: .28rem;
+            line-height: .4rem;
+            font-weight: bold;
+            color: #69140e;
+        }
+        .instr ul li span{
+            display: inline-block;
+            width: .2rem;
+            height: .2rem;
+            line-height: .2rem;
+            font-style: normal;
+            background: #fd7c00;
+            border-radius: 50%;
+            text-align: center;
+        }
+        .instr{
+            margin-bottom: .4rem;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="title"></div>
+<div class="contain">
+    <div class="step">
+        <div class="tit">网络投票两步走</div>
+        <div class="firStep">
+            <p><i>1</i>进入<span>人民网</span>官方微信，点击菜单栏的
+                “回乡看中国”投票</p>
+            <div class="inner">
+                <div>
+                    <img src="../images/hud_03.png" alt=""/>
+                </div>
+                <div>
+                    <img src="../images/cell_03.png" alt=""/>
+                </div>
+            </div>
+            <div class="ewm">
+                <span>长按二维码进人民网微信</span>
+                <img src="../images/action_07.png" alt=""/>
+            </div>
+        </div>
+        <div class="secStep">
+            <p><i>2</i>通过搜索查找你支持的作品,点击投票</p>
+            <div><img src="../images/cell_11.png" alt=""/></div>
+        </div>
+    </div>
+    <div class="instr">
+        <div class="tit Act_instr">活动说明</div>
+        <ul>
+            <li><span></span>投票截止时间：2017年2月4日17:00</li>
+            <br/>
+            <li><span></span>投票系统在微信中方能使用，每个微
+                信帐号为单个候选作品限投一票。</li>
+        </ul>
+    </div>
+</div>
+<div class="footer">
+    <i></i>
+    <p>指导单位：网信办网络社会工作局、<br>全国学联、共青团中央学校部</p>
+</div>
+<script src="../js/index.js"></script>
+<script src="../js/zepto.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
